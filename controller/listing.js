@@ -17,6 +17,7 @@ var listing = {
         offset: res.locals.offset,
         limit: res.locals.limit,
         total: total,
+        designers: res.locals.allDesigners,
         products: sliceProducts.map(function (product) {
             return {
                 sku: product.id,
