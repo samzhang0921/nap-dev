@@ -4,19 +4,34 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
-  },  
-  "author": "",
+    "dev": "concurrently \"npm run watch:server\" \"npm run watch:client\"",
+    "watch:server": "nodemon",
+    "watch:client": "webpack --progress --colors --watch",
+    "build": "",
+    "start": ""
+  },
+  "author": "sam",
   "license": "ISC",
   "dependencies": {
     "express": "^4.9.8",
     "express-hbs": "^0.7.11",
     "express-params": "0.0.3",
-    "request": "^2.46.0",
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "react": "^15.6.0",
+    "react-dom": "^15.6.0",
+    "request": "^2.46.0"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "concurrently": "^3.4.0",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "nodemon": "^1.11.0",
+    "style-loader": "^0.18.2",
+    "webpack": "^2.6.1"
   }
 }

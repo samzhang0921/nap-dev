@@ -6,7 +6,7 @@ var controller = require('../controller/listing');
 var allProducts = require(config.ROOT + '/fixtures/products.json').data;
 var routes = {
     init: function (app) {
-        app.get("/:language/shop",
+        app.get("/api/:language/shop",
           middleware.setLanguage,
           middleware.init,
           middleware.setQuery,
