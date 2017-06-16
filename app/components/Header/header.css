@@ -1,0 +1,12 @@
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  border-top: 0;
+  border-bottom: 1px dotted #999;
+  float: none;
+  clear: both;
+  bottom: 8px;
+  position: relative;
+}

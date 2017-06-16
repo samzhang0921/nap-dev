@@ -4,15 +4,12 @@ var utility = require('./utility');
 
 function init(req, res, next) {
   res.locals.allProducts = allProducts;
-  console.log("1");
   res.locals.allDesigners = utility.getDesigners(allProducts);
-  console.log(res.locals.allDesigners);
   next();
 }
 
 function setLanguage(req, res, next) {
   res.locals.language = req.params.language;
-    console.log("zh");
   next();
 }
 

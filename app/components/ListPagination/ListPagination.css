@@ -1,0 +1,5 @@
+.pagenationBox {
+  flex: 1;
+  text-align: right;
+  align-self: baseline;
+}

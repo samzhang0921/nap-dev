@@ -6,7 +6,6 @@ var routes = {
         app.get("/listing",
         function(req, res, next){
           // var contentString = ReactDOMServer.renderTostring(app);
-          // console.log(contentString);
           res.render('listing', {
             content: ''
           });

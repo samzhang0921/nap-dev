@@ -1,3 +1,67 @@
-.style__header___120mu {
+.header__headerContainer___2X29a {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  border-top: 0;
+  border-bottom: 1px dotted #999;
+  float: none;
+  clear: both;
+  bottom: 8px;
+  position: relative;
+}
+.ListViewAndSort__sortBox___1lnFJ{
+  flex: 1;
+  align-self: baseline;
+  display: flex;
+}
+.ListTitleAndTotal__titleBox___I5geD {
+  flex: 2;
+  text-align: center;
+  align-self: baseline;
+}
+
+h1 {
+  text-align: center;
+  width: 250px;
+  padding-bottom: 4px;
+  padding-top: 2px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-size: 21px;
+  font-family: ModernNAP-Display, serif;
+  letter-spacing: 1px;
+  background-color: transparent;
+  color: #000;
+  min-height: 20px;
+  word-wrap: break-word;
+  margin: 25px auto 0;
+}
+
+.ListTitleAndTotal__resultsBox___byQUm {
+
+    text-align: center;
+  margin-bottom: -5px;
+  font-family: GillSans,"Gill Sans MT",Calibri,sans-serif;
+  font-size: 14px;
+}
+
+.ListTitleAndTotal__resultsBox___byQUm span {
+  padding: 0 15px;
+  color: #666;
+  background-color: white;
+}
+.ListPagination__pagenationBox___LvNak {
+  flex: 1;
+  text-align: right;
+  align-self: baseline;
+}
+.MainBlock__MainBlock___1e6oB {
   color: red;
+  text-align: center;
+}
+.App__wraper___2TLPr {
+  max-width: 950px;
+    min-width: 950px;
+    margin: 0 auto 20px
 }

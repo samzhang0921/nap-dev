@@ -1,0 +1,5 @@
+.sortBox{
+  flex: 1;
+  align-self: baseline;
+  display: flex;
+}
