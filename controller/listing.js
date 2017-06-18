@@ -28,7 +28,8 @@ var listing = {
                 brand_id: product.brand.id,
                 caregories:product.categories,
                 image: {
-                    outfit: '//cache.net-a-porter.com/images/products/' + product.id + '/' + product.id + '_ou_sl.jpg'
+                    outfit: '//cache.net-a-porter.com/images/products/' + product.id + '/' + product.id + '_ou_sl.jpg',
+                    pview: '//cache.net-a-porter.com/images/products/' + product.id + '/' + product.id + '_in_sl.jpg'
                 }
             };
         })

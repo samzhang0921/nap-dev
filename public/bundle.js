@@ -1,19 +1,19 @@
 webpackJsonp([0],{
 
-/***/ 111:
+/***/ 112:
 /***/ (function(module, exports, __webpack_require__) {
 
 // the whatwg-fetch polyfill installs the fetch() function
 // on the global object (window or self)
 //
 // Return that as the export for use in Webpack, Browserify etc.
-__webpack_require__(197);
+__webpack_require__(198);
 module.exports = self.fetch.bind(self);
 
 
 /***/ }),
 
-/***/ 197:
+/***/ 198:
 /***/ (function(module, exports) {
 
 (function(self) {
@@ -481,51 +481,74 @@ module.exports = self.fetch.bind(self);
 
 /***/ }),
 
-/***/ 208:
-/***/ (function(module, exports) {
+/***/ 209:
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
-module.exports = {"headerContainer":"header__headerContainer___2X29a"};
+"use strict";
 
-/***/ }),
 
-/***/ 210:
-/***/ (function(module, exports) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-// removed by extract-text-webpack-plugin
-module.exports = {"pagenationBox":"ListPagination__pagenationBox___LvNak"};
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-/***/ }),
+var _react = __webpack_require__(12);
 
-/***/ 212:
-/***/ (function(module, exports) {
+var _react2 = _interopRequireDefault(_react);
 
-// removed by extract-text-webpack-plugin
-module.exports = {"titleBox":"ListTitleAndTotal__titleBox___I5geD","resultsBox":"ListTitleAndTotal__resultsBox___byQUm"};
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/***/ }),
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/***/ 214:
-/***/ (function(module, exports) {
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-// removed by extract-text-webpack-plugin
-module.exports = {"sortBox":"ListViewAndSort__sortBox___1lnFJ"};
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-/***/ }),
+var product = function (_React$Component) {
+  _inherits(product, _React$Component);
 
-/***/ 216:
-/***/ (function(module, exports) {
+  function product(props) {
+    _classCallCheck(this, product);
 
-// removed by extract-text-webpack-plugin
-module.exports = {"wraper":"App__wraper___2TLPr"};
+    var _this = _possibleConstructorReturn(this, (product.__proto__ || Object.getPrototypeOf(product)).call(this, props));
 
-/***/ }),
+    _this.state = {};
+    return _this;
+  }
 
-/***/ 218:
-/***/ (function(module, exports) {
+  _createClass(product, [{
+    key: 'render',
+    value: function render() {
+      return;
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement('img', { src: this.props.outfit })
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          this.props.product.name,
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'span',
+            null,
+            this.props.product.price
+          ),
+          _react2.default.createElement('br', null)
+        )
+      );
+    }
+  }]);
 
-// removed by extract-text-webpack-plugin
-module.exports = {"MainBlock":"MainBlock__MainBlock___1e6oB"};
+  return product;
+}(_react2.default.Component);
+
+exports.default = product;
 
 /***/ }),
 
@@ -547,7 +570,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(25);
 
-var _isomorphicFetch = __webpack_require__(111);
+var _isomorphicFetch = __webpack_require__(112);
 
 var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
@@ -559,7 +582,7 @@ var _MainBlock = __webpack_require__(88);
 
 var _MainBlock2 = _interopRequireDefault(_MainBlock);
 
-var _App = __webpack_require__(216);
+var _App = __webpack_require__(92);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -595,7 +618,9 @@ var App = function (_React$Component) {
       (0, _isomorphicFetch2.default)(url).then(function (res) {
         return res.json();
       }).then(function (res) {
-        _this2.setState({ data: res });
+        _this2.setState({
+          data: res
+        });
         console.log(_this2.state.data);
       });
     }
@@ -614,7 +639,9 @@ var App = function (_React$Component) {
           totalPage: totalPage,
           currentPage: currentPage
         }),
-        _react2.default.createElement(_MainBlock2.default, null)
+        _react2.default.createElement(_MainBlock2.default, {
+          data: this.state.data
+        })
       );
     }
   }]);
@@ -640,7 +667,7 @@ var _react = __webpack_require__(12);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _header = __webpack_require__(208);
+var _header = __webpack_require__(93);
 
 var _header2 = _interopRequireDefault(_header);
 
@@ -659,7 +686,7 @@ var _ListPagination2 = _interopRequireDefault(_ListPagination);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Header = function Header(props) {
-  console.log(props);
+
   return _react2.default.createElement(
     'div',
     { className: _header2.default.headerContainer },
@@ -687,7 +714,7 @@ var _react = __webpack_require__(12);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ListPagination = __webpack_require__(210);
+var _ListPagination = __webpack_require__(94);
 
 var _ListPagination2 = _interopRequireDefault(_ListPagination);
 
@@ -719,7 +746,7 @@ var _react = __webpack_require__(12);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ListTitleAndTotal = __webpack_require__(212);
+var _ListTitleAndTotal = __webpack_require__(95);
 
 var _ListTitleAndTotal2 = _interopRequireDefault(_ListTitleAndTotal);
 
@@ -769,7 +796,7 @@ var _react = __webpack_require__(12);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ListViewAndSort = __webpack_require__(214);
+var _ListViewAndSort = __webpack_require__(96);
 
 var _ListViewAndSort2 = _interopRequireDefault(_ListViewAndSort);
 
@@ -801,25 +828,102 @@ var _react = __webpack_require__(12);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _MainBlock = __webpack_require__(218);
+var _MainBlock = __webpack_require__(97);
 
 var _MainBlock2 = _interopRequireDefault(_MainBlock);
+
+var _ProductsList = __webpack_require__(89);
+
+var _ProductsList2 = _interopRequireDefault(_ProductsList);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var MainBlock = function MainBlock(props) {
   return _react2.default.createElement(
     'div',
-    { className: _MainBlock2.default.MainBlock },
-    'This is a MainBlock!!!!'
+    null,
+    _react2.default.createElement(
+      'p',
+      null,
+      props.data.total
+    ),
+    _react2.default.createElement(_ProductsList2.default, { products: props.data })
   );
 };
-
+// import SideFilter from '../SideFilter/SideFilter';
 exports.default = MainBlock;
 
 /***/ }),
 
 /***/ 89:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(12);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Product = __webpack_require__(209);
+
+var _Product2 = _interopRequireDefault(_Product);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProductsList = function (_React$Component) {
+  _inherits(ProductsList, _React$Component);
+
+  function ProductsList(props) {
+    _classCallCheck(this, ProductsList);
+
+    var _this = _possibleConstructorReturn(this, (ProductsList.__proto__ || Object.getPrototypeOf(ProductsList)).call(this, props));
+
+    console.log("products" + props);
+
+    return _this;
+  }
+
+  _createClass(ProductsList, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+
+      console.log("products" + props);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var products = this.props.products;
+      return _react2.default.createElement(
+        'div',
+        null,
+        products.map(function (pid) {
+          return _react2.default.createElement(_Product2.default, { key: pid.sku, product: pid, outfit: pid.outfit, pview: pid.pview });
+        })
+      );
+    }
+  }]);
+
+  return ProductsList;
+}(_react2.default.Component);
+
+exports.default = ProductsList;
+
+/***/ }),
+
+/***/ 90:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -841,6 +945,54 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('main'));
 
+/***/ }),
+
+/***/ 92:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"wraper":"App__wraper___2xg1l"};
+
+/***/ }),
+
+/***/ 93:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"headerContainer":"header__headerContainer___1-Y0z"};
+
+/***/ }),
+
+/***/ 94:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"pagenationBox":"ListPagination__pagenationBox___lAVm6"};
+
+/***/ }),
+
+/***/ 95:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"titleBox":"ListTitleAndTotal__titleBox___2G1iu","resultsBox":"ListTitleAndTotal__resultsBox___9SwZV"};
+
+/***/ }),
+
+/***/ 96:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"sortBox":"ListViewAndSort__sortBox___2484D"};
+
+/***/ }),
+
+/***/ 97:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"MainBlock":"MainBlock__MainBlock___1qRL8"};
+
 /***/ })
 
-},[89]);
+},[90]);
