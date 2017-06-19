@@ -2,19 +2,20 @@ import React from 'react';
 import {render} from 'react-dom';
 
 export default class Designer extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-
   }
-  render(){
-    <li>
-                              <a href="&brand=${this.props.designers.id}" title={this.props.designers.name}>
-                                  <span class="filter-checkbox"></span>
-                                  <div class="filter-name">
-                                      <span>{this.props.designers.name}</span>
-                                  </div>
-                              </a>
-                              <div class="clear"></div>
-                          </li>
+  render() {
+    return (
+      <li>
+        <a href="&brand=${this.props.designerId}" title={this.props.designerName}>
+          <span></span>
+          <div>
+            <span>{this.props.designerName}</span>
+          </div>
+        </a>
+        <div></div>
+      </li>
+    )
   }
 }

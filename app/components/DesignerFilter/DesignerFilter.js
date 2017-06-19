@@ -7,16 +7,14 @@ export default class DesignerFilter extends React.Component{
   }
 
   render() {
-
-    console.log('DesignerFilter', this.props.designerList);
-    if(!this.props.desinerList) {return <div>Loading</div>};
+    if(!this.props.designerList) {return <div>Loading</div>};
     const designerList = this.props.designerList;
     return (
       <div>
         <ul>
           {designerList.map((designer) => {
             console.log('designer', designer)
-            return <Designer key = {designer.id} designerName = {designer.name} designerId = {designer.id}/>
+            return <Designer key = {designer.id} designerName = {designer.name.en} designerId = {designer.id}/>
           })}
         </ul>
       </div>
