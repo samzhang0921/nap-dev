@@ -1,26 +1,24 @@
 import React from 'react';
+import { render } from 'react-dom';
 import Product from '../Product/Product';
+import style from './ProductsList.css'
 
 export default class ProductsList extends React.Component {
   constructor (props){
     super(props)
-    console.log("products"  + props);
-
   }
 
-  componentDidMount() {
-
-
-        console.log("products"  + props);
-  }
 
     render (){
-      const products = this.props.products;
+      if(!this.props.data.products) {return <div>Loading</div>};
+      const products = this.props.data.products;
       return  (
-        <div>
+        <div className= {style.productsList}>
+        <ul>
         {products.map((pid) =>{
-           return <Product key={pid.sku} product={pid} outfit={pid.outfit} pview={pid.pview}/>
+           return <Product key={pid.sku} product={pid} outfit={pid.image.outfit} pview={pid.image.pview}/>
         })}
+        </ul>
         </div>
       )
     }

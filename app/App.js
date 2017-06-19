@@ -23,7 +23,6 @@ class App extends React.Component {
       this.setState({
         data: res
       })
-      console.log(this.state.data);
     })
 
   };

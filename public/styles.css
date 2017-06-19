@@ -1,4 +1,4 @@
-.header__headerContainer___1-Y0z {
+.header__headerContainer___2X29a {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -10,12 +10,12 @@
   bottom: 8px;
   position: relative;
 }
-.ListViewAndSort__sortBox___2484D{
+.ListViewAndSort__sortBox___1lnFJ{
   flex: 1;
   align-self: baseline;
   display: flex;
 }
-.ListTitleAndTotal__titleBox___2G1iu {
+.ListTitleAndTotal__titleBox___I5geD {
   flex: 2;
   text-align: center;
   align-self: baseline;
@@ -38,7 +38,7 @@ h1 {
   margin: 25px auto 0;
 }
 
-.ListTitleAndTotal__resultsBox___9SwZV {
+.ListTitleAndTotal__resultsBox___byQUm {
 
     text-align: center;
   margin-bottom: -5px;
@@ -46,22 +46,53 @@ h1 {
   font-size: 14px;
 }
 
-.ListTitleAndTotal__resultsBox___9SwZV span {
+.ListTitleAndTotal__resultsBox___byQUm span {
   padding: 0 15px;
   color: #666;
   background-color: white;
 }
-.ListPagination__pagenationBox___lAVm6 {
+.ListPagination__pagenationBox___LvNak {
   flex: 1;
   text-align: right;
   align-self: baseline;
 }
-.MainBlock__MainBlock___1qRL8 {
+.MainBlock__MainBlock___1e6oB {
   color: red;
   text-align: center;
 }
-.App__wraper___2xg1l {
+.SideFilter__sideFilter___FacSz {
+  float: left;
+width: 183px;
+padding: 13px 0 0;
+position: relative;
+background-color: red;
+}
+.Product__listItem___342Zi {
+  width: 224px;
+  height: 367px;
+  display: block;
+  float: left;
+  padding-left: 30px;
+  padding-bottom: 15px;
+  margin-top: 20px;
+  text-align: left;
+  font-family: GillSans, "Gill Sans MT", Calibri, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .1px;
+  box-sizing: border-box;
+}
+.ProductsList__productsList___29beS {
+  float: left;
+  width: 762px;
+  position: relative;
+  overflow: visible;
+}
+.App__wraper___2TLPr {
   max-width: 950px;
     min-width: 950px;
     margin: 0 auto 20px
+}
+ol, ul {
+  list-style: none;
 }

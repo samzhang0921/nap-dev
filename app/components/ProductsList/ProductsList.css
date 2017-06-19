@@ -1,1 +1,6 @@
-
+.productsList {
+  float: left;
+  width: 762px;
+  position: relative;
+  overflow: visible;
+}
