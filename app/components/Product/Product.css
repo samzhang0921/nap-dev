@@ -11,5 +11,19 @@
   font-size: 14px;
   font-weight: 400;
   letter-spacing: .1px;
-  box-sizing: border-box;
+}
+.productImage {
+    position: relative;
+    height: 274px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+.productInfo {
+    padding-left: 30px;
+}
+.designer {
+    font-weight: 700;
+    text-transform: uppercase;
+    vertical-align: baseline;
 }

@@ -7,13 +7,11 @@ export default class Designer extends React.Component {
   }
   render() {
     return (
-      <li>
-        <a href="&brand=${this.props.designerId}" title={this.props.designerName}>
+      <li data-designer-id={this.props.designerId} className="not-selected">
           <span></span>
           <div>
             <span>{this.props.designerName}</span>
           </div>
-        </a>
         <div></div>
       </li>
     )

@@ -4,7 +4,7 @@ webpackJsonp([0],{
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"sortBox":"ListViewAndSort__sortBox___1lnFJ"};
+module.exports = {"sortBox":"ListViewAndSort__sortBox___2484D"};
 
 /***/ }),
 
@@ -12,7 +12,7 @@ module.exports = {"sortBox":"ListViewAndSort__sortBox___1lnFJ"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"MainBlock":"MainBlock__MainBlock___1e6oB"};
+module.exports = {"MainBlock":"MainBlock__MainBlock___1qRL8"};
 
 /***/ }),
 
@@ -20,7 +20,7 @@ module.exports = {"MainBlock":"MainBlock__MainBlock___1e6oB"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"listItem":"Product__listItem___342Zi"};
+module.exports = {"listItem":"Product__listItem___15U1D","productImage":"Product__productImage___3KNF6","productInfo":"Product__productInfo___3nx8b","designer":"Product__designer___KwTQY"};
 
 /***/ }),
 
@@ -28,7 +28,7 @@ module.exports = {"listItem":"Product__listItem___342Zi"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"productsList":"ProductsList__productsList___29beS"};
+module.exports = {"productsList":"ProductsList__productsList___21Jwk"};
 
 /***/ }),
 
@@ -36,7 +36,7 @@ module.exports = {"productsList":"ProductsList__productsList___29beS"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"sideFilter":"SideFilter__sideFilter___FacSz"};
+module.exports = {"sideFilter":"SideFilter__sideFilter___1NJoG"};
 
 /***/ }),
 
@@ -521,6 +521,14 @@ module.exports = self.fetch.bind(self);
 
 /***/ }),
 
+/***/ 219:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"scrollPanel":"DesignerFilter__scrollPanel___2QwvQ"};
+
+/***/ }),
+
 /***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -639,74 +647,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(14);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _DesignerFilter = __webpack_require__(219);
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _DesignerFilter2 = _interopRequireDefault(_DesignerFilter);
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Designer = function (_React$Component) {
-  _inherits(Designer, _React$Component);
-
-  function Designer(props) {
-    _classCallCheck(this, Designer);
-
-    return _possibleConstructorReturn(this, (Designer.__proto__ || Object.getPrototypeOf(Designer)).call(this, props));
-  }
-
-  _createClass(Designer, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'li',
-        null,
-        _react2.default.createElement(
-          'a',
-          { href: '&brand=${this.props.designerId}', title: this.props.designerName },
-          _react2.default.createElement('span', null),
-          _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(
-              'span',
-              null,
-              this.props.designerName
-            )
-          )
-        ),
-        _react2.default.createElement('div', null)
-      );
-    }
-  }]);
-
-  return Designer;
-}(_react2.default.Component);
-
-exports.default = Designer;
-
-/***/ }),
-
-/***/ 85:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(7);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(14);
-
-var _Designer = __webpack_require__(84);
+var _Designer = __webpack_require__(85);
 
 var _Designer2 = _interopRequireDefault(_Designer);
 
@@ -742,10 +687,19 @@ var DesignerFilter = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'ul',
+          'h4',
           null,
+          'Designer'
+        ),
+        _react2.default.createElement(
+          'a',
+          { className: 'clear_filter', href: '?' },
+          'Clear'
+        ),
+        _react2.default.createElement(
+          'ul',
+          { className: _DesignerFilter2.default.scrollPanel },
           designerList.map(function (designer) {
-            console.log('designer', designer);
             return _react2.default.createElement(_Designer2.default, { key: designer.id, designerName: designer.name.en, designerId: designer.id });
           })
         )
@@ -757,6 +711,69 @@ var DesignerFilter = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = DesignerFilter;
+
+/***/ }),
+
+/***/ 85:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(14);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Designer = function (_React$Component) {
+  _inherits(Designer, _React$Component);
+
+  function Designer(props) {
+    _classCallCheck(this, Designer);
+
+    return _possibleConstructorReturn(this, (Designer.__proto__ || Object.getPrototypeOf(Designer)).call(this, props));
+  }
+
+  _createClass(Designer, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'li',
+        { 'data-designer-id': this.props.designerId, className: 'not-selected' },
+        _react2.default.createElement('span', null),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'span',
+            null,
+            this.props.designerName
+          )
+        ),
+        _react2.default.createElement('div', null)
+      );
+    }
+  }]);
+
+  return Designer;
+}(_react2.default.Component);
+
+exports.default = Designer;
 
 /***/ }),
 
@@ -1011,7 +1028,7 @@ var Product = function (_React$Component) {
         { className: _Product2.default.listItem },
         _react2.default.createElement(
           'div',
-          null,
+          { className: _Product2.default.productImage },
           _react2.default.createElement(
             'a',
             { href: '/product/${this.props.prodct.id}' },
@@ -1020,13 +1037,13 @@ var Product = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          null,
+          { className: _Product2.default.productInfo },
           _react2.default.createElement(
             'a',
             { href: '/product/${this.props.prodct.id}' },
             _react2.default.createElement(
               'span',
-              null,
+              { className: _Product2.default.designer },
               this.props.product.brand_name
             )
           ),
@@ -1133,14 +1150,14 @@ exports.default = ProductsList;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _DesignerFilter = __webpack_require__(85);
+var _DesignerFilter = __webpack_require__(84);
 
 var _DesignerFilter2 = _interopRequireDefault(_DesignerFilter);
 
@@ -1151,14 +1168,14 @@ var _SideFilter2 = _interopRequireDefault(_SideFilter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SideFilter = function SideFilter(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: _SideFilter2.default.sideFilter },
-    _react2.default.createElement(_DesignerFilter2.default, { designerList: props.designerList })
-  )
-  // <CategoryFilter />
-  // <ColorFilter />
-  ;
+    return _react2.default.createElement(
+        'div',
+        { className: _SideFilter2.default.sideFilter },
+        _react2.default.createElement(_DesignerFilter2.default, { designerList: props.designerList })
+    )
+    // <CategoryFilter />
+    // <ColorFilter />
+    ;
 };
 
 exports.default = SideFilter;
@@ -1193,7 +1210,7 @@ _reactDom2.default.render(_react2.default.createElement(_App2.default, null), do
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"wraper":"App__wraper___2TLPr"};
+module.exports = {"wraper":"App__wraper___2xg1l"};
 
 /***/ }),
 
@@ -1201,7 +1218,7 @@ module.exports = {"wraper":"App__wraper___2TLPr"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"headerContainer":"header__headerContainer___2X29a"};
+module.exports = {"headerContainer":"header__headerContainer___1-Y0z"};
 
 /***/ }),
 
@@ -1209,7 +1226,7 @@ module.exports = {"headerContainer":"header__headerContainer___2X29a"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"pagenationBox":"ListPagination__pagenationBox___LvNak"};
+module.exports = {"pagenationBox":"ListPagination__pagenationBox___lAVm6"};
 
 /***/ }),
 
@@ -1217,7 +1234,7 @@ module.exports = {"pagenationBox":"ListPagination__pagenationBox___LvNak"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"titleBox":"ListTitleAndTotal__titleBox___I5geD","resultsBox":"ListTitleAndTotal__resultsBox___byQUm"};
+module.exports = {"titleBox":"ListTitleAndTotal__titleBox___2G1iu","resultsBox":"ListTitleAndTotal__resultsBox___9SwZV"};
 
 /***/ })
 

@@ -1,0 +1,12 @@
+.scrollPanel {
+  overflow: hidden;
+  padding: 0px;
+  outline: none;
+  width: 183px;
+  max-height: 283px;
+  outline: 0;
+  clear: both;
+  display: block;
+  height: auto;
+  position: relative;
+}

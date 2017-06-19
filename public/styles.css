@@ -1,4 +1,4 @@
-.header__headerContainer___2X29a {
+.header__headerContainer___1-Y0z {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -10,12 +10,12 @@
   bottom: 8px;
   position: relative;
 }
-.ListViewAndSort__sortBox___1lnFJ{
+.ListViewAndSort__sortBox___2484D{
   flex: 1;
   align-self: baseline;
   display: flex;
 }
-.ListTitleAndTotal__titleBox___I5geD {
+.ListTitleAndTotal__titleBox___2G1iu {
   flex: 2;
   text-align: center;
   align-self: baseline;
@@ -38,7 +38,7 @@ h1 {
   margin: 25px auto 0;
 }
 
-.ListTitleAndTotal__resultsBox___byQUm {
+.ListTitleAndTotal__resultsBox___9SwZV {
 
     text-align: center;
   margin-bottom: -5px;
@@ -46,27 +46,39 @@ h1 {
   font-size: 14px;
 }
 
-.ListTitleAndTotal__resultsBox___byQUm span {
+.ListTitleAndTotal__resultsBox___9SwZV span {
   padding: 0 15px;
   color: #666;
   background-color: white;
 }
-.ListPagination__pagenationBox___LvNak {
+.ListPagination__pagenationBox___lAVm6 {
   flex: 1;
   text-align: right;
   align-self: baseline;
 }
-.MainBlock__MainBlock___1e6oB {
+.MainBlock__MainBlock___1qRL8 {
   color: red;
   text-align: center;
 }
-.SideFilter__sideFilter___FacSz {
+.DesignerFilter__scrollPanel___2QwvQ {
+  overflow: hidden;
+  padding: 0px;
+  outline: none;
+  width: 183px;
+  max-height: 283px;
+  outline: 0;
+  clear: both;
+  display: block;
+  height: auto;
+  position: relative;
+}
+.SideFilter__sideFilter___1NJoG {
   float: left;
 width: 183px;
 padding: 13px 0 0;
 position: relative;
 }
-.Product__listItem___342Zi {
+.Product__listItem___15U1D {
   width: 224px;
   height: 367px;
   display: block;
@@ -79,19 +91,40 @@ position: relative;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: .1px;
-  box-sizing: border-box;
 }
-.ProductsList__productsList___29beS {
+.Product__productImage___3KNF6 {
+    position: relative;
+    height: 274px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+.Product__productInfo___3nx8b {
+    padding-left: 30px;
+}
+.Product__designer___KwTQY {
+    font-weight: 700;
+    text-transform: uppercase;
+    vertical-align: baseline;
+}
+.ProductsList__productsList___21Jwk {
   float: left;
   width: 762px;
   position: relative;
   overflow: visible;
 }
-.App__wraper___2TLPr {
+.App__wraper___2xg1l {
   max-width: 950px;
     min-width: 950px;
     margin: 0 auto 20px
 }
 ol, ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
