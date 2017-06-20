@@ -8,104 +8,104 @@ const ColorFilter = props => {
     <a className={style.clearFilter} href="?">Clear</a>
     <ul>
       <li data-colour-id="1001" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Animal print</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Animal print</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="2" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Black</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Black</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="3" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Blue</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Blue</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="6" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Brown</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Brown</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="7" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Burgundy</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Burgundy</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="17" className="not-selected">
-          <span className="filter-checkbox"></span>
-          <span className="filter-name">Gold</span>
+          <span className={style.filterCheckbox}></span>
+          <span className={style.colorName}>Gold</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="18" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Gray</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Gray</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="19" className="not-selected">
-          <span className="filter-checkbox"></span>
-          <span className="filter-name">Green</span>
+          <span className={style.filterCheckbox}></span>
+          <span className={style.colorName}>Green</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="104" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Metallic</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Metallic</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="1002" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Neutrals</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Neutrals</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="31" className="not-selected">
-          <span className="filter-checkbox"></span>
-          <span className="filter-name">Orange</span>
+          <span className={style.filterCheckbox}></span>
+          <span className={style.colorName}>Orange</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="33" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Pink</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Pink</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="36" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Purple</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Purple</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="37" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Red</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Red</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="69" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Silver</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Silver</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="43" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">White</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>White</span>
         <div className="clear"></div>
       </li>
 
       <li data-colour-id="44" className="not-selected">
-        <span className="filter-checkbox"></span>
-        <span className="filter-name">Yellow</span>
+        <span className={style.filterCheckbox}></span>
+        <span className={style.colorName}>Yellow</span>
         <div className="clear"></div>
       </li>
     </ul>

@@ -1,4 +1,4 @@
-.header__headerContainer___2X29a {
+.header__headerContainer___1-Y0z {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -10,12 +10,12 @@
   bottom: 8px;
   position: relative;
 }
-.ListViewAndSort__ListViewAndSort___1VSKA {
+.ListViewAndSort__ListViewAndSort___n9G35 {
   flex: 1;
   align-self: baseline;
   display: flex;
 }
-.ListTitleAndTotal__ListTitleAndTotal___naePD {
+.ListTitleAndTotal__ListTitleAndTotal___1o1Zg {
   flex: 2;
   text-align: center;
   align-self: baseline;
@@ -38,7 +38,7 @@ h1 {
   margin: 25px auto 0;
 }
 
-.ListTitleAndTotal__resultsBox___byQUm {
+.ListTitleAndTotal__resultsBox___9SwZV {
 
     text-align: center;
   margin-bottom: -8px;
@@ -46,28 +46,28 @@ h1 {
   font-size: 14px;
 }
 
-.ListTitleAndTotal__resultsBox___byQUm span {
+.ListTitleAndTotal__resultsBox___9SwZV span {
   padding: 0 15px;
   color: #666;
   background-color: white;
 }
-.ListPagination__ListPagination___2Nsw8 {
+.ListPagination__ListPagination___3fUhv {
   flex: 1;
   text-align: right;
   align-self: baseline;
 }
-.MainBlock__MainBlock___1e6oB {
+.MainBlock__MainBlock___1qRL8 {
   color: red;
   text-align: center;
 }
-.DesignerFilter__DesignerFilter___3FBGL {
+.DesignerFilter__DesignerFilter___3IC8T {
   border-bottom: dotted 1px #000;
   padding-bottom: 18px;
   margin-bottom: 11px;
   font-family: GillSans, "Gill Sans MT", Calibri, sans-serif;
 }
 
-.DesignerFilter__DesignerFilter___3FBGL h4 {
+.DesignerFilter__DesignerFilter___3IC8T h4 {
   font-weight: 400;
   font-family: GillSans, "Gill Sans MT", Calibri, sans-serif;
   text-transform: uppercase;
@@ -76,7 +76,7 @@ h1 {
   margin-bottom: 11px;
 }
 
-.DesignerFilter__clearFilter___2nQIS {
+.DesignerFilter__clearFilter___2CByy {
   position: relative;
   top: 1px;
   float: right;
@@ -89,7 +89,7 @@ h1 {
   z-index: 999;
 }
 
-.DesignerFilter__DesignerFilter___3FBGL li {
+.DesignerFilter__DesignerFilter___3IC8T li {
   min-height: 25px;
   display: block;
   vertical-align: baseline;
@@ -99,7 +99,7 @@ h1 {
   cursor: pointer;
 }
 
-.DesignerFilter__scrollPanel___3TGuf {
+.DesignerFilter__scrollPanel___2QwvQ {
   overflow-y: scroll;
   padding: 0px;
   outline: none;
@@ -111,19 +111,19 @@ h1 {
   height: auto;
   position: relative;
 }
-.Designer__noSelected___21d7q {}
+.Designer__noSelected___3_VMm {}
 
-.Designer__filterCheckbox___12kKV {
+.Designer__filterCheckbox___3oABo {
   display: inline-block;
   height: 15px;
   width: 15px;
   border: 1px solid #C2C2C2;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  margin-right: 6px;
+  margin-right: 4px;
 }
 
-.Designer__checkBox___3WEkk {
+.Designer__checkBox___wh5vk {
   background-color: #000;
   color: #FFF;
   text-decoration: none;
@@ -134,20 +134,20 @@ span {
   align-self: center;
 }
 
-.Designer__designer___31lDV {
+.Designer__designer___3M014 {
     line-height: 14px;
     vertical-align: top;
     display: inline-block;
     max-width: 145px;
     margin-bottom: 11px;
 }
-.CategoryFilter__catFilterList___2QLR5 {
+.CategoryFilter__catFilterList___3gVbM {
   border-bottom: dotted 1px #000;
   padding-bottom: 8px;
   margin-bottom: 11px;
 }
 
-.CategoryFilter__filterItem___3n0HQ {
+.CategoryFilter__filterItem___M-qeF {
   margin: 8px 0;
   display: block;
   position: relative;
@@ -160,7 +160,7 @@ span {
   letter-spacing: .1px;
   text-transform: uppercase;
 }
-.ColorFilter__ColorFilter___1HvdL {
+.ColorFilter__ColorFilter___3lCD3 {
 }
 
 h4 {
@@ -172,18 +172,20 @@ h4 {
   margin-bottom: 11px;
 }
 
-.ColorFilter__clearFilter___3Fkyo {
+.ColorFilter__clearFilter___3jByB {
 }
 
-.ColorFilter__filterCheckbox___3l9Pn {
+.ColorFilter__filterCheckbox___pAjmx {
 }
-.SideFilter__sideFilter___FacSz {
+.ColorFilter__colorName___3o1dV {
+}
+.SideFilter__sideFilter___1NJoG {
   float: left;
 width: 183px;
 padding: 13px 0 0;
 position: relative;
 }
-.Product__listItem___342Zi {
+.Product__listItem___15U1D {
   width: 224px;
   height: 367px;
   display: block;
@@ -197,29 +199,29 @@ position: relative;
   font-weight: 400;
   letter-spacing: .1px;
 }
-.Product__productImage___15OeF {
+.Product__productImage___3KNF6 {
     position: relative;
     height: 274px;
     padding-left: 30px;
     padding-bottom: 10px;
     margin-top: 20px;
 }
-.Product__productInfo___9lGi8 {
+.Product__productInfo___3nx8b {
     padding-left: 30px;
 }
-.Product__designer___2bZAh {
+.Product__designer___KwTQY {
     font-weight: 700;
     text-transform: uppercase;
     vertical-align: baseline;    
     letter-spacing: .1px;
 }
-.ProductsList__productsList___29beS {
+.ProductsList__productsList___21Jwk {
   float: left;
   width: 762px;
   position: relative;
   overflow: visible;
 }
-.App__wraper___2TLPr {
+.App__wraper___2xg1l {
   max-width: 950px;
     min-width: 950px;
     margin: 0 auto 20px

@@ -18,3 +18,6 @@ h4 {
 .filterCheckbox {
 composes: filterCheckbox from '../Designer/Designer.css';
 }
+.colorName {
+  composes: designer from '../Designer/Designer.css';
+}
