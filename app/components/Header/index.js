@@ -7,7 +7,7 @@ const Header = props => {
 
     return (
       <div className={style.headerContainer}>
-        <ListViewAndSort offset={props.offset} limit={props.limit} totalPage={props.totalPage} currentPage={props.currentPage}/>
+        <ListViewAndSort offset={props.offset} limit={props.limit} totalPage={props.totalPage} currentPage={props.currentPage} changeProductsView = {props.changeProductsView}/>
         <ListTitleAndTotal total={props.total}/>
         <ListPagination offset={props.offset} limit={props.limit} totalPage={props.totalPage} currentPage={props.currentPage}/>
       </div>

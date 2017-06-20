@@ -11,8 +11,10 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: {}
+      data: {},
+      productViewChecked: false
     };
+    this.changeProductsView = this.changeProductsView.bind(this);
   };
   componentDidMount() {
     console.log('componentDidMount');
@@ -26,6 +28,10 @@ class App extends React.Component {
     })
 
   };
+
+  changeProductsView (productViewChecked){
+    this.setState({productViewChecked});
+  }
 
   render() {
     const totalPage = Math.ceil(this.state.data.total / this.state.data.limit);
@@ -47,6 +53,9 @@ class App extends React.Component {
       }
       currentPage = {
         currentPage
+      }
+      changeProductsView = {
+        this.changeProductsView
       }
       />
       <MainBlock

@@ -1,0 +1,30 @@
+.noSelected {}
+
+.filterCheckbox {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border: 1px solid #C2C2C2;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  margin-right: 6px;
+}
+
+.checkBox {
+  background-color: #000;
+  color: #FFF;
+  text-decoration: none;
+  flex-grow: 1;
+}
+
+span {
+  align-self: center;
+}
+
+.designer {
+    line-height: 14px;
+    vertical-align: top;
+    display: inline-block;
+    max-width: 145px;
+    margin-bottom: 11px;
+}

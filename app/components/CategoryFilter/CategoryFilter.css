@@ -1,0 +1,19 @@
+.catFilterList {
+  border-bottom: dotted 1px #000;
+  padding-bottom: 8px;
+  margin-bottom: 11px;
+}
+
+.filterItem {
+  margin: 8px 0;
+  display: block;
+  position: relative;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font-family: GillSans, "Gill Sans MT", Calibri, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .1px;
+  text-transform: uppercase;
+}

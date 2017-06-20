@@ -1,18 +1,22 @@
 import React, {Component} from 'react';
 import DesignerFilter from '../DesignerFilter/DesignerFilter';
-import style from './SideFilter.css'
+import CategoryFilter from '../CategoryFilter/CategoryFilter';
+import ColorFilter from '../ColorFilter/ColorFilter';
+import style from './SideFilter.css';
 
 const SideFilter = props => {
   return (
 
     <div className={style.sideFilter}>
 
-    <DesignerFilter designerList = {props.designerList}/>
+      <CategoryFilter/>
+
+      <DesignerFilter designerList={props.designerList}/>
+
+      <ColorFilter/>
 
     </div>
-  // <CategoryFilter />
-  // <ColorFilter />
-)
+  )
 }
 
 export default SideFilter;

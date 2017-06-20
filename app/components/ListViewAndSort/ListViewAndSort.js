@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import style from './ListViewAndSort.css';
+import ListView from '../ListView/ListView';
 const ListViewAndSort = props => {
   return (
     <div className={style.ListViewAndSort}>
-      ListView
+      <ListView changeProductsView = {props.changeProductsView}/>
     </div>
   );
 };

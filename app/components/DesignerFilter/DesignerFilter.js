@@ -11,9 +11,9 @@ export default class DesignerFilter extends React.Component{
     if(!this.props.designerList) {return <div>Loading</div>};
     const designerList = this.props.designerList;
     return (
-      <div>
+      <div className={style.DesignerFilter}>
       <h4>Designer</h4>
-           <a className="clear_filter" href="?">Clear</a>
+      <a className={style.clearFilter} href="?">Clear</a>
         <ul className={style.scrollPanel}>
           {designerList.map((designer) => {
             return <Designer key = {designer.id} designerName = {designer.name.en} designerId = {designer.id}/>

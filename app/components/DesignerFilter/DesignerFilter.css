@@ -1,5 +1,44 @@
+.DesignerFilter {
+  border-bottom: dotted 1px #000;
+  padding-bottom: 18px;
+  margin-bottom: 11px;
+  font-family: GillSans, "Gill Sans MT", Calibri, sans-serif;
+}
+
+.DesignerFilter h4 {
+  font-weight: 400;
+  font-family: GillSans, "Gill Sans MT", Calibri, sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 11px;
+}
+
+.clearFilter {
+  position: relative;
+  top: 1px;
+  float: right;
+  display: inline-block;
+  right: 0;
+  font-size: 11px;
+  text-transform: none;
+  font-weight: 400;
+  color: #666;
+  z-index: 999;
+}
+
+.DesignerFilter li {
+  min-height: 25px;
+  display: block;
+  vertical-align: baseline;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .1px;
+  cursor: pointer;
+}
+
 .scrollPanel {
-  overflow: hidden;
+  overflow-y: scroll;
   padding: 0px;
   outline: none;
   width: 183px;

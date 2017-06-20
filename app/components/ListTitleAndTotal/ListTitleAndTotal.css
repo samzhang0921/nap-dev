@@ -1,4 +1,4 @@
-.titleBox {
+.ListTitleAndTotal {
   flex: 2;
   text-align: center;
   align-self: baseline;
@@ -24,7 +24,7 @@ h1 {
 .resultsBox {
 
     text-align: center;
-  margin-bottom: -5px;
+  margin-bottom: -8px;
   font-family: GillSans,"Gill Sans MT",Calibri,sans-serif;
   font-size: 14px;
 }
