@@ -69,7 +69,6 @@ h1 {
 
 .DesignerFilter__DesignerFilter___3IC8T h4 {
   font-weight: 400;
-  font-family: GillSans, "Gill Sans MT", Calibri, sans-serif;
   text-transform: uppercase;
   display: inline-block;
   margin-top: 0;
@@ -142,9 +141,6 @@ span {
     margin-bottom: 11px;
 }
 .CategoryFilter__catFilterList___3gVbM {
-  border-bottom: dotted 1px #000;
-  padding-bottom: 8px;
-  margin-bottom: 11px;
 }
 
 .CategoryFilter__filterItem___M-qeF {

@@ -1,7 +1,5 @@
 .catFilterList {
-  border-bottom: dotted 1px #000;
-  padding-bottom: 8px;
-  margin-bottom: 11px;
+composes: DesignerFilter from '../DesignerFilter/DesignerFilter.css';
 }
 
 .filterItem {

@@ -4,7 +4,7 @@ webpackJsonp([0],{
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"catFilterList":"CategoryFilter__catFilterList___3gVbM","filterItem":"CategoryFilter__filterItem___M-qeF"};
+module.exports = {"catFilterList":"CategoryFilter__catFilterList___3gVbM DesignerFilter__DesignerFilter___3IC8T","filterItem":"CategoryFilter__filterItem___M-qeF"};
 
 /***/ }),
 
@@ -12,7 +12,7 @@ module.exports = {"catFilterList":"CategoryFilter__catFilterList___3gVbM","filte
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"ColorFilter":"ColorFilter__ColorFilter___3lCD3 CategoryFilter__catFilterList___3gVbM","clearFilter":"ColorFilter__clearFilter___3jByB DesignerFilter__clearFilter___2CByy","filterCheckbox":"ColorFilter__filterCheckbox___pAjmx Designer__filterCheckbox___3oABo","colorName":"ColorFilter__colorName___3o1dV Designer__designer___3M014"};
+module.exports = {"ColorFilter":"ColorFilter__ColorFilter___3lCD3 DesignerFilter__DesignerFilter___3IC8T","clearFilter":"ColorFilter__clearFilter___3jByB DesignerFilter__clearFilter___2CByy","filterCheckbox":"ColorFilter__filterCheckbox___pAjmx Designer__filterCheckbox___3oABo","colorName":"ColorFilter__colorName___3o1dV Designer__designer___3M014"};
 
 /***/ }),
 

@@ -1,5 +1,5 @@
 .ColorFilter {
-  composes: catFilterList from '../CategoryFilter/CategoryFilter.css';
+  composes: DesignerFilter from '../DesignerFilter/DesignerFilter.css';
 }
 
 h4 {
