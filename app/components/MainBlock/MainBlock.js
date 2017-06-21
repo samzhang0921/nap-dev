@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import style from './MainBlock.css';
 import SideFilter from '../SideFilter/SideFilter';
 import ProductsList from '../ProductsList/ProductsList';
@@ -7,7 +7,7 @@ const MainBlock = props => {
     return (
       <div>
       <SideFilter designerList = {props.data.designers}/>
-      <ProductsList data = {props.data}/>
+      <ProductsList productViewChecked={props.productViewChecked} data = {props.data}/>
       </div>
     );
   }

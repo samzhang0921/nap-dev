@@ -16,7 +16,7 @@ export default class ProductsList extends React.Component {
         <div className= {style.productsList}>
         <ul>
         {products.map((pid) =>{
-           return <Product key={pid.sku} product={pid} outfit={pid.image.outfit} pview={pid.image.pview}/>
+           return <Product productViewChecked={this.props.productViewChecked} key={pid.sku} product={pid} outfit={pid.image.outfit} pview={pid.image.pview}/>
         })}
         </ul>
         </div>

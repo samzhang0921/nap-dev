@@ -1,0 +1,27 @@
+.pagenationBoxLi {
+margin-right: 10px;
+align-self: auto;
+cursor: pointer;
+}
+.pagenationBoxCurrentPage {
+margin-right: 5px;
+align-self: auto;
+font-size: 18px;
+line-height: 18px;
+}
+.pagination-dot {
+  cursor: inherit;
+}
+.pagination--1 {
+    border-width: 4.5px 7.8px 4.5px 0;
+    border-color: transparent #000 transparent transparent;
+    margin-bottom: 5px;
+    border-style: solid;
+}
+
+.pagination-0 {
+    border-width: 4.5px 0 4.5px 7.8px;
+    border-color: transparent transparent transparent #000;
+    margin-bottom: 5px;
+    border-style: solid;
+}

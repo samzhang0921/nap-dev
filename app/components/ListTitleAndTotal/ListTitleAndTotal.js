@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import style from './ListTitleAndTotal.css';
 const ListTitleAndTotal = props => {
   return (

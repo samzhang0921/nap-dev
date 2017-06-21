@@ -12,10 +12,17 @@ class App extends React.Component {
     super();
     this.state = {
       data: {},
-      productViewChecked: false
+      productViewChecked: false,
+      offset: 0,
+      sort: '',
+      category: 0,
+      designerList: [],
+      colorList: []
     };
     this.changeProductsView = this.changeProductsView.bind(this);
+    this.updateOffset = this.updateOffset.bind(this);
   };
+
   componentDidMount() {
     console.log('componentDidMount');
     const url = 'http://127.0.0.1:3000/api/en/shop';
@@ -26,14 +33,21 @@ class App extends React.Component {
         data: res
       })
     })
-
   };
+  updateOffset (newOffset){
+    this.setState({
+      offset: newOffset
+    });
+    console.log(newOffset);
+  }
+
 
   changeProductsView (productViewChecked){
     this.setState({productViewChecked});
   }
 
   render() {
+    console.log(this.state.productViewChecked);
     const totalPage = Math.ceil(this.state.data.total / this.state.data.limit);
     const currentPage = parseInt(Math.floor(this.state.data.offset / this.state.data.limit)) + 1;
     return (
@@ -57,10 +71,16 @@ class App extends React.Component {
       changeProductsView = {
         this.changeProductsView
       }
+      updateOffset = {
+        this.updateOffset
+      }
       />
       <MainBlock
       data = {
         this.state.data
+      }
+      productViewChecked = {
+        this.state.productViewChecked
       }
       />
       </div >
