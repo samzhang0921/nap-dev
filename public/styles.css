@@ -21,6 +21,16 @@
   height: 20px;
   padding: 0;
   margin-top: 1px;
+  margin-right: 8px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 20px;
+}
+.ListSort__sortBy___1IDED {
+  font-size: 11px;
+  height: 20px;
+  padding: 0;
+  margin-top: 2px;
   font-weight: 400;
   text-align: center;
   line-height: 20px;
@@ -78,12 +88,14 @@ h1 {
 margin-right: 10px;
 align-self: auto;
 cursor: pointer;
+font-family: GillSans,"Gill Sans MT",Calibri,sans-serif;
+font-size: 14px;
 }
 .PageNumber__pagenationBoxCurrentPage___351I0 {
 margin-right: 5px;
 align-self: auto;
 font-size: 18px;
-line-height: 18px;
+line-height: 16px;
 }
 .PageNumber__pagination-dot____D911 {
   cursor: inherit;

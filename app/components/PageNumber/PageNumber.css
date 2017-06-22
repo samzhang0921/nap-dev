@@ -2,12 +2,14 @@
 margin-right: 10px;
 align-self: auto;
 cursor: pointer;
+font-family: GillSans,"Gill Sans MT",Calibri,sans-serif;
+font-size: 14px;
 }
 .pagenationBoxCurrentPage {
 margin-right: 5px;
 align-self: auto;
 font-size: 18px;
-line-height: 18px;
+line-height: 16px;
 }
 .pagination-dot {
   cursor: inherit;

@@ -601,6 +601,89 @@ module.exports = self.fetch.bind(self);
 
 /***/ }),
 
+/***/ 235:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(10);
+
+var _ListSort = __webpack_require__(236);
+
+var _ListSort2 = _interopRequireDefault(_ListSort);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ListSort = function (_React$Component) {
+    _inherits(ListSort, _React$Component);
+
+    function ListSort(props) {
+        _classCallCheck(this, ListSort);
+
+        return _possibleConstructorReturn(this, (ListSort.__proto__ || Object.getPrototypeOf(ListSort)).call(this, props));
+    }
+
+    _createClass(ListSort, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: _ListSort2.default.sortBy },
+                _react2.default.createElement(
+                    'select',
+                    { name: 'sortOrder' },
+                    _react2.default.createElement(
+                        'option',
+                        { value: '0' },
+                        'Sort by'
+                    ),
+                    _react2.default.createElement(
+                        'option',
+                        { value: 'high' },
+                        'Price High to Low'
+                    ),
+                    _react2.default.createElement(
+                        'option',
+                        { value: 'low' },
+                        'Price Low to High'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return ListSort;
+}(_react2.default.Component);
+
+exports.default = ListSort;
+
+/***/ }),
+
+/***/ 236:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"sortBy":"ListSort__sortBy___1IDED"};
+
+/***/ }),
+
 /***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1545,13 +1628,18 @@ var _ListView = __webpack_require__(91);
 
 var _ListView2 = _interopRequireDefault(_ListView);
 
+var _ListSort = __webpack_require__(235);
+
+var _ListSort2 = _interopRequireDefault(_ListSort);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ListViewAndSort = function ListViewAndSort(props) {
   return _react2.default.createElement(
     'div',
     { className: _ListViewAndSort2.default.ListViewAndSort },
-    _react2.default.createElement(_ListView2.default, { changeProductsView: props.changeProductsView })
+    _react2.default.createElement(_ListView2.default, { changeProductsView: props.changeProductsView }),
+    _react2.default.createElement(_ListSort2.default, null)
   );
 };
 
