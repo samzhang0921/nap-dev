@@ -7,7 +7,7 @@ const ListViewAndSort = props => {
   return (
     <div className={style.ListViewAndSort}>
       <ListView changeProductsView = {props.changeProductsView}/>
-      <ListSort />
+      <ListSort updateSort={props.updateSort}/>
     </div>
   );
 };

@@ -8,7 +8,7 @@ export default class DesignerFilter extends React.Component{
   }
 
   render() {
-    if(!this.props.designerList) {return <div>Loading</div>};
+    if(!this.props.designerList) {return <div className={style.DesignerFilter} >Loading</div>};
     const designerList = this.props.designerList;
     return (
       <div className={style.DesignerFilter}>

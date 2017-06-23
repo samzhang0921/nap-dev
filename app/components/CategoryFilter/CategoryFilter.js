@@ -1,44 +1,53 @@
 import React from 'react';
+import {render} from 'react-dom';
 import style from './CategoryFilter.css';
+import Category from '../Category/Category';
 
-const CategoryFilter = props => {
-  return (
-    <div className={style.catFilterList}>
+export default class CategoryFilter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      categoryList: [
+        {
+          id: 0,
+          name: 'Clothing'
+        }, {
+          id: 40,
+          name: 'Beachwear'
+        }, {
+          id: 48,
+          name: 'Coat'
+        }, {
+          id: 46,
+          name: 'Dress'
+        }, {
+          id: 44,
+          name: 'Jackets'
+        }, {
+          id: 55,
+          name: 'Jeans'
+        }, {
+          id: 42,
+          name: 'Pants'
+        }, {
+          id: 39,
+          name: 'Top'
+        }, {
+          id: 49,
+          name: 'Wrap'
+        }
+      ]
 
-      <div className={style.filterItem}>
-        <a href="/listing?">Clothing</a>
+    }
+  }
+  render() {
+    return (
+      <div className={style.CatFilterList}>
+        {this.state.categoryList.map((cat) => {
+          return <Category key={cat.id} Category={cat} updateCategory = {this.props.updateCategory}/>
+        })}
       </div>
+    )
+  }
 
-      <div className={style.filterItem}>
-        <a href="/listing?category=40">Beachwear</a>
-      </div>
-      <div className={style.filterItem}>
-        <a href="/listing?category=48">Coat</a>
-      </div>
-
-      <div className={style.filterItem}>
-        <a href="/listing?category=46">Dress</a>
-      </div>
-      <div className={style.filterItem}>
-        <a href="/listing?category=44">Jackets</a>
-      </div>
-
-      <div className={style.filterItem}>
-        <a href="/listing?category=55">Jeans</a>
-      </div>
-
-      <div className={style.filterItem}>
-        <a href="/listing?category=42">Pants</a>
-      </div>
-      <div className={style.filterItem}>
-        <a href="/listing?category=39">Top</a>
-      </div>
-      <div className={style.filterItem}>
-        <a href="/listing?category=49">Wrap</a>
-      </div>
-
-    </div>
-  )
 }
-
-export default CategoryFilter;

@@ -59,6 +59,7 @@ export default class ListPagination extends React.Component {
   };
 
   render() {
+    if (this.props.totalPage===1){return (<div className={style.pagenationBox}></div>)};
     let pagenations = this.getPagenation(this.props.currentPage,this.props.totalPage);
     return (
       <div className={style.pagenationBox}>

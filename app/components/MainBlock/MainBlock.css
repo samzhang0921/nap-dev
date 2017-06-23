@@ -1,4 +1,8 @@
 .MainBlock {
-  color: red;
-  text-align: center;
+  box-sizing: border-box;
+  border-bottom: 1px dotted #999;
+  margin-bottom: 30px;
+}
+.clear {
+  clear: both;
 }

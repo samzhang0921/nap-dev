@@ -9,7 +9,7 @@ const SideFilter = props => {
 
     <div className={style.sideFilter}>
 
-      <CategoryFilter/>
+      <CategoryFilter updateCategory = {props.updateCategory}/>
 
       <DesignerFilter designerList={props.designerList}/>
 

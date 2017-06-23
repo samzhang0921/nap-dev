@@ -10,7 +10,7 @@ export default class ProductsList extends React.Component {
 
 
     render (){
-      if(!this.props.data.products) {return <div>Loading</div>};
+      if(!this.props.data.products) {return <div className= {style.productsList}> <p className= {style.loading}>Loading</p></div>};
       const products = this.props.data.products;
       return  (
         <div className= {style.productsList}>

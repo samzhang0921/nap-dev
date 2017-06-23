@@ -4,3 +4,8 @@
   position: relative;
   overflow: visible;
 }
+
+.loading {
+  text-align: center;
+  margin-top: 50px;
+}

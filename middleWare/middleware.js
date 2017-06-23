@@ -40,23 +40,41 @@ function setQuery(req, res, next) {
 
 function processProducts(req, res, next) {
   if (res.locals.sort) {
-    res.locals.allProducts = utility.sortBy(res.locals.allProducts, res.locals.sort);
-  }
-  if (res.locals.colorId) {
-      var colorArray = res.locals.colorId.split(',');
-      var colorProducts = utility.getAllProductsColor(res.locals.allProducts, colorArray);
-      res.locals.allProducts = colorProducts;
-  }
-  if (res.locals.categories) {
-      res.locals.allProducts = utility.getAllCategoriesProducts(res.locals.allProducts, res.locals.categories);
+    res.locals.sortedAllProducts = utility.sortBy(res.locals.allProducts, res.locals.sort);
+    res.locals.allProducts = res.locals.sortedAllProducts;
+    if (res.locals.categories ) {
+        res.locals.allProducts = utility.getAllCategoriesProducts(res.locals.allProducts, res.locals.categories);
+    } else {
+        res.locals.allProducts = res.locals.allProducts;
+    }
+    if (res.locals.brandId) {
+        var brandArray = res.locals.brandId.split(',');
+        var brandProducts = utility.getAllBrandsProducts(res.locals.allProducts, brandArray);
+        res.locals.allProducts = brandProducts;
+    }
+    if (res.locals.colorId) {
+        var colorArray = res.locals.colorId.split(',');
+        var colorProducts = utility.getAllProductsColor(res.locals.allProducts, colorArray);
+        res.locals.allProducts = colorProducts;
+    }
   } else {
-      res.locals.allProducts = res.locals.allProducts;
+    if (res.locals.categories) {
+        res.locals.allProducts = utility.getAllCategoriesProducts(res.locals.allProducts, res.locals.categories);
+    } else {
+        res.locals.allProducts = res.locals.allProducts;
+    }
+    if (res.locals.brandId) {
+        var brandArray = res.locals.brandId.split(',');
+        var brandProducts = utility.getAllBrandsProducts(res.locals.allProducts, brandArray);
+        res.locals.allProducts = brandProducts;
+    }
+    if (res.locals.colorId) {
+        var colorArray = res.locals.colorId.split(',');
+        var colorProducts = utility.getAllProductsColor(res.locals.allProducts, colorArray);
+        res.locals.allProducts = colorProducts;
+    }
   }
-  if (res.locals.brandId) {
-      var brandArray = res.locals.brandId.split(',');
-      var brandProducts = utility.getAllBrandsProducts(res.locals.allProducts, brandArray);
-      res.locals.allProducts = brandProducts;
-  }
+
 
 
   next();
