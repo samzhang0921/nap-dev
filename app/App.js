@@ -41,11 +41,12 @@ class App extends React.Component {
     this.setState({
       sort: newSort
     });
-    let offset = this.state.newOffset === 0 ? '': 'offset='+this.state.newOffset;
+    console.log(newSort);
     let sort = newSort === 'sort'? '': 'sort='+newSort+'&';
     let cat = this.state.cat === 0 ? '': 'cat='+this.state.cat+'&';
     let designerList = this.state.designerList.length===0 ? '': 'brand='+this.state.designerList.toString()+'&';
-    let colorList = this.state.colorList.length===0 ? '': 'color='+this.state.colorList.toString()+'&';
+    let colorList = this.state.colorList.length===0 ? '': 'color='+this.state.colorList.toString()+'&';    
+    let offset = this.state.newOffset === 0 ? '': 'offset='+this.state.newOffset;
     let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList+offset;
     console.log(url);
     fetch(url).then(res => {

@@ -4,20 +4,22 @@ import style from './ListSort.css';
 
 export default class ListSort extends React.Component {
     constructor(props) {
-    super(props)
+    super(props);
+
+    this.getSort = this.getSort.bind(this);
   }
 
-  getSort (newSort){
-    this.props.updateSort(newSort)
+  getSort (event){
+    this.props.updateSort(event.target.value)
   }
 
 render() {
   return (
     <div className={style.sortBy}>
-                <select name="sortOrder" >
+                <select name="sortOrder" onChange={this.getSort} >
                     <option value="sort">Sort by</option>
-                    <option value="high">Price High to Low</option>
-                    <option value="low">Price Low to High</option>
+                    <option value="low">Price High to Low</option>
+                    <option value="high">Price Low to High</option>
                 </select>
 
         </div>
