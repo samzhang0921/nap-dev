@@ -6,16 +6,24 @@ export default class DesignerFilter extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      select:false
+      clearClicked:false
     };
     this.clearDesigner = this.clearDesigner.bind(this);
   }
 
   clearDesigner () {
+    const {clearClicked} = this.state;
     this.setState({
-        select: false
+        clearClicked:!clearClicked
     });
     this.props.updateDesignerList(0);
+  }
+  componentWillUpdate(nextProps, nextState){
+    if (this.props.designerListRefresh !== nextProps.designerListRefresh){
+      this.setState({
+        clearClicked:!this.state.clearClicked
+      })
+    }
   }
 
   render() {
@@ -32,7 +40,8 @@ export default class DesignerFilter extends React.Component{
             designerName = {designer.name.en}
             designerId = {designer.id}
             updateDesignerList = {this.props.updateDesignerList}
-            select = {this.state.select}
+            // select = {this.state.select}
+            clearClicked = {this.state.clearClicked}
             />
           })}
         </ul>

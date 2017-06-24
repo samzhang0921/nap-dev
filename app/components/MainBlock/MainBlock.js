@@ -10,6 +10,7 @@ const MainBlock = props => {
     designerList = {props.data.designers}
     updateCategory = {props.updateCategory}
     updateDesignerList = {props.updateDesignerList}
+    designerListRefresh = {props.designerListRefresh}
     />
     <ProductsList
     productViewChecked={props.productViewChecked}

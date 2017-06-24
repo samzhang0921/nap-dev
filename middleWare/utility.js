@@ -30,7 +30,7 @@ function getDesigners(products) {
 function getColors (products) {
   var colors = [];
   for (var i = 0; i < products.length; i++) {
-    if (_.findIndex(colors, products[i].colourIds[0]) === -1) {
+    if (colors.indexOf(products[i].colourIds[0]) < 0) {
       colors.push(products[i].colourIds[0]);
     }
   }

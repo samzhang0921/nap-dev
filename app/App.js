@@ -13,6 +13,7 @@ class App extends React.Component {
     this.state = {
       data: {},
       productViewChecked: false,
+      designerListRefresh: false,
       offset: 0,
       sort: 'sort',
       cat: 0,
@@ -75,26 +76,23 @@ class App extends React.Component {
       return res.json()
     }).then(res => {
       this.setState({
-        data: res
+        data: res,
+        designerListRefresh: !this.state.designerListRefresh
       })
     })
   }
 
   updateDesignerList (updateDesigner){
     let updateDesignerList = [];
-
-    console.log("1",updateDesignerList);
     if (updateDesigner===0){
       this.setState({
         designerList: []
       });
     }else {
       let index = this.state.designerList.indexOf(updateDesigner);
-          console.log("index",index);
       if (index > -1){
         this.state.designerList.splice(index, 1);
         updateDesignerList = this.state.designerList;
-        console.log("2",updateDesignerList);
         this.setState({
           designerList: updateDesignerList
         });
@@ -103,13 +101,11 @@ class App extends React.Component {
         console.log("push",updateDesigner);
         this.state.designerList.push(updateDesigner);
         updateDesignerList = this.state.designerList;
-        console.log("3",updateDesignerList);
         this.setState({
           designerList: updateDesignerList
         });
       }
     }
-    console.log("4",updateDesignerList);
     let sort = this.state.sort === 'sort'? '': 'sort='+this.state.sort+'&';
     let cat = this.state.cat === 0 ? '': 'cat='+this.state.cat+'&';
     let designerList = updateDesignerList.length===0 ? '': 'brand='+updateDesignerList.toString()+'&';
@@ -170,6 +166,7 @@ class App extends React.Component {
           productViewChecked = {this.state.productViewChecked}
           updateCategory = {this.updateCategory}
           updateDesignerList = {this.updateDesignerList}
+          designerListRefresh = {this.state.designerListRefresh}
           />
       </div >
     );

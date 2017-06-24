@@ -6,18 +6,24 @@ export default class Designer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectBox:this.props.select
+      selectBox:false
     };
     this.getDesigner = this.getDesigner.bind(this);
   }
-  componentWillReceiveProps(nextProps){
-    console.log(nextProps);
-    this.setState({
-      selectBox:nextProps.select
-    })
+
+  // shouldComponentUpdate (nextProps, nextState){
+  //   return nextState.selectBox !== nextProps.clearClicked ;
+  // }
+  componentWillUpdate(nextProps, nextState){
+    if (this.props.clearClicked !== nextProps.clearClicked){
+      this.setState({
+        selectBox:false
+      })
+    }
   }
+
   getDesigner (designer) {
-    let { selectBox } = this.state;
+    const { selectBox } = this.state;
     this.setState({
       selectBox: !selectBox
     });
@@ -25,7 +31,6 @@ export default class Designer extends React.Component {
   }
 
   render() {
-    console.log("111444", this.state.selectBox);
     const checkBox = this.state.selectBox? style.filterCheckedbox: style.filterCheckbox;
     return (
       <li data-designer-id={this.props.designerId} onClick={()=>this.getDesigner(this.props.designerId)}>

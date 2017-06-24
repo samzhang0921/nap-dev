@@ -64,7 +64,6 @@ function processProducts(req, res, next) {
     var colorProducts = utility.getAllProductsColor(res.locals.allProducts, colorArray);
     res.locals.allProducts = colorProducts;
   }
-
   next();
 }
 

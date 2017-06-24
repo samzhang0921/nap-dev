@@ -9,9 +9,9 @@ const SideFilter = props => {
 
     <div className={style.sideFilter}>
 
-      <CategoryFilter updateCategory = {props.updateCategory}/>
+      <CategoryFilter updateCategory = {props.updateCategory} />
 
-      <DesignerFilter designerList={props.designerList} updateDesignerList={props.updateDesignerList}/>
+      <DesignerFilter designerList={props.designerList} updateDesignerList={props.updateDesignerList} designerListRefresh={props.designerListRefresh}/>
 
       <ColorFilter/>
 

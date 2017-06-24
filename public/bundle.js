@@ -694,6 +694,7 @@ var App = function (_React$Component) {
     _this.state = {
       data: {},
       productViewChecked: false,
+      designerListRefresh: false,
       offset: 0,
       sort: 'sort',
       cat: 0,
@@ -767,7 +768,8 @@ var App = function (_React$Component) {
         return res.json();
       }).then(function (res) {
         _this4.setState({
-          data: res
+          data: res,
+          designerListRefresh: !_this4.state.designerListRefresh
         });
       });
     }
@@ -777,19 +779,15 @@ var App = function (_React$Component) {
       var _this5 = this;
 
       var updateDesignerList = [];
-
-      console.log("1", updateDesignerList);
       if (updateDesigner === 0) {
         this.setState({
           designerList: []
         });
       } else {
         var index = this.state.designerList.indexOf(updateDesigner);
-        console.log("index", index);
         if (index > -1) {
           this.state.designerList.splice(index, 1);
           updateDesignerList = this.state.designerList;
-          console.log("2", updateDesignerList);
           this.setState({
             designerList: updateDesignerList
           });
@@ -798,13 +796,11 @@ var App = function (_React$Component) {
           console.log("push", updateDesigner);
           this.state.designerList.push(updateDesigner);
           updateDesignerList = this.state.designerList;
-          console.log("3", updateDesignerList);
           this.setState({
             designerList: updateDesignerList
           });
         }
       }
-      console.log("4", updateDesignerList);
       var sort = this.state.sort === 'sort' ? '' : 'sort=' + this.state.sort + '&';
       var cat = this.state.cat === 0 ? '' : 'cat=' + this.state.cat + '&';
       var designerList = updateDesignerList.length === 0 ? '' : 'brand=' + updateDesignerList.toString() + '&';
@@ -870,7 +866,8 @@ var App = function (_React$Component) {
           data: this.state.data,
           productViewChecked: this.state.productViewChecked,
           updateCategory: this.updateCategory,
-          updateDesignerList: this.updateDesignerList
+          updateDesignerList: this.updateDesignerList,
+          designerListRefresh: this.state.designerListRefresh
         })
       );
     }
@@ -1325,7 +1322,7 @@ var DesignerFilter = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (DesignerFilter.__proto__ || Object.getPrototypeOf(DesignerFilter)).call(this, props));
 
     _this.state = {
-      select: false
+      clearClicked: false
     };
     _this.clearDesigner = _this.clearDesigner.bind(_this);
     return _this;
@@ -1334,10 +1331,21 @@ var DesignerFilter = function (_React$Component) {
   _createClass(DesignerFilter, [{
     key: 'clearDesigner',
     value: function clearDesigner() {
+      var clearClicked = this.state.clearClicked;
+
       this.setState({
-        select: false
+        clearClicked: !clearClicked
       });
       this.props.updateDesignerList(0);
+    }
+  }, {
+    key: 'componentWillUpdate',
+    value: function componentWillUpdate(nextProps, nextState) {
+      if (this.props.designerListRefresh !== nextProps.designerListRefresh) {
+        this.setState({
+          clearClicked: !this.state.clearClicked
+        });
+      }
     }
   }, {
     key: 'render',
@@ -1375,8 +1383,9 @@ var DesignerFilter = function (_React$Component) {
               key: designer.id,
               designerName: designer.name.en,
               designerId: designer.id,
-              updateDesignerList: _this2.props.updateDesignerList,
-              select: _this2.state.select
+              updateDesignerList: _this2.props.updateDesignerList
+              // select = {this.state.select}
+              , clearClicked: _this2.state.clearClicked
             });
           })
         )
@@ -1430,19 +1439,25 @@ var Designer = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Designer.__proto__ || Object.getPrototypeOf(Designer)).call(this, props));
 
     _this.state = {
-      selectBox: _this.props.select
+      selectBox: false
     };
     _this.getDesigner = _this.getDesigner.bind(_this);
     return _this;
   }
 
+  // shouldComponentUpdate (nextProps, nextState){
+  //   return nextState.selectBox !== nextProps.clearClicked ;
+  // }
+
+
   _createClass(Designer, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      console.log(nextProps);
-      this.setState({
-        selectBox: nextProps.select
-      });
+    key: 'componentWillUpdate',
+    value: function componentWillUpdate(nextProps, nextState) {
+      if (this.props.clearClicked !== nextProps.clearClicked) {
+        this.setState({
+          selectBox: false
+        });
+      }
     }
   }, {
     key: 'getDesigner',
@@ -1459,7 +1474,6 @@ var Designer = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log("111444", this.state.selectBox);
       var checkBox = this.state.selectBox ? _Designer2.default.filterCheckedbox : _Designer2.default.filterCheckbox;
       return _react2.default.createElement(
         'li',
@@ -1951,7 +1965,8 @@ var MainBlock = function MainBlock(props) {
     _react2.default.createElement(_SideFilter2.default, {
       designerList: props.data.designers,
       updateCategory: props.updateCategory,
-      updateDesignerList: props.updateDesignerList
+      updateDesignerList: props.updateDesignerList,
+      designerListRefresh: props.designerListRefresh
     }),
     _react2.default.createElement(_ProductsList2.default, {
       productViewChecked: props.productViewChecked,
@@ -2283,7 +2298,7 @@ var SideFilter = function SideFilter(props) {
             'div',
             { className: _SideFilter2.default.sideFilter },
             _react2.default.createElement(_CategoryFilter2.default, { updateCategory: props.updateCategory }),
-            _react2.default.createElement(_DesignerFilter2.default, { designerList: props.designerList, updateDesignerList: props.updateDesignerList }),
+            _react2.default.createElement(_DesignerFilter2.default, { designerList: props.designerList, updateDesignerList: props.updateDesignerList, designerListRefresh: props.designerListRefresh }),
             _react2.default.createElement(_ColorFilter2.default, null)
       );
 };
