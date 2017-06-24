@@ -24,6 +24,7 @@
   font-weight: 400;
   color: #666;
   z-index: 999;
+  cursor: pointer;
 }
 
 .DesignerFilter li {

@@ -18,6 +18,7 @@ var listing = {
         limit: res.locals.limit,
         total: total,
         designers: res.locals.allDesigners,
+        colors: res.locals.allColors,
         products: sliceProducts.map(function (product) {
             return {
                 sku: product.id,

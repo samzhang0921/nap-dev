@@ -18,8 +18,8 @@ render() {
     <div className={style.sortBy}>
                 <select name="sortOrder" onChange={this.getSort} >
                     <option value="sort">Sort by</option>
-                    <option value="low">Price High to Low</option>
-                    <option value="high">Price Low to High</option>
+                    <option value="low">Price Low to High</option>
+                    <option value="high">Price High to Low</option>
                 </select>
 
         </div>

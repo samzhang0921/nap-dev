@@ -27,6 +27,16 @@ function getDesigners(products) {
   return designers;
 }
 
+function getColors (products) {
+  var colors = [];
+  for (var i = 0; i < products.length; i++) {
+    if (_.findIndex(colors, products[i].colourIds[0]) === -1) {
+      colors.push(products[i].colourIds[0]);
+    }
+  }
+  return colors;
+}
+
 function sortBy(products, sortOrder) {
   switch (sortOrder) {
     case 'high':
@@ -90,6 +100,7 @@ function getAllCategoriesProducts(products, categories) {
 module.exports = {
   finalPrice: finalPrice,
   sortBy: sortBy,
+  getColors:getColors,
   getDesigners: getDesigners,
   getBrandProducts: getBrandProducts,
   getAllBrandsProducts: getAllBrandsProducts,

@@ -1,4 +1,4 @@
-.header__headerContainer___2X29a {
+.header__headerContainer___1-Y0z {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -10,12 +10,12 @@
   bottom: 8px;
   position: relative;
 }
-.ListViewAndSort__ListViewAndSort___1VSKA {
+.ListViewAndSort__ListViewAndSort___n9G35 {
   flex: 1;
   align-self: baseline;
   display: flex;
 }
-.ListView__ListView___u3qmR {
+.ListView__ListView___16-Qf {
   font-size: 11px;
   width: 102px;
   height: 20px;
@@ -26,7 +26,7 @@
   text-align: center;
   line-height: 20px;
 }
-.ListSort__sortBy___1IDED {
+.ListSort__sortBy___2CWgv {
   font-size: 11px;
   height: 20px;
   padding: 0;
@@ -35,7 +35,7 @@
   text-align: center;
   line-height: 20px;
 }
-.ListTitleAndTotal__ListTitleAndTotal___naePD {
+.ListTitleAndTotal__ListTitleAndTotal___1o1Zg {
   flex: 2;
   text-align: center;
   align-self: baseline;
@@ -58,7 +58,7 @@ h1 {
   margin: 25px auto 0;
 }
 
-.ListTitleAndTotal__resultsBox___byQUm {
+.ListTitleAndTotal__resultsBox___9SwZV {
 
     text-align: center;
   margin-bottom: -8px;
@@ -66,17 +66,17 @@ h1 {
   font-size: 14px;
 }
 
-.ListTitleAndTotal__resultsBox___byQUm span {
+.ListTitleAndTotal__resultsBox___9SwZV span {
   padding: 0 15px;
   color: #666;
   background-color: white;
 }
-.ListPagination__pagenationBox___LvNak {
+.ListPagination__pagenationBox___lAVm6 {
   flex: 1;
   text-align: right;
   align-self: baseline;
 }
-.ListPagination__pagenationBoxUl___2hDy2 {
+.ListPagination__pagenationBoxUl___2Y-wV {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -84,7 +84,7 @@ h1 {
   justify-content: flex-end;
   margin: 0px;
 }
-.PageNumber__pagenationBoxLi___3n8kB {
+.PageNumber__pagenationBoxLi___2v3AQ {
 margin-right: 10px;
 align-self: auto;
 cursor: pointer;
@@ -95,7 +95,7 @@ font-size: 14px;
     -moz-transition: font-size 0.2s ease-in;
     -webkit-transition: font-size 0.2s ease-in;
 }
-.PageNumber__pagenationBoxCurrentPage___351I0 {
+.PageNumber__pagenationBoxCurrentPage___azGUJ {
 margin-right: 5px;
 align-self: auto;
 font-family: GillSans,"Gill Sans MT",Calibri,sans-serif;
@@ -106,38 +106,38 @@ transition: font-size 0.2s ease-in;
 -moz-transition: font-size 0.2s ease-in;
 -webkit-transition: font-size 0.2s ease-in;
 }
-.PageNumber__pagination-dot____D911 {
+.PageNumber__pagination-dot___2Yuzd {
   cursor: inherit;
 }
-.PageNumber__pagination--1___UOAIt {
+.PageNumber__pagination--1___3M6qH {
     border-width: 4.5px 7.8px 4.5px 0;
     border-color: transparent #000 transparent transparent;
     margin-bottom: 5px;
     border-style: solid;
 }
 
-.PageNumber__pagination-0___85lF_ {
+.PageNumber__pagination-0___13NEa {
     border-width: 4.5px 0 4.5px 7.8px;
     border-color: transparent transparent transparent #000;
     margin-bottom: 5px;
     border-style: solid;
 }
-.MainBlock__MainBlock___1e6oB {
+.MainBlock__MainBlock___1qRL8 {
   box-sizing: border-box;
   border-bottom: 1px dotted #999;
   margin-bottom: 30px;
 }
-.MainBlock__clear___3DdXx {
+.MainBlock__clear___1vuT9 {
   clear: both;
 }
-.DesignerFilter__DesignerFilter___3FBGL {
+.DesignerFilter__DesignerFilter___3IC8T {
   border-bottom: dotted 1px #000;
   padding-bottom: 18px;
   margin-bottom: 11px;
   font-family: GillSans, "Gill Sans MT", Calibri, sans-serif;
 }
 
-.DesignerFilter__DesignerFilter___3FBGL h4 {
+.DesignerFilter__DesignerFilter___3IC8T h4 {
   font-weight: 400;
   text-transform: uppercase;
   display: inline-block;
@@ -145,7 +145,7 @@ transition: font-size 0.2s ease-in;
   margin-bottom: 11px;
 }
 
-.DesignerFilter__clearFilter___2nQIS {
+.DesignerFilter__clearFilter___2CByy {
   position: relative;
   top: 1px;
   float: right;
@@ -156,9 +156,10 @@ transition: font-size 0.2s ease-in;
   font-weight: 400;
   color: #666;
   z-index: 999;
+  cursor: pointer;
 }
 
-.DesignerFilter__DesignerFilter___3FBGL li {
+.DesignerFilter__DesignerFilter___3IC8T li {
   min-height: 25px;
   display: block;
   vertical-align: baseline;
@@ -168,7 +169,7 @@ transition: font-size 0.2s ease-in;
   cursor: pointer;
 }
 
-.DesignerFilter__scrollPanel___3TGuf {
+.DesignerFilter__scrollPanel___2QwvQ {
   overflow-y: scroll;
   padding: 0px;
   outline: none;
@@ -180,9 +181,9 @@ transition: font-size 0.2s ease-in;
   height: auto;
   position: relative;
 }
-.Designer__noSelected___21d7q {}
+.Designer__noSelected___3_VMm {}
 
-.Designer__filterCheckbox___12kKV {
+.Designer__filterCheckbox___3oABo {
   display: inline-block;
   height: 15px;
   width: 15px;
@@ -191,8 +192,11 @@ transition: font-size 0.2s ease-in;
   border-radius: 2px;
   margin-right: 4px;
 }
+.Designer__filterCheckedbox___2wSfG {
+  background-color: #000;
+}
 
-.Designer__checkBox___3WEkk {
+.Designer__checkBox___wh5vk {
   background-color: #000;
   color: #FFF;
   text-decoration: none;
@@ -203,16 +207,16 @@ span {
   align-self: center;
 }
 
-.Designer__designer___31lDV {
+.Designer__designer___3M014 {
     line-height: 14px;
     vertical-align: top;
     display: inline-block;
     max-width: 145px;
     margin-bottom: 11px;
 }
-.CategoryFilter__CatFilterList___2edh1 {
+.CategoryFilter__CatFilterList___3RMlI {
 }
-.Category__filterItem___2dhEy {
+.Category__filterItem___2E4dv {
   margin: 8px 0;
   display: block;
   position: relative;
@@ -226,7 +230,7 @@ span {
   text-transform: uppercase;
   cursor: pointer;
 }
-.ColorFilter__ColorFilter___1HvdL {
+.ColorFilter__ColorFilter___3lCD3 {
 }
 
 h4 {
@@ -238,20 +242,20 @@ h4 {
   margin-bottom: 11px;
 }
 
-.ColorFilter__clearFilter___3Fkyo {
+.ColorFilter__clearFilter___3jByB {
 }
 
-.ColorFilter__filterCheckbox___3l9Pn {
+.ColorFilter__filterCheckbox___pAjmx {
 }
-.ColorFilter__colorName___2hrbD {
+.ColorFilter__colorName___3o1dV {
 }
-.SideFilter__sideFilter___FacSz {
+.SideFilter__sideFilter___1NJoG {
   float: left;
 width: 183px;
 padding: 13px 0 0;
 position: relative;
 }
-.Product__listItem___342Zi {
+.Product__listItem___15U1D {
   width: 224px;
   height: 367px;
   display: block;
@@ -265,34 +269,34 @@ position: relative;
   font-weight: 400;
   letter-spacing: .1px;
 }
-.Product__productImage___15OeF {
+.Product__productImage___3KNF6 {
     position: relative;
     height: 274px;
     padding-left: 30px;
     padding-bottom: 10px;
     margin-top: 20px;
 }
-.Product__productInfo___9lGi8 {
+.Product__productInfo___3nx8b {
     padding-left: 30px;
 }
-.Product__designer___2bZAh {
+.Product__designer___KwTQY {
     font-weight: 700;
     text-transform: uppercase;
     vertical-align: baseline;    
     letter-spacing: .1px;
 }
-.ProductsList__productsList___29beS {
+.ProductsList__productsList___21Jwk {
   float: left;
   width: 762px;
   position: relative;
   overflow: visible;
 }
 
-.ProductsList__loading___1btUw {
+.ProductsList__loading___21UkL {
   text-align: center;
   margin-top: 50px;
 }
-.App__wraper___2TLPr {
+.App__wraper___2xg1l {
   max-width: 950px;
     min-width: 950px;
     margin: 0 auto 20px

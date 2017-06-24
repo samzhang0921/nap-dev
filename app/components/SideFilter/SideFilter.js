@@ -11,7 +11,7 @@ const SideFilter = props => {
 
       <CategoryFilter updateCategory = {props.updateCategory}/>
 
-      <DesignerFilter designerList={props.designerList}/>
+      <DesignerFilter designerList={props.designerList} updateDesignerList={props.updateDesignerList}/>
 
       <ColorFilter/>
 

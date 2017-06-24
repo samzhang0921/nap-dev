@@ -9,6 +9,10 @@
   border-radius: 2px;
   margin-right: 4px;
 }
+.filterCheckedbox {
+  composes:filterCheckbox;
+  background-color: #000;
+}
 
 .checkBox {
   background-color: #000;

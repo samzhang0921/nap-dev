@@ -28,7 +28,7 @@ _reactDom2.default.render(_react2.default.createElement(_App2.default, null), do
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"wraper":"App__wraper___2TLPr"};
+module.exports = {"wraper":"App__wraper___2xg1l"};
 
 /***/ }),
 
@@ -36,7 +36,7 @@ module.exports = {"wraper":"App__wraper___2TLPr"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"filterItem":"Category__filterItem___2dhEy"};
+module.exports = {"CatFilterList":"CategoryFilter__CatFilterList___3RMlI DesignerFilter__DesignerFilter___3IC8T"};
 
 /***/ }),
 
@@ -44,7 +44,7 @@ module.exports = {"filterItem":"Category__filterItem___2dhEy"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"CatFilterList":"CategoryFilter__CatFilterList___2edh1 DesignerFilter__DesignerFilter___3FBGL"};
+module.exports = {"filterItem":"Category__filterItem___2E4dv"};
 
 /***/ }),
 
@@ -52,7 +52,7 @@ module.exports = {"CatFilterList":"CategoryFilter__CatFilterList___2edh1 Designe
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"ColorFilter":"ColorFilter__ColorFilter___1HvdL DesignerFilter__DesignerFilter___3FBGL","clearFilter":"ColorFilter__clearFilter___3Fkyo DesignerFilter__clearFilter___2nQIS","filterCheckbox":"ColorFilter__filterCheckbox___3l9Pn Designer__filterCheckbox___12kKV","colorName":"ColorFilter__colorName___2hrbD Designer__designer___31lDV"};
+module.exports = {"ColorFilter":"ColorFilter__ColorFilter___3lCD3 DesignerFilter__DesignerFilter___3IC8T","clearFilter":"ColorFilter__clearFilter___3jByB DesignerFilter__clearFilter___2CByy","filterCheckbox":"ColorFilter__filterCheckbox___pAjmx Designer__filterCheckbox___3oABo","colorName":"ColorFilter__colorName___3o1dV Designer__designer___3M014"};
 
 /***/ }),
 
@@ -60,7 +60,7 @@ module.exports = {"ColorFilter":"ColorFilter__ColorFilter___1HvdL DesignerFilter
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"noSelected":"Designer__noSelected___21d7q","filterCheckbox":"Designer__filterCheckbox___12kKV","checkBox":"Designer__checkBox___3WEkk","designer":"Designer__designer___31lDV"};
+module.exports = {"DesignerFilter":"DesignerFilter__DesignerFilter___3IC8T","clearFilter":"DesignerFilter__clearFilter___2CByy","scrollPanel":"DesignerFilter__scrollPanel___2QwvQ"};
 
 /***/ }),
 
@@ -68,7 +68,7 @@ module.exports = {"noSelected":"Designer__noSelected___21d7q","filterCheckbox":"
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"DesignerFilter":"DesignerFilter__DesignerFilter___3FBGL","clearFilter":"DesignerFilter__clearFilter___2nQIS","scrollPanel":"DesignerFilter__scrollPanel___3TGuf"};
+module.exports = {"noSelected":"Designer__noSelected___3_VMm","filterCheckbox":"Designer__filterCheckbox___3oABo","filterCheckedbox":"Designer__filterCheckedbox___2wSfG Designer__filterCheckbox___3oABo","checkBox":"Designer__checkBox___wh5vk","designer":"Designer__designer___3M014"};
 
 /***/ }),
 
@@ -76,7 +76,7 @@ module.exports = {"DesignerFilter":"DesignerFilter__DesignerFilter___3FBGL","cle
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"headerContainer":"header__headerContainer___2X29a"};
+module.exports = {"headerContainer":"header__headerContainer___1-Y0z"};
 
 /***/ }),
 
@@ -84,7 +84,7 @@ module.exports = {"headerContainer":"header__headerContainer___2X29a"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"pagenationBox":"ListPagination__pagenationBox___LvNak","pagenationBoxUl":"ListPagination__pagenationBoxUl___2hDy2"};
+module.exports = {"pagenationBox":"ListPagination__pagenationBox___lAVm6","pagenationBoxUl":"ListPagination__pagenationBoxUl___2Y-wV"};
 
 /***/ }),
 
@@ -92,7 +92,7 @@ module.exports = {"pagenationBox":"ListPagination__pagenationBox___LvNak","pagen
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"sortBy":"ListSort__sortBy___1IDED"};
+module.exports = {"sortBy":"ListSort__sortBy___2CWgv"};
 
 /***/ }),
 
@@ -100,7 +100,7 @@ module.exports = {"sortBy":"ListSort__sortBy___1IDED"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"ListTitleAndTotal":"ListTitleAndTotal__ListTitleAndTotal___naePD","resultsBox":"ListTitleAndTotal__resultsBox___byQUm"};
+module.exports = {"ListTitleAndTotal":"ListTitleAndTotal__ListTitleAndTotal___1o1Zg","resultsBox":"ListTitleAndTotal__resultsBox___9SwZV"};
 
 /***/ }),
 
@@ -108,7 +108,7 @@ module.exports = {"ListTitleAndTotal":"ListTitleAndTotal__ListTitleAndTotal___na
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"ListView":"ListView__ListView___u3qmR"};
+module.exports = {"ListViewAndSort":"ListViewAndSort__ListViewAndSort___n9G35"};
 
 /***/ }),
 
@@ -116,7 +116,7 @@ module.exports = {"ListView":"ListView__ListView___u3qmR"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"ListViewAndSort":"ListViewAndSort__ListViewAndSort___1VSKA"};
+module.exports = {"ListView":"ListView__ListView___16-Qf"};
 
 /***/ }),
 
@@ -124,7 +124,7 @@ module.exports = {"ListViewAndSort":"ListViewAndSort__ListViewAndSort___1VSKA"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"MainBlock":"MainBlock__MainBlock___1e6oB","clear":"MainBlock__clear___3DdXx"};
+module.exports = {"MainBlock":"MainBlock__MainBlock___1qRL8","clear":"MainBlock__clear___1vuT9"};
 
 /***/ }),
 
@@ -132,7 +132,7 @@ module.exports = {"MainBlock":"MainBlock__MainBlock___1e6oB","clear":"MainBlock_
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"pagenationBoxLi":"PageNumber__pagenationBoxLi___3n8kB","pagenationBoxCurrentPage":"PageNumber__pagenationBoxCurrentPage___351I0","pagination-dot":"PageNumber__pagination-dot____D911","pagination--1":"PageNumber__pagination--1___UOAIt","pagination-0":"PageNumber__pagination-0___85lF_"};
+module.exports = {"pagenationBoxLi":"PageNumber__pagenationBoxLi___2v3AQ","pagenationBoxCurrentPage":"PageNumber__pagenationBoxCurrentPage___azGUJ","pagination-dot":"PageNumber__pagination-dot___2Yuzd","pagination--1":"PageNumber__pagination--1___3M6qH","pagination-0":"PageNumber__pagination-0___13NEa"};
 
 /***/ }),
 
@@ -140,7 +140,7 @@ module.exports = {"pagenationBoxLi":"PageNumber__pagenationBoxLi___3n8kB","pagen
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"listItem":"Product__listItem___342Zi","productImage":"Product__productImage___15OeF","productInfo":"Product__productInfo___9lGi8","designer":"Product__designer___2bZAh"};
+module.exports = {"listItem":"Product__listItem___15U1D","productImage":"Product__productImage___3KNF6","productInfo":"Product__productInfo___3nx8b","designer":"Product__designer___KwTQY"};
 
 /***/ }),
 
@@ -148,7 +148,7 @@ module.exports = {"listItem":"Product__listItem___342Zi","productImage":"Product
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"productsList":"ProductsList__productsList___29beS","loading":"ProductsList__loading___1btUw"};
+module.exports = {"productsList":"ProductsList__productsList___21Jwk","loading":"ProductsList__loading___21UkL"};
 
 /***/ }),
 
@@ -156,7 +156,7 @@ module.exports = {"productsList":"ProductsList__productsList___29beS","loading":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"sideFilter":"SideFilter__sideFilter___FacSz"};
+module.exports = {"sideFilter":"SideFilter__sideFilter___1NJoG"};
 
 /***/ }),
 
@@ -699,11 +699,13 @@ var App = function (_React$Component) {
       cat: 0,
       designerList: [],
       colorList: []
+
     };
     _this.changeProductsView = _this.changeProductsView.bind(_this);
     _this.updateOffset = _this.updateOffset.bind(_this);
     _this.updateCategory = _this.updateCategory.bind(_this);
     _this.updateSort = _this.updateSort.bind(_this);
+    _this.updateDesignerList = _this.updateDesignerList.bind(_this);
     return _this;
   }
 
@@ -735,7 +737,7 @@ var App = function (_React$Component) {
       var cat = this.state.cat === 0 ? '' : 'cat=' + this.state.cat + '&';
       var designerList = this.state.designerList.length === 0 ? '' : 'brand=' + this.state.designerList.toString() + '&';
       var colorList = this.state.colorList.length === 0 ? '' : 'color=' + this.state.colorList.toString() + '&';
-      var offset = this.state.newOffset === 0 ? '' : 'offset=' + this.state.newOffset;
+      var offset = this.state.offset === 0 ? '' : 'offset=' + this.state.offset;
       var url = "http://127.0.0.1:3000/api/en/shop?" + sort + cat + designerList + colorList + offset;
       console.log(url);
       (0, _isomorphicFetch2.default)(url).then(function (res) {
@@ -752,11 +754,14 @@ var App = function (_React$Component) {
       var _this4 = this;
 
       this.setState({
-        cat: newCategory
+        sort: 'sort',
+        cat: newCategory,
+        offset: 0,
+        designerList: [],
+        colorList: []
       });
-      var sort = this.state.sort === 'sort' ? '' : 'sort=' + this.state.sort + '&';
       var cat = newCategory === 0 ? '' : 'cat=' + newCategory + '&';
-      var url = "http://127.0.0.1:3000/api/en/shop?" + sort + cat;
+      var url = "http://127.0.0.1:3000/api/en/shop?" + cat;
       console.log(url);
       (0, _isomorphicFetch2.default)(url).then(function (res) {
         return res.json();
@@ -767,9 +772,58 @@ var App = function (_React$Component) {
       });
     }
   }, {
+    key: 'updateDesignerList',
+    value: function updateDesignerList(updateDesigner) {
+      var _this5 = this;
+
+      var updateDesignerList = [];
+
+      console.log("1", updateDesignerList);
+      if (updateDesigner === 0) {
+        this.setState({
+          designerList: []
+        });
+      } else {
+        var index = this.state.designerList.indexOf(updateDesigner);
+        console.log("index", index);
+        if (index > -1) {
+          this.state.designerList.splice(index, 1);
+          updateDesignerList = this.state.designerList;
+          console.log("2", updateDesignerList);
+          this.setState({
+            designerList: updateDesignerList
+          });
+        } else {
+          console.log("this.state.designerList", this.state.designerList);
+          console.log("push", updateDesigner);
+          this.state.designerList.push(updateDesigner);
+          updateDesignerList = this.state.designerList;
+          console.log("3", updateDesignerList);
+          this.setState({
+            designerList: updateDesignerList
+          });
+        }
+      }
+      console.log("4", updateDesignerList);
+      var sort = this.state.sort === 'sort' ? '' : 'sort=' + this.state.sort + '&';
+      var cat = this.state.cat === 0 ? '' : 'cat=' + this.state.cat + '&';
+      var designerList = updateDesignerList.length === 0 ? '' : 'brand=' + updateDesignerList.toString() + '&';
+      var colorList = this.state.colorList.length === 0 ? '' : 'color=' + this.state.colorList.toString() + '&';
+      var offset = this.state.offset === 0 ? '' : 'offset=' + this.state.offset;
+      var url = "http://127.0.0.1:3000/api/en/shop?" + sort + cat + designerList + colorList + offset;
+      console.log(url);
+      (0, _isomorphicFetch2.default)(url).then(function (res) {
+        return res.json();
+      }).then(function (res) {
+        _this5.setState({
+          data: res
+        });
+      });
+    }
+  }, {
     key: 'updateOffset',
     value: function updateOffset(newOffset) {
-      var _this5 = this;
+      var _this6 = this;
 
       this.setState({
         offset: newOffset
@@ -784,7 +838,7 @@ var App = function (_React$Component) {
       (0, _isomorphicFetch2.default)(url).then(function (res) {
         return res.json();
       }).then(function (res) {
-        _this5.setState({
+        _this6.setState({
           data: res
         });
       });
@@ -815,7 +869,8 @@ var App = function (_React$Component) {
         _react2.default.createElement(_MainBlock2.default, {
           data: this.state.data,
           productViewChecked: this.state.productViewChecked,
-          updateCategory: this.updateCategory
+          updateCategory: this.updateCategory,
+          updateDesignerList: this.updateDesignerList
         })
       );
     }
@@ -846,80 +901,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(8);
 
-var _Category = __webpack_require__(103);
-
-var _Category2 = _interopRequireDefault(_Category);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Category = function (_React$Component) {
-  _inherits(Category, _React$Component);
-
-  function Category(props) {
-    _classCallCheck(this, Category);
-
-    var _this = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this, props));
-
-    _this.getCategory = _this.getCategory.bind(_this);
-    return _this;
-  }
-
-  _createClass(Category, [{
-    key: 'getCategory',
-    value: function getCategory(newCategory) {
-      this.props.updateCategory(newCategory);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      return _react2.default.createElement(
-        'div',
-        { className: _Category2.default.filterItem, 'data-category-id': this.props.Category.id, onClick: function onClick() {
-            return _this2.getCategory(_this2.props.Category.id);
-          } },
-        this.props.Category.name
-      );
-    }
-  }]);
-
-  return Category;
-}(_react2.default.Component);
-
-exports.default = Category;
-
-/***/ }),
-
-/***/ 85:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(6);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(8);
-
-var _CategoryFilter = __webpack_require__(104);
+var _CategoryFilter = __webpack_require__(103);
 
 var _CategoryFilter2 = _interopRequireDefault(_CategoryFilter);
 
-var _Category = __webpack_require__(84);
+var _Category = __webpack_require__(85);
 
 var _Category2 = _interopRequireDefault(_Category);
 
@@ -992,6 +978,75 @@ var CategoryFilter = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = CategoryFilter;
+
+/***/ }),
+
+/***/ 85:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(8);
+
+var _Category = __webpack_require__(104);
+
+var _Category2 = _interopRequireDefault(_Category);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Category = function (_React$Component) {
+  _inherits(Category, _React$Component);
+
+  function Category(props) {
+    _classCallCheck(this, Category);
+
+    var _this = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this, props));
+
+    _this.getCategory = _this.getCategory.bind(_this);
+    return _this;
+  }
+
+  _createClass(Category, [{
+    key: 'getCategory',
+    value: function getCategory(newCategory) {
+      this.props.updateCategory(newCategory);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { className: _Category2.default.filterItem, 'data-category-id': this.props.Category.id, onClick: function onClick() {
+            return _this2.getCategory(_this2.props.Category.id);
+          } },
+        this.props.Category.name
+      );
+    }
+  }]);
+
+  return Category;
+}(_react2.default.Component);
+
+exports.default = Category;
 
 /***/ }),
 
@@ -1245,7 +1300,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(8);
 
-var _Designer = __webpack_require__(106);
+var _DesignerFilter = __webpack_require__(106);
+
+var _DesignerFilter2 = _interopRequireDefault(_DesignerFilter);
+
+var _Designer = __webpack_require__(88);
 
 var _Designer2 = _interopRequireDefault(_Designer);
 
@@ -1257,40 +1316,78 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Designer = function (_React$Component) {
-  _inherits(Designer, _React$Component);
+var DesignerFilter = function (_React$Component) {
+  _inherits(DesignerFilter, _React$Component);
 
-  function Designer(props) {
-    _classCallCheck(this, Designer);
+  function DesignerFilter(props) {
+    _classCallCheck(this, DesignerFilter);
 
-    return _possibleConstructorReturn(this, (Designer.__proto__ || Object.getPrototypeOf(Designer)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (DesignerFilter.__proto__ || Object.getPrototypeOf(DesignerFilter)).call(this, props));
+
+    _this.state = {
+      select: false
+    };
+    _this.clearDesigner = _this.clearDesigner.bind(_this);
+    return _this;
   }
 
-  _createClass(Designer, [{
+  _createClass(DesignerFilter, [{
+    key: 'clearDesigner',
+    value: function clearDesigner() {
+      this.setState({
+        select: false
+      });
+      this.props.updateDesignerList(0);
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(
-        'li',
-        { 'data-designer-id': this.props.designerId, className: 'not-selected' },
-        _react2.default.createElement('span', { className: _Designer2.default.filterCheckbox }),
-        _react2.default.createElement(
+      var _this2 = this;
+
+      if (!this.props.designerList) {
+        return _react2.default.createElement(
           'div',
-          { className: _Designer2.default.designer },
-          _react2.default.createElement(
-            'span',
-            null,
-            this.props.designerName
-          )
+          { className: _DesignerFilter2.default.DesignerFilter },
+          'Loading'
+        );
+      };
+      var designerList = this.props.designerList;
+      return _react2.default.createElement(
+        'div',
+        { className: _DesignerFilter2.default.DesignerFilter },
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Designer'
         ),
-        _react2.default.createElement('div', null)
+        _react2.default.createElement(
+          'a',
+          { className: _DesignerFilter2.default.clearFilter, onClick: function onClick() {
+              return _this2.clearDesigner();
+            } },
+          'Clear'
+        ),
+        _react2.default.createElement(
+          'ul',
+          { className: _DesignerFilter2.default.scrollPanel },
+          designerList.map(function (designer) {
+            return _react2.default.createElement(_Designer2.default, {
+              key: designer.id,
+              designerName: designer.name.en,
+              designerId: designer.id,
+              updateDesignerList: _this2.props.updateDesignerList,
+              select: _this2.state.select
+            });
+          })
+        )
       );
     }
   }]);
 
-  return Designer;
+  return DesignerFilter;
 }(_react2.default.Component);
 
-exports.default = Designer;
+exports.default = DesignerFilter;
 
 /***/ }),
 
@@ -1312,11 +1409,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(8);
 
-var _DesignerFilter = __webpack_require__(107);
-
-var _DesignerFilter2 = _interopRequireDefault(_DesignerFilter);
-
-var _Designer = __webpack_require__(87);
+var _Designer = __webpack_require__(107);
 
 var _Designer2 = _interopRequireDefault(_Designer);
 
@@ -1328,54 +1421,70 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var DesignerFilter = function (_React$Component) {
-  _inherits(DesignerFilter, _React$Component);
+var Designer = function (_React$Component) {
+  _inherits(Designer, _React$Component);
 
-  function DesignerFilter(props) {
-    _classCallCheck(this, DesignerFilter);
+  function Designer(props) {
+    _classCallCheck(this, Designer);
 
-    return _possibleConstructorReturn(this, (DesignerFilter.__proto__ || Object.getPrototypeOf(DesignerFilter)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Designer.__proto__ || Object.getPrototypeOf(Designer)).call(this, props));
+
+    _this.state = {
+      selectBox: _this.props.select
+    };
+    _this.getDesigner = _this.getDesigner.bind(_this);
+    return _this;
   }
 
-  _createClass(DesignerFilter, [{
+  _createClass(Designer, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      console.log(nextProps);
+      this.setState({
+        selectBox: nextProps.select
+      });
+    }
+  }, {
+    key: 'getDesigner',
+    value: function getDesigner(designer) {
+      var selectBox = this.state.selectBox;
+
+      this.setState({
+        selectBox: !selectBox
+      });
+      this.props.updateDesignerList(designer);
+    }
+  }, {
     key: 'render',
     value: function render() {
-      if (!this.props.designerList) {
-        return _react2.default.createElement(
-          'div',
-          { className: _DesignerFilter2.default.DesignerFilter },
-          'Loading'
-        );
-      };
-      var designerList = this.props.designerList;
+      var _this2 = this;
+
+      console.log("111444", this.state.selectBox);
+      var checkBox = this.state.selectBox ? _Designer2.default.filterCheckedbox : _Designer2.default.filterCheckbox;
       return _react2.default.createElement(
-        'div',
-        { className: _DesignerFilter2.default.DesignerFilter },
+        'li',
+        { 'data-designer-id': this.props.designerId, onClick: function onClick() {
+            return _this2.getDesigner(_this2.props.designerId);
+          } },
+        _react2.default.createElement('span', { className: checkBox }),
         _react2.default.createElement(
-          'h4',
-          null,
-          'Designer'
+          'div',
+          { className: _Designer2.default.designer },
+          _react2.default.createElement(
+            'span',
+            null,
+            this.props.designerName
+          )
         ),
-        _react2.default.createElement(
-          'a',
-          { className: _DesignerFilter2.default.clearFilter, href: '?' },
-          'Clear'
-        ),
-        _react2.default.createElement(
-          'ul',
-          { className: _DesignerFilter2.default.scrollPanel },
-          designerList.map(function (designer) {
-            return _react2.default.createElement(_Designer2.default, { key: designer.id, designerName: designer.name.en, designerId: designer.id });
-          })
-        )
+        _react2.default.createElement('div', null)
       );
     }
   }]);
 
-  return DesignerFilter;
+  return Designer;
 }(_react2.default.Component);
 
-exports.default = DesignerFilter;
+exports.default = Designer;
 
 /***/ }),
 
@@ -1397,7 +1506,7 @@ var _header = __webpack_require__(108);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _ListViewAndSort = __webpack_require__(94);
+var _ListViewAndSort = __webpack_require__(93);
 
 var _ListViewAndSort2 = _interopRequireDefault(_ListViewAndSort);
 
@@ -1616,12 +1725,12 @@ var ListSort = function (_React$Component) {
           _react2.default.createElement(
             'option',
             { value: 'low' },
-            'Price High to Low'
+            'Price Low to High'
           ),
           _react2.default.createElement(
             'option',
             { value: 'high' },
-            'Price Low to High'
+            'Price High to Low'
           )
         )
       );
@@ -1695,6 +1804,47 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ListViewAndSort = __webpack_require__(112);
+
+var _ListViewAndSort2 = _interopRequireDefault(_ListViewAndSort);
+
+var _ListView = __webpack_require__(94);
+
+var _ListView2 = _interopRequireDefault(_ListView);
+
+var _ListSort = __webpack_require__(91);
+
+var _ListSort2 = _interopRequireDefault(_ListSort);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ListViewAndSort = function ListViewAndSort(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: _ListViewAndSort2.default.ListViewAndSort },
+    _react2.default.createElement(_ListView2.default, { changeProductsView: props.changeProductsView }),
+    _react2.default.createElement(_ListSort2.default, { updateSort: props.updateSort })
+  );
+};
+
+exports.default = ListViewAndSort;
+
+/***/ }),
+
+/***/ 94:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(6);
@@ -1703,7 +1853,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(8);
 
-var _ListView = __webpack_require__(112);
+var _ListView = __webpack_require__(113);
 
 var _ListView2 = _interopRequireDefault(_ListView);
 
@@ -1766,47 +1916,6 @@ exports.default = ListView;
 
 /***/ }),
 
-/***/ 94:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(6);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ListViewAndSort = __webpack_require__(113);
-
-var _ListViewAndSort2 = _interopRequireDefault(_ListViewAndSort);
-
-var _ListView = __webpack_require__(93);
-
-var _ListView2 = _interopRequireDefault(_ListView);
-
-var _ListSort = __webpack_require__(91);
-
-var _ListSort2 = _interopRequireDefault(_ListSort);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ListViewAndSort = function ListViewAndSort(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: _ListViewAndSort2.default.ListViewAndSort },
-    _react2.default.createElement(_ListView2.default, { changeProductsView: props.changeProductsView }),
-    _react2.default.createElement(_ListSort2.default, { updateSort: props.updateSort })
-  );
-};
-
-exports.default = ListViewAndSort;
-
-/***/ }),
-
 /***/ 95:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1839,8 +1948,15 @@ var MainBlock = function MainBlock(props) {
   return _react2.default.createElement(
     'div',
     { className: _MainBlock2.default.MainBlock },
-    _react2.default.createElement(_SideFilter2.default, { designerList: props.data.designers, updateCategory: props.updateCategory }),
-    _react2.default.createElement(_ProductsList2.default, { productViewChecked: props.productViewChecked, data: props.data }),
+    _react2.default.createElement(_SideFilter2.default, {
+      designerList: props.data.designers,
+      updateCategory: props.updateCategory,
+      updateDesignerList: props.updateDesignerList
+    }),
+    _react2.default.createElement(_ProductsList2.default, {
+      productViewChecked: props.productViewChecked,
+      data: props.data
+    }),
     _react2.default.createElement('div', { className: _MainBlock2.default.clear })
   );
 };
@@ -2137,18 +2253,18 @@ exports.default = ProductsList;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+      value: true
 });
 
 var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _DesignerFilter = __webpack_require__(88);
+var _DesignerFilter = __webpack_require__(87);
 
 var _DesignerFilter2 = _interopRequireDefault(_DesignerFilter);
 
-var _CategoryFilter = __webpack_require__(85);
+var _CategoryFilter = __webpack_require__(84);
 
 var _CategoryFilter2 = _interopRequireDefault(_CategoryFilter);
 
@@ -2163,13 +2279,13 @@ var _SideFilter2 = _interopRequireDefault(_SideFilter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SideFilter = function SideFilter(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: _SideFilter2.default.sideFilter },
-    _react2.default.createElement(_CategoryFilter2.default, { updateCategory: props.updateCategory }),
-    _react2.default.createElement(_DesignerFilter2.default, { designerList: props.designerList }),
-    _react2.default.createElement(_ColorFilter2.default, null)
-  );
+      return _react2.default.createElement(
+            'div',
+            { className: _SideFilter2.default.sideFilter },
+            _react2.default.createElement(_CategoryFilter2.default, { updateCategory: props.updateCategory }),
+            _react2.default.createElement(_DesignerFilter2.default, { designerList: props.designerList, updateDesignerList: props.updateDesignerList }),
+            _react2.default.createElement(_ColorFilter2.default, null)
+      );
 };
 
 exports.default = SideFilter;
