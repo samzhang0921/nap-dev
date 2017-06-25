@@ -19,7 +19,7 @@ export default class DesignerFilter extends React.Component{
     this.props.updateDesignerList(0);
   }
   componentWillUpdate(nextProps, nextState){
-    if (this.props.designerListRefresh !== nextProps.designerListRefresh){
+    if (this.props.categoryRefresh !== nextProps.categoryRefresh){
       this.setState({
         clearClicked:!this.state.clearClicked
       })

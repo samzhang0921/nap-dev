@@ -13,7 +13,7 @@ class App extends React.Component {
     this.state = {
       data: {},
       productViewChecked: false,
-      designerListRefresh: false,
+      categoryRefresh: false,
       offset: 0,
       sort: 'sort',
       cat: 0,
@@ -26,6 +26,7 @@ class App extends React.Component {
     this.updateCategory = this.updateCategory.bind(this);
     this.updateSort = this.updateSort.bind(this);
     this.updateDesignerList = this.updateDesignerList.bind(this);
+    this.updateColorList = this.updateColorList.bind(this);
   };
 
   componentDidMount() {
@@ -77,7 +78,7 @@ class App extends React.Component {
     }).then(res => {
       this.setState({
         data: res,
-        designerListRefresh: !this.state.designerListRefresh
+        categoryRefresh: !this.state.categoryRefresh
       })
     })
   }
@@ -121,6 +122,47 @@ class App extends React.Component {
       })
     })
   }
+
+  updateColorList (updateColor){
+      let updateColorList = [];
+      if (updateColor===0){
+        this.setState({
+          colorList: []
+        });
+      }else {
+        let index = this.state.colorList.indexOf(updateColor);
+        if (index > -1){
+          this.state.colorList.splice(index, 1);
+          updateColorList = this.state.colorList;
+          this.setState({
+            colorList: updateColorList
+          });
+        }else {
+          console.log("this.state.colorList",this.state.colorList);
+          console.log("push",updateColor);
+          this.state.colorList.push(updateColor);
+          updateColorList = this.state.colorList;
+          this.setState({
+            colorList: updateColorList
+          });
+        }
+      }
+      let sort = this.state.sort === 'sort'? '': 'sort='+this.state.sort+'&';
+        let cat = this.state.cat === 0 ? '': 'cat='+this.state.cat+'&';
+        let designerList = this.state.designerList.length===0 ? '': 'brand='+this.state.designerList.toString()+'&';
+        let colorList = updateColorList.length===0 ? '': 'color='+updateColorList.toString()+'&';
+        let offset = this.state.offset === 0 ? '': 'offset='+this.state.offset;
+        let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList+offset;
+        console.log(url);
+        fetch(url).then(res => {
+          return res.json()
+        }).then(res => {
+          this.setState({
+            data: res
+          })
+        })
+
+    }
 
   updateOffset (newOffset){
     this.setState({
@@ -166,7 +208,8 @@ class App extends React.Component {
           productViewChecked = {this.state.productViewChecked}
           updateCategory = {this.updateCategory}
           updateDesignerList = {this.updateDesignerList}
-          designerListRefresh = {this.state.designerListRefresh}
+          updateColorList = {this.updateColorList}
+          categoryRefresh = {this.state.categoryRefresh}
           />
       </div >
     );

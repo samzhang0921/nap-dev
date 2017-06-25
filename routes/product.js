@@ -24,6 +24,7 @@ var routes = {
                     onSale : productObj.onSale,
                     sizes: productObj.saleableStandardSizes,
                     badges: productObj.badges,
+                    color: productObj.colourIds,
                     images: {
                         outfit: '//cache.net-a-porter.com/images/products/'+productObj.id+'/'+productObj.id+'_ou_sl.jpg',
                         small: '//cache.net-a-porter.com/images/products/'+productObj.id+'/'+productObj.id+'_in_sl.jpg',

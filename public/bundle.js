@@ -52,7 +52,7 @@ module.exports = {"filterItem":"Category__filterItem___2E4dv"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"ColorFilter":"ColorFilter__ColorFilter___3lCD3 DesignerFilter__DesignerFilter___3IC8T","clearFilter":"ColorFilter__clearFilter___3jByB DesignerFilter__clearFilter___2CByy","filterCheckbox":"ColorFilter__filterCheckbox___pAjmx Designer__filterCheckbox___3oABo","colorName":"ColorFilter__colorName___3o1dV Designer__designer___3M014"};
+module.exports = {"ColorFilter":"ColorFilter__ColorFilter___3lCD3 DesignerFilter__DesignerFilter___3IC8T","clearFilter":"ColorFilter__clearFilter___3jByB DesignerFilter__clearFilter___2CByy"};
 
 /***/ }),
 
@@ -641,6 +641,107 @@ module.exports = self.fetch.bind(self);
 
 /***/ }),
 
+/***/ 241:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(8);
+
+var _Color = __webpack_require__(242);
+
+var _Color2 = _interopRequireDefault(_Color);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Color = function (_React$Component) {
+  _inherits(Color, _React$Component);
+
+  function Color(props) {
+    _classCallCheck(this, Color);
+
+    var _this = _possibleConstructorReturn(this, (Color.__proto__ || Object.getPrototypeOf(Color)).call(this, props));
+
+    _this.state = {
+      selectBox: false
+    };
+    _this.getColor = _this.getColor.bind(_this);
+    return _this;
+  }
+
+  _createClass(Color, [{
+    key: 'getColor',
+    value: function getColor(newColor) {
+      var selectBox = this.state.selectBox;
+
+      this.setState({
+        selectBox: !selectBox
+      });
+      this.props.updateColorList(newColor);
+    }
+  }, {
+    key: 'componentWillUpdate',
+    value: function componentWillUpdate(nextProps, nextState) {
+      if (this.props.clearClicked !== nextProps.clearClicked) {
+        this.setState({
+          selectBox: false
+        });
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var checkBox = this.state.selectBox ? _Color2.default.colorCheckedbox : _Color2.default.colorCheckbox;
+      return _react2.default.createElement(
+        'li',
+        { 'data-category-id': this.props.colorItem.id, onClick: function onClick() {
+            return _this2.getColor(_this2.props.colorItem.id);
+          } },
+        _react2.default.createElement('span', { className: checkBox }),
+        _react2.default.createElement(
+          'span',
+          { className: _Color2.default.colorName },
+          this.props.colorItem.name
+        ),
+        _react2.default.createElement('div', { className: _Color2.default.clear })
+      );
+    }
+  }]);
+
+  return Color;
+}(_react2.default.Component);
+
+exports.default = Color;
+
+/***/ }),
+
+/***/ 242:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"clear":"Color__clear___3qxaG","colorName":"Color__colorName___2Uh5g Designer__designer___3M014","colorCheckbox":"Color__colorCheckbox___21712 Designer__filterCheckbox___3oABo","colorCheckedbox":"Color__colorCheckedbox___37ta_ Designer__filterCheckedbox___2wSfG Designer__filterCheckbox___3oABo"};
+
+/***/ }),
+
 /***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -694,7 +795,7 @@ var App = function (_React$Component) {
     _this.state = {
       data: {},
       productViewChecked: false,
-      designerListRefresh: false,
+      categoryRefresh: false,
       offset: 0,
       sort: 'sort',
       cat: 0,
@@ -707,6 +808,7 @@ var App = function (_React$Component) {
     _this.updateCategory = _this.updateCategory.bind(_this);
     _this.updateSort = _this.updateSort.bind(_this);
     _this.updateDesignerList = _this.updateDesignerList.bind(_this);
+    _this.updateColorList = _this.updateColorList.bind(_this);
     return _this;
   }
 
@@ -769,7 +871,7 @@ var App = function (_React$Component) {
       }).then(function (res) {
         _this4.setState({
           data: res,
-          designerListRefresh: !_this4.state.designerListRefresh
+          categoryRefresh: !_this4.state.categoryRefresh
         });
       });
     }
@@ -817,9 +919,52 @@ var App = function (_React$Component) {
       });
     }
   }, {
+    key: 'updateColorList',
+    value: function updateColorList(updateColor) {
+      var _this6 = this;
+
+      var updateColorList = [];
+      if (updateColor === 0) {
+        this.setState({
+          colorList: []
+        });
+      } else {
+        var index = this.state.colorList.indexOf(updateColor);
+        if (index > -1) {
+          this.state.colorList.splice(index, 1);
+          updateColorList = this.state.colorList;
+          this.setState({
+            colorList: updateColorList
+          });
+        } else {
+          console.log("this.state.colorList", this.state.colorList);
+          console.log("push", updateColor);
+          this.state.colorList.push(updateColor);
+          updateColorList = this.state.colorList;
+          this.setState({
+            colorList: updateColorList
+          });
+        }
+      }
+      var sort = this.state.sort === 'sort' ? '' : 'sort=' + this.state.sort + '&';
+      var cat = this.state.cat === 0 ? '' : 'cat=' + this.state.cat + '&';
+      var designerList = this.state.designerList.length === 0 ? '' : 'brand=' + this.state.designerList.toString() + '&';
+      var colorList = updateColorList.length === 0 ? '' : 'color=' + updateColorList.toString() + '&';
+      var offset = this.state.offset === 0 ? '' : 'offset=' + this.state.offset;
+      var url = "http://127.0.0.1:3000/api/en/shop?" + sort + cat + designerList + colorList + offset;
+      console.log(url);
+      (0, _isomorphicFetch2.default)(url).then(function (res) {
+        return res.json();
+      }).then(function (res) {
+        _this6.setState({
+          data: res
+        });
+      });
+    }
+  }, {
     key: 'updateOffset',
     value: function updateOffset(newOffset) {
-      var _this6 = this;
+      var _this7 = this;
 
       this.setState({
         offset: newOffset
@@ -834,7 +979,7 @@ var App = function (_React$Component) {
       (0, _isomorphicFetch2.default)(url).then(function (res) {
         return res.json();
       }).then(function (res) {
-        _this6.setState({
+        _this7.setState({
           data: res
         });
       });
@@ -867,7 +1012,8 @@ var App = function (_React$Component) {
           productViewChecked: this.state.productViewChecked,
           updateCategory: this.updateCategory,
           updateDesignerList: this.updateDesignerList,
-          designerListRefresh: this.state.designerListRefresh
+          updateColorList: this.updateColorList,
+          categoryRefresh: this.state.categoryRefresh
         })
       );
     }
@@ -1057,223 +1203,110 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(8);
 
 var _ColorFilter = __webpack_require__(105);
 
 var _ColorFilter2 = _interopRequireDefault(_ColorFilter);
 
+var _Color = __webpack_require__(241);
+
+var _Color2 = _interopRequireDefault(_Color);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ColorFilter = function ColorFilter(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: _ColorFilter2.default.ColorFilter },
-    _react2.default.createElement(
-      'h4',
-      null,
-      'COLOR'
-    ),
-    _react2.default.createElement(
-      'a',
-      { className: _ColorFilter2.default.clearFilter, href: '?' },
-      'Clear'
-    ),
-    _react2.default.createElement(
-      'ul',
-      null,
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '1001', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ColorFilter = function (_React$Component) {
+  _inherits(ColorFilter, _React$Component);
+
+  function ColorFilter(props) {
+    _classCallCheck(this, ColorFilter);
+
+    var _this = _possibleConstructorReturn(this, (ColorFilter.__proto__ || Object.getPrototypeOf(ColorFilter)).call(this, props));
+
+    _this.state = {
+      clearClicked: false
+    };
+    _this.clearColor = _this.clearColor.bind(_this);
+    return _this;
+  }
+
+  _createClass(ColorFilter, [{
+    key: 'clearColor',
+    value: function clearColor() {
+      var clearClicked = this.state.clearClicked;
+
+      this.setState({
+        clearClicked: !clearClicked
+      });
+      this.props.updateColorList(0);
+    }
+  }, {
+    key: 'componentWillUpdate',
+    value: function componentWillUpdate(nextProps, nextState) {
+      if (this.props.categoryRefresh !== nextProps.categoryRefresh) {
+        this.setState({
+          clearClicked: !this.state.clearClicked
+        });
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      if (!this.props.colorList) {
+        return _react2.default.createElement(
+          'div',
+          { className: _ColorFilter2.default.ColorFilter },
+          'Loading'
+        );
+      };
+      return _react2.default.createElement(
+        'div',
+        { className: _ColorFilter2.default.ColorFilter },
         _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Animal print'
+          'h4',
+          null,
+          ' COLOR '
         ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '2', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
         _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Black'
+          'a',
+          { className: _ColorFilter2.default.clearFilter, onClick: function onClick() {
+              return _this2.clearColor();
+            } },
+          'Clear'
         ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '3', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
         _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Blue'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '6', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Brown'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '7', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Burgundy'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '17', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Gold'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '18', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Gray'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '19', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Green'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '104', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Metallic'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '1002', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Neutrals'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '31', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Orange'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '33', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Pink'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '36', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Purple'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '37', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Red'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '69', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Silver'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '43', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'White'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      ),
-      _react2.default.createElement(
-        'li',
-        { 'data-colour-id': '44', className: 'not-selected' },
-        _react2.default.createElement('span', { className: _ColorFilter2.default.filterCheckbox }),
-        _react2.default.createElement(
-          'span',
-          { className: _ColorFilter2.default.colorName },
-          'Yellow'
-        ),
-        _react2.default.createElement('div', { className: 'clear' })
-      )
-    )
-  );
-};
+          'ul',
+          null,
+          this.props.colorList.map(function (pColor) {
+            return _react2.default.createElement(_Color2.default, {
+              key: pColor.id,
+              colorItem: pColor,
+              updateColorList: _this2.props.updateColorList,
+              categoryRefresh: _this2.props.categoryRefresh,
+              clearClicked: _this2.state.clearClicked
+            });
+          })
+        )
+      );
+    }
+  }]);
+
+  return ColorFilter;
+}(_react2.default.Component);
 
 exports.default = ColorFilter;
 
@@ -1341,7 +1374,7 @@ var DesignerFilter = function (_React$Component) {
   }, {
     key: 'componentWillUpdate',
     value: function componentWillUpdate(nextProps, nextState) {
-      if (this.props.designerListRefresh !== nextProps.designerListRefresh) {
+      if (this.props.categoryRefresh !== nextProps.categoryRefresh) {
         this.setState({
           clearClicked: !this.state.clearClicked
         });
@@ -1964,9 +1997,11 @@ var MainBlock = function MainBlock(props) {
     { className: _MainBlock2.default.MainBlock },
     _react2.default.createElement(_SideFilter2.default, {
       designerList: props.data.designers,
+      colorList: props.data.colors,
       updateCategory: props.updateCategory,
       updateDesignerList: props.updateDesignerList,
-      designerListRefresh: props.designerListRefresh
+      updateColorList: props.updateColorList,
+      categoryRefresh: props.categoryRefresh
     }),
     _react2.default.createElement(_ProductsList2.default, {
       productViewChecked: props.productViewChecked,
@@ -2298,8 +2333,8 @@ var SideFilter = function SideFilter(props) {
             'div',
             { className: _SideFilter2.default.sideFilter },
             _react2.default.createElement(_CategoryFilter2.default, { updateCategory: props.updateCategory }),
-            _react2.default.createElement(_DesignerFilter2.default, { designerList: props.designerList, updateDesignerList: props.updateDesignerList, designerListRefresh: props.designerListRefresh }),
-            _react2.default.createElement(_ColorFilter2.default, null)
+            _react2.default.createElement(_DesignerFilter2.default, { designerList: props.designerList, updateDesignerList: props.updateDesignerList, categoryRefresh: props.categoryRefresh }),
+            _react2.default.createElement(_ColorFilter2.default, { updateColorList: props.updateColorList, colorList: props.colorList, categoryRefresh: props.categoryRefresh })
       );
 };
 

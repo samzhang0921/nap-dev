@@ -29,12 +29,88 @@ function getDesigners(products) {
 
 function getColors (products) {
   var colors = [];
+  var colorList = [];
+  // the test didn't provide the colors name, add some colors name
+  var colorWithName= [ {
+                id:1001,
+                name:"Animal print"
+            },
+            {
+                id:2,
+                name:"black"
+            },
+            {
+                id:3,
+                name:"Blue"
+            },
+            {
+                id:6,
+                name:"Brown"
+            },{
+                id:7,
+                name:"Burgundy"
+            },
+            {
+                id:17,
+                name:"Gold"
+            },{
+                id:18,
+                name:"Gray"
+            },
+            {
+                id:19,
+                name:"Green"
+            },{
+                id:104,
+                name:"Metallic"
+            },
+            {
+                id:1002,
+                name:"Neutrals"
+            },{
+                id:31,
+                name:"Orange"
+            },
+            {
+                id:33,
+                name:"Pink"
+            },{
+                id:36,
+                name:"Purple"
+            },
+            {
+                id:37,
+                name:"Red"
+            },
+            {
+                id:69,
+                name:"Silver"
+            },
+            {
+                id:43,
+                name:"White"
+            },{
+                id:44,
+                name:"Yellow"
+            },{
+                id:115,
+                name:"Jean Blue"
+            }
+        ];
   for (var i = 0; i < products.length; i++) {
     if (colors.indexOf(products[i].colourIds[0]) < 0) {
       colors.push(products[i].colourIds[0]);
     }
   }
-  return colors;
+  for (var j=0;j<colors.length;j++){
+            for (var k=0; k<colorWithName.length; k++){
+                if (colors[j]==colorWithName[k].id){
+                    colorList.push(colorWithName[k]);
+                }
+            }
+        }
+
+  return colorList;
 }
 
 function sortBy(products, sortOrder) {

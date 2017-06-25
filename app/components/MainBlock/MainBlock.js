@@ -8,9 +8,11 @@ const MainBlock = props => {
     <div className={style.MainBlock}>
     <SideFilter
     designerList = {props.data.designers}
+    colorList = {props.data.colors}
     updateCategory = {props.updateCategory}
     updateDesignerList = {props.updateDesignerList}
-    designerListRefresh = {props.designerListRefresh}
+    updateColorList = {props.updateColorList}
+    categoryRefresh = {props.categoryRefresh}
     />
     <ProductsList
     productViewChecked={props.productViewChecked}

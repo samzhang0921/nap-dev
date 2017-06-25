@@ -1,0 +1,16 @@
+.clear {
+  clear: both;
+}
+
+.colorName {
+  composes: designer from '../Designer/Designer.css';
+}
+
+.colorCheckbox {
+  composes: filterCheckbox from '../Designer/Designer.css';
+
+}
+.colorCheckedbox {
+  composes: filterCheckedbox from '../Designer/Designer.css';
+
+}

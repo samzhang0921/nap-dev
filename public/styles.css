@@ -241,13 +241,20 @@ h4 {
   margin-top: 0;
   margin-bottom: 11px;
 }
-
 .ColorFilter__clearFilter___3jByB {
 }
-
-.ColorFilter__filterCheckbox___pAjmx {
+.Color__clear___3qxaG {
+  clear: both;
 }
-.ColorFilter__colorName___3o1dV {
+
+.Color__colorName___2Uh5g {
+}
+
+.Color__colorCheckbox___21712 {
+
+}
+.Color__colorCheckedbox___37ta_ {
+
 }
 .SideFilter__sideFilter___1NJoG {
   float: left;

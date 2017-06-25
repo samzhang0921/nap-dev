@@ -6,14 +6,13 @@ import style from './SideFilter.css';
 
 const SideFilter = props => {
   return (
-
     <div className={style.sideFilter}>
 
       <CategoryFilter updateCategory = {props.updateCategory} />
 
-      <DesignerFilter designerList={props.designerList} updateDesignerList={props.updateDesignerList} designerListRefresh={props.designerListRefresh}/>
+      <DesignerFilter designerList={props.designerList} updateDesignerList={props.updateDesignerList} categoryRefresh={props.categoryRefresh}/>
 
-      <ColorFilter/>
+      <ColorFilter updateColorList = {props.updateColorList} colorList ={props.colorList} categoryRefresh={props.categoryRefresh}/>
 
     </div>
   )
