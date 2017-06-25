@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './header.css';
-import ListViewAndSort from '../ListViewAndSort/ListViewAndSort';
-import ListTitleAndTotal from '../ListTitleAndTotal/ListTitleAndTotal';
-import ListPagination from '../ListPagination/ListPagination';
+import ListViewAndSort from './ListViewAndSort/ListViewAndSort';
+import ListTitleAndTotal from './ListTitleAndTotal/ListTitleAndTotal';
+import ListPagination from './ListPagination/ListPagination';
 const Header = props => {
 
     return (

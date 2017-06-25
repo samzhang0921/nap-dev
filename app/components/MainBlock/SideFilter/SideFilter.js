@@ -1,7 +1,7 @@
 import React from 'react';
-import DesignerFilter from '../DesignerFilter/DesignerFilter';
-import CategoryFilter from '../CategoryFilter/CategoryFilter';
-import ColorFilter from '../ColorFilter/ColorFilter';
+import DesignerFilter from './DesignerFilter/DesignerFilter';
+import CategoryFilter from './CategoryFilter/CategoryFilter';
+import ColorFilter from './ColorFilter/ColorFilter';
 import style from './SideFilter.css';
 
 const SideFilter = props => {

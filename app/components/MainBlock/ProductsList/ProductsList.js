@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Product from '../Product/Product';
+import Product from './Product/Product';
 import style from './ProductsList.css'
 
 export default class ProductsList extends React.Component {

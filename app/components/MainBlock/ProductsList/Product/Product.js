@@ -26,6 +26,7 @@ export default class Product extends React.Component {
         <div onMouseEnter={this.toggleImage} onMouseLeave={this.toggleImage} className={style.productImage}>
         <a href={'/product/'+this.props.product.sku}>
         <img src={finalImageUrl}/>
+
         </a>
         </div>
         <div className={style.productInfo}>

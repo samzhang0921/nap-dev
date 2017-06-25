@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './MainBlock.css';
-import SideFilter from '../SideFilter/SideFilter';
-import ProductsList from '../ProductsList/ProductsList';
+import SideFilter from './SideFilter/SideFilter';
+import ProductsList from './ProductsList/ProductsList';
 
 const MainBlock = props => {
   return (
