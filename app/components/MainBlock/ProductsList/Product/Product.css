@@ -25,6 +25,16 @@
 .designer {
     font-weight: 700;
     text-transform: uppercase;
-    vertical-align: baseline;    
+    vertical-align: baseline;
     letter-spacing: .1px;
+}
+.quickView {
+  width: 40px;
+  position: absolute;
+  top:100px;
+  left: 100px;
+  text-align: center;
+  font-size: 10px;
+  color: #fff;
+  background: #999;
 }

@@ -1,0 +1,26 @@
+.overlay {
+    background-color: rgba(51, 51, 51, 0.55);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99;
+}
+.wrap {
+  margin: 5rem auto;
+  background-color: #fff;
+  width: 75%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 3%;
+}
+
+h2 {
+line-height: 26px;
+}
