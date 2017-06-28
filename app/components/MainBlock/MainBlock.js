@@ -18,7 +18,6 @@ const MainBlock = props => {
     productViewChecked={props.productViewChecked}
     data={props.data}
     />
-    <div className={style.clear}></div>
     </div>
   );
 }

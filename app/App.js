@@ -27,11 +27,10 @@ class App extends React.Component {
     this.updateSort = this.updateSort.bind(this);
     this.updateDesignerList = this.updateDesignerList.bind(this);
     this.updateColorList = this.updateColorList.bind(this);
+    this.fetchListing = this.fetchListing.bind(this);
   };
 
-  componentDidMount() {
-    console.log('componentDidMount');
-    const url = 'http://127.0.0.1:3000/api/en/shop';
+  fetchListing(url) {
     fetch(url).then(res => {
       return res.json()
     }).then(res => {
@@ -39,27 +38,27 @@ class App extends React.Component {
         data: res
       })
     })
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount');
+    const url = 'http://127.0.0.1:3000/api/en/shop';
+    this.fetchListing(url);
   };
+
+
 
   updateSort (newSort){
     this.setState({
       sort: newSort
     });
-    console.log(newSort);
     let sort = newSort === 'sort'? '': 'sort='+newSort+'&';
     let cat = this.state.cat === 0 ? '': 'cat='+this.state.cat+'&';
     let designerList = this.state.designerList.length===0 ? '': 'brand='+this.state.designerList.toString()+'&';
     let colorList = this.state.colorList.length===0 ? '': 'color='+this.state.colorList.toString()+'&';
     let offset = this.state.offset === 0 ? '': 'offset='+this.state.offset;
     let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList+offset;
-    console.log(url);
-    fetch(url).then(res => {
-      return res.json()
-    }).then(res => {
-      this.setState({
-        data: res
-      })
-    })
+    this.fetchListing(url);
   }
 
   updateCategory (newCategory){
@@ -72,15 +71,7 @@ class App extends React.Component {
     });
     let cat = newCategory === 0 ? '': 'cat='+newCategory+'&';
     let url = "http://127.0.0.1:3000/api/en/shop?"+cat;
-    console.log(url);
-    fetch(url).then(res => {
-      return res.json()
-    }).then(res => {
-      this.setState({
-        data: res,
-        categoryRefresh: !this.state.categoryRefresh
-      })
-    })
+    this.fetchListing(url);
   }
 
   updateDesignerList (updateDesigner){
@@ -113,14 +104,7 @@ class App extends React.Component {
     let colorList = this.state.colorList.length===0 ? '': 'color='+this.state.colorList.toString()+'&';
     let offset = this.state.offset === 0 ? '': 'offset='+this.state.offset;
     let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList+offset;
-    console.log(url);
-    fetch(url).then(res => {
-      return res.json()
-    }).then(res => {
-      this.setState({
-        data: res
-      })
-    })
+    this.fetchListing(url);
   }
 
   updateColorList (updateColor){
@@ -153,15 +137,7 @@ class App extends React.Component {
         let colorList = updateColorList.length===0 ? '': 'color='+updateColorList.toString()+'&';
         let offset = this.state.offset === 0 ? '': 'offset='+this.state.offset;
         let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList+offset;
-        console.log(url);
-        fetch(url).then(res => {
-          return res.json()
-        }).then(res => {
-          this.setState({
-            data: res
-          })
-        })
-
+        this.fetchListing(url);
     }
 
   updateOffset (newOffset){
@@ -174,14 +150,7 @@ class App extends React.Component {
     let designerList = this.state.designerList.length===0 ? '': 'brand='+this.state.designerList.toString()+'&';
     let colorList = this.state.colorList.length===0 ? '': 'color='+this.state.colorList.toString()+'&';
     let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList+offset;
-    console.log(url);
-    fetch(url).then(res => {
-      return res.json()
-    }).then(res => {
-      this.setState({
-        data: res
-      })
-    })
+    this.fetchListing(url);
   }
 
   changeProductsView (productViewChecked){

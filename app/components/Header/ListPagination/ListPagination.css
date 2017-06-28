@@ -1,13 +1,14 @@
 .pagenationBox {
-  flex: 1;
+  order:3;
   text-align: right;
-  align-self: baseline;
 }
 .pagenationBoxUl {
   list-style: none;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-end;
   margin: 0px;
+}
+@media (max-width: 949px) {
+  .pagenationBox {
+    order: 3;
+  }
 }

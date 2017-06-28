@@ -10,13 +10,8 @@
 .wrap {
   margin: 5rem auto;
   background-color: #fff;
-  width: 75%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  width: 40%;
+ text-align: center;
   box-sizing: border-box;
   padding: 3%;
 }

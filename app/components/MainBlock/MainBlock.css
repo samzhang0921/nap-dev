@@ -2,7 +2,11 @@
   box-sizing: border-box;
   border-bottom: 1px dotted #999;
   margin-bottom: 30px;
+  display: flex;
 }
-.clear {
-  clear: both;
+@media (max-width: 949px) {
+  .MainBlock {
+    width: 100%;
+    flex-wrap: wrap;
+  }
 }

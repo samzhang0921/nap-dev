@@ -1,6 +1,5 @@
 .wraper {
   max-width: 950px;
-    min-width: 950px;
     margin: 0 auto 20px
 }
 ol, ul {
@@ -12,4 +11,10 @@ ol, ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+@media (max-width: 949px) {
+  .wraper {
+    width: 94%;
+    margin: 0 auto 20px
+  }
 }

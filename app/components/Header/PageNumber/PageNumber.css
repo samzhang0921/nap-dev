@@ -26,14 +26,14 @@
 }
 
 .pagination--1 {
-  border-width: 4.5px 7.8px 4.5px 0;
+  border-width: 7.5px 9.8px 5.5px 0;
   border-color: transparent #000 transparent transparent;
   margin-bottom: 5px;
   border-style: solid;
 }
 
 .pagination-0 {
-  border-width: 4.5px 0 4.5px 7.8px;
+  border-width: 7.5px 0 5.5px 9.8px;
   border-color: transparent transparent transparent #000;
   margin-bottom: 5px;
   border-style: solid;

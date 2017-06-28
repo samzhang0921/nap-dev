@@ -1,5 +1,5 @@
 .ListTitleAndTotal {
-  flex: 2;
+  order: 2;
   text-align: center;
   align-self: baseline;
 }
@@ -33,4 +33,11 @@ h1 {
   padding: 0 15px;
   color: #666;
   background-color: white;
+}
+@media (max-width: 949px) {
+  .ListTitleAndTotal {
+    order: 1;
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }

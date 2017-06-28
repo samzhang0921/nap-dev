@@ -1,5 +1,11 @@
 .ListViewAndSort {
-  flex: 1;
+  order: 1;
   align-self: baseline;
   display: flex;
+}
+@media (max-width: 949px) {
+  .ListViewAndSort {
+    order: 2;    
+    align-self: baseline;
+  }
 }

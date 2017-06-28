@@ -33,9 +33,10 @@ export default class QuickView extends React.Component {
       <div onClick={this.showComponent} className={style.overlay}>
             <div className={style.wrap}>
               <h2>{this.state.quickProduct.designer}</h2>
-              <h4>{this.state.quickProduct.name}</h4>
+              <h3>{this.state.quickProduct.name}</h3>
+              <h4>{this.state.quickProduct.price}</h4>
               <div>
-              {!this.state.quickProduct.images.large?
+              {!this.state.quickProduct.images?
                 null :
                 <img src={this.state.quickProduct.images.large} alt={this.state.quickProduct.name}/>
               }
