@@ -2,7 +2,9 @@ import React from 'react';
 import {render} from 'react-dom';
 import style from './ListPagination.css';
 import PageNumber from '../PageNumber/PageNumber';
-export default class ListPagination extends React.Component {
+import PropTypes from 'prop-types';
+
+class ListPagination extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -72,3 +74,5 @@ export default class ListPagination extends React.Component {
     )
   }
 }
+
+export default ListPagination;

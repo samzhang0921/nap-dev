@@ -7,8 +7,7 @@
     "dev": "concurrently \"npm run watch:server\" \"npm run watch:client\"",
     "watch:server": "nodemon",
     "watch:client": "webpack --progress --colors --watch",
-    "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test": "jest"
   },
   "author": "sam",
   "license": "ISC",
@@ -20,7 +19,6 @@
     "lodash": "^2.4.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.0",
-    "react-dom": "^15.6.0",
     "request": "^2.46.0"
   },
   "devDependencies": {
@@ -35,18 +33,22 @@
     "css-loader": "^0.28.4",
     "enzyme": "^2.9.1",
     "extract-text-webpack-plugin": "^2.1.2",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^20.0.4",
+    "jest-cli": "^20.0.4",
     "json-loader": "^0.5.4",
     "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.6.0",
-    "sinon": "^2.3.5",
-    "sion": "0.0.1",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "sinon": "^2.3.6",
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1"
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(css|less|scss|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/CSSStub.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/CSSStub.js",
+      "\\.(css|less|sass)$": "identity-obj-proxy"
     }
   }
 }

@@ -10,10 +10,7 @@ export default class Designer extends React.Component {
     };
     this.getDesigner = this.getDesigner.bind(this);
   }
-
-  // shouldComponentUpdate (nextProps, nextState){
-  //   return nextState.selectBox !== nextProps.clearClicked ;
-  // }
+  
   componentWillUpdate(nextProps, nextState){
     if (this.props.clearClicked !== nextProps.clearClicked){
       this.setState({

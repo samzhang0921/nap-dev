@@ -1,8 +1,6 @@
 import { shallow, render, mount } from 'enzyme';
 import Header from './index';
 import React from 'react';
-import { expect } from 'chai';
-
 describe('Header', () => {
   const props = {
     data: {
@@ -18,7 +16,7 @@ describe('Header', () => {
   const updateSort = jest.fn();
 
   it('should render a ul', () => {
-      const wrapper = mount(
+      const wrapper = mount((
         < Header
         offset = {props.data.offset}
         limit = {props.data.limit}
@@ -29,11 +27,11 @@ describe('Header', () => {
         updateOffset = {updateOffset}
         updateSort = {updateSort}
         />
-      );
-      expect(wrapper.find('select')).to.have.length(1);
-      expect(wrapper.find('h1')).to.have.length(1);
-      expect(wrapper.find('h1').text()).to.contain("what's new");
-      expect(wrapper.find('ul')).to.have.length(1);
+      ));
+      expect(wrapper.find('select')).toHaveLength(1);
+      expect(wrapper.find('h1')).toHaveLength(1);
+      expect(wrapper.find('h1').text()).toContain("what's new");
+      expect(wrapper.find('ul')).toHaveLength(1);
   });
 
 });

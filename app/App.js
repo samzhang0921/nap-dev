@@ -158,14 +158,15 @@ class App extends React.Component {
   }
 
   render() {
-    const totalPage = Math.ceil(this.state.data.total / this.state.data.limit);
-    const currentPage = parseInt(Math.floor(this.state.data.offset / this.state.data.limit)) + 1;
+    const { total,limit, offset } = this.state.data;
+    const totalPage = Math.ceil(total / limit);
+    const currentPage = parseInt(Math.floor(offset / limit)) + 1;
     return (
       < div className = {style.wraper} >
           < Header
-          offset = {this.state.data.offset}
-          limit = {this.state.data.limit}
-          total = {this.state.data.total}
+          offset = {offset}
+          limit = {limit}
+          total = {total}
           totalPage ={totalPage}
           currentPage = {currentPage}
           changeProductsView = {this.changeProductsView}
