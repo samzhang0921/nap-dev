@@ -11,7 +11,9 @@ export default class QuickView extends React.Component {
   }
   showComponent() {
     this.props.showComponent();
+    this.props.toggleImage();
    }
+
    componentDidMount() {
      console.log('componentDidMount,,quickProduct');
      const productID = this.props.id;
@@ -35,6 +37,7 @@ export default class QuickView extends React.Component {
               <h2>{this.state.quickProduct.designer}</h2>
               <h3>{this.state.quickProduct.name}</h3>
               <h4>{this.state.quickProduct.price}</h4>
+              <div className={style.close}></div>
               <div>
               {!this.state.quickProduct.images?
                 null :

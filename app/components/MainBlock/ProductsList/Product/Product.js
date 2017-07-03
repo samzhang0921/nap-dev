@@ -35,7 +35,7 @@ export default class Product extends React.Component {
         <img src={finalImageUrl}/>
             <div className={style.quickView} onClick={this.showComponent}>Quick View</div>
             {this.state.showComponent ?
-          <QuickView  showComponent={this.showComponent} id={this.props.product.sku}/> :
+          <QuickView  showComponent={this.showComponent} id={this.props.product.sku} toggleImage={this.toggleImage}/> :
           null
        }
         </div>

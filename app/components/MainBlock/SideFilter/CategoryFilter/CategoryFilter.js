@@ -6,6 +6,8 @@ import Category from '../Category/Category';
 export default class CategoryFilter extends React.Component {
   constructor(props) {
     super(props);
+
+  // the test haven't provide the categoryList data ,  that's whay I add here
     this.state = {
       categoryList: [
         {

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Designer should match its snapshot with data 1`] = `
+<li
+  data-designer-id={undefined}
+  onClick={[Function]}
+>
+  <span
+    className="filterCheckbox"
+  />
+  <div
+    className="designer"
+  >
+    <span />
+  </div>
+  <div />
+</li>
+`;
+
+exports[`Designer should pass a selected value to the onChange function 1`] = `
+<li
+  onClick={[Function]}
+>
+  <span
+    className="filterCheckbox"
+  />
+  <div
+    className="designer"
+  >
+    <span />
+  </div>
+  <div />
+</li>
+`;
+
+exports[`Designer should render a todo item  1`] = `
+<li
+  onClick={[Function]}
+>
+  <span
+    className="filterCheckbox"
+  />
+  <div
+    className="designer"
+  >
+    <span />
+  </div>
+  <div />
+</li>
+`;

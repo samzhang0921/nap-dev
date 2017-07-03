@@ -372,7 +372,7 @@ module.exports = {"listItem":"Product__listItem___U9Sor","designer":"Product__de
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"overlay":"QuickView__overlay___XnnAK","wrap":"QuickView__wrap___3WmXY"};
+module.exports = {"overlay":"QuickView__overlay___XnnAK","wrap":"QuickView__wrap___3WmXY","close":"QuickView__close___Qc8Ab"};
 
 /***/ }),
 
@@ -1936,7 +1936,7 @@ var Product = function (_React$Component) {
             { className: _Product2.default.quickView, onClick: this.showComponent },
             'Quick View'
           ),
-          this.state.showComponent ? _react2.default.createElement(_QuickView2.default, { showComponent: this.showComponent, id: this.props.product.sku }) : null
+          this.state.showComponent ? _react2.default.createElement(_QuickView2.default, { showComponent: this.showComponent, id: this.props.product.sku, toggleImage: this.toggleImage }) : null
         ),
         _react2.default.createElement(
           'div',
@@ -2016,6 +2016,7 @@ var QuickView = function (_React$Component) {
     key: 'showComponent',
     value: function showComponent() {
       this.props.showComponent();
+      this.props.toggleImage();
     }
   }, {
     key: 'componentDidMount',
@@ -2059,6 +2060,7 @@ var QuickView = function (_React$Component) {
             null,
             this.state.quickProduct.price
           ),
+          _react2.default.createElement('div', { className: _QuickView2.default.close }),
           _react2.default.createElement(
             'div',
             null,

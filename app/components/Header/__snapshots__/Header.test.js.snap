@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match its snapshot with data 1`] = `
+<div
+  className="headerContainer"
+>
+  <div
+    className="ListViewAndSort"
+  >
+    <div>
+      <button
+        className="ListView"
+        onClick={[Function]}
+      >
+        Product View
+      </button>
+    </div>
+    <div
+      className="sortBy"
+    >
+      <select
+        name="sortOrder"
+        onChange={[Function]}
+      >
+        <option
+          value="sort"
+        >
+          Sort by
+        </option>
+        <option
+          value="low"
+        >
+          Price Low to High
+        </option>
+        <option
+          value="high"
+        >
+          Price High to Low
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    className="ListTitleAndTotal"
+  >
+    <h1>
+      what's new
+    </h1>
+    <div
+      className="resultBox"
+    >
+      <div
+        className="resultsBox"
+      >
+        <span>
+           Results
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="pagenationBox"
+  >
+    <ul
+      className="pagenationBoxUl"
+    >
+      <li
+        className="pagination--1 pagenationBoxLi"
+        onClick={[Function]}
+      >
+        <span>
+          
+        </span>
+      </li>
+      <li
+        className="pagination-1 pagenationBoxLi"
+        onClick={[Function]}
+      >
+        <span>
+          1
+        </span>
+      </li>
+      <li
+        className="pagination-dot pagenationBoxLi"
+        onClick={[Function]}
+      >
+        <span>
+          ...
+        </span>
+      </li>
+      <li
+        className="pagination-0 pagenationBoxLi"
+        onClick={[Function]}
+      >
+        <span>
+          
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`should render a todo item  1`] = `
+<div
+  className="headerContainer"
+>
+  <ListViewAndSort />
+  <ListTitleAndTotal />
+  <ListPagination />
+</div>
+`;

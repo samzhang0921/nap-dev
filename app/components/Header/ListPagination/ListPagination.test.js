@@ -2,7 +2,6 @@ import { mount } from 'enzyme';
 import ListPagination from './ListPagination';
 import React from 'react';
 import sinon from 'sinon';
-// import { expect } from 'chai';
 
 describe('ListPagination', () => {
   const totalPage = 10;
