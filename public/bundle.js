@@ -1144,6 +1144,9 @@ var App = function (_React$Component) {
       var cat = newCategory === 0 ? '' : 'cat=' + newCategory + '&';
       var url = "http://127.0.0.1:3000/api/en/shop?" + cat;
       this.fetchListing(url);
+      this.setState({
+        categoryRefresh: !this.state.categoryRefresh
+      });
     }
   }, {
     key: 'updateDesignerList',
@@ -1921,8 +1924,8 @@ var Product = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var pview = this.state.mouseOver ? this.props.outfit : this.props.pview;
-      var outfit = this.state.mouseOver ? this.props.pview : this.props.outfit;
+      var pview = this.state.mouseOver ? this.props.product.image.outfit : this.props.product.image.pview;
+      var outfit = this.state.mouseOver ? this.props.product.image.pview : this.props.product.image.outfit;
       var finalImageUrl = this.props.productViewChecked ? pview : outfit;
       return _react2.default.createElement(
         'li',
@@ -2041,7 +2044,7 @@ var QuickView = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { onClick: this.showComponent, className: _QuickView2.default.overlay },
+        { className: _QuickView2.default.overlay },
         _react2.default.createElement(
           'div',
           { className: _QuickView2.default.wrap },
@@ -2060,7 +2063,7 @@ var QuickView = function (_React$Component) {
             null,
             this.state.quickProduct.price
           ),
-          _react2.default.createElement('div', { className: _QuickView2.default.close }),
+          _react2.default.createElement('div', { className: _QuickView2.default.close, onClick: this.showComponent }),
           _react2.default.createElement(
             'div',
             null,
@@ -2146,7 +2149,7 @@ var ProductsList = function (_React$Component) {
           'ul',
           null,
           products.map(function (pid) {
-            return _react2.default.createElement(_Product2.default, { productViewChecked: _this2.props.productViewChecked, key: pid.sku, product: pid, outfit: pid.image.outfit, pview: pid.image.pview });
+            return _react2.default.createElement(_Product2.default, { productViewChecked: _this2.props.productViewChecked, key: pid.sku, product: pid });
           })
         )
       );
@@ -2269,6 +2272,7 @@ var CategoryFilter = function (_React$Component) {
   function CategoryFilter(props) {
     _classCallCheck(this, CategoryFilter);
 
+    // the test haven't provide the categoryList data ,  that's whay I add here
     var _this = _possibleConstructorReturn(this, (CategoryFilter.__proto__ || Object.getPrototypeOf(CategoryFilter)).call(this, props));
 
     _this.state = {
@@ -2399,14 +2403,14 @@ var Color = function (_React$Component) {
       var checkBox = this.state.selectBox ? _Color2.default.colorCheckedbox : _Color2.default.colorCheckbox;
       return _react2.default.createElement(
         'li',
-        { 'data-category-id': this.props.colorItem.id, onClick: function onClick() {
-            return _this2.getColor(_this2.props.colorItem.id);
+        { 'data-category-id': this.props.id, onClick: function onClick() {
+            return _this2.getColor(_this2.props.id);
           } },
         _react2.default.createElement('span', { className: checkBox }),
         _react2.default.createElement(
           'span',
           { className: _Color2.default.colorName },
-          this.props.colorItem.name
+          this.props.name
         ),
         _react2.default.createElement('div', { className: _Color2.default.clear })
       );
@@ -2521,7 +2525,8 @@ var ColorFilter = function (_React$Component) {
           this.props.colorList.map(function (pColor) {
             return _react2.default.createElement(_Color2.default, {
               key: pColor.id,
-              colorItem: pColor,
+              id: pColor.id,
+              name: pColor.name,
               updateColorList: _this2.props.updateColorList,
               categoryRefresh: _this2.props.categoryRefresh,
               clearClicked: _this2.state.clearClicked

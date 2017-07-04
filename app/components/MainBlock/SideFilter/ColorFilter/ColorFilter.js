@@ -35,7 +35,8 @@ render() {
         {this.props.colorList.map((pColor) => {
           return <Color
           key = {pColor.id}
-          colorItem = {pColor}
+          id = {pColor.id}
+          name = {pColor.name}
           updateColorList = {this.props.updateColorList}
           categoryRefresh={this.props.categoryRefresh}
           clearClicked = {this.state.clearClicked}

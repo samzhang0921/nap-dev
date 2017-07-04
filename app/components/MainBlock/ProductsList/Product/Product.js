@@ -26,8 +26,8 @@ export default class Product extends React.Component {
     }
 
   render() {
-    const pview = this.state.mouseOver? this.props.outfit : this.props.pview;
-    const outfit = this.state.mouseOver? this.props.pview : this.props.outfit;
+    const pview = this.state.mouseOver? this.props.product.image.outfit : this.props.product.image.pview;
+    const outfit = this.state.mouseOver? this.props.product.image.pview : this.props.product.image.outfit;
     const finalImageUrl= this.props.productViewChecked? pview : outfit;
     return (
       <li className = {style.listItem}>

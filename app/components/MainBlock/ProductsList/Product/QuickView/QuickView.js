@@ -32,12 +32,12 @@ export default class QuickView extends React.Component {
 
   render() {
     return (
-      <div onClick={this.showComponent} className={style.overlay}>
+      <div className={style.overlay}>
             <div className={style.wrap}>
               <h2>{this.state.quickProduct.designer}</h2>
               <h3>{this.state.quickProduct.name}</h3>
               <h4>{this.state.quickProduct.price}</h4>
-              <div className={style.close}></div>
+              <div className={style.close} onClick={this.showComponent}></div>
               <div>
               {!this.state.quickProduct.images?
                 null :

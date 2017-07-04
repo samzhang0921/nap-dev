@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should match its snapshot with items 1`] = `
+exports[`SideFilter should match its snapshot with items 1`] = `
 <div
   className="sideFilter"
 >
@@ -74,22 +74,241 @@ exports[`should match its snapshot with items 1`] = `
   <div
     className="DesignerFilter"
   >
-    Loading
+    <h4>
+      Designer
+    </h4>
+    <a
+      className="clearFilter"
+      onClick={[Function]}
+    >
+      Clear
+    </a>
+    <ul
+      className="scrollPanel"
+    >
+      <li
+        data-designer-id={1643}
+        onClick={[Function]}
+      >
+        <span
+          className="filterCheckbox"
+        />
+        <div
+          className="designer"
+        >
+          <span>
+            A.P.C. Atelier de Production et de Création
+          </span>
+        </div>
+        <div />
+      </li>
+    </ul>
   </div>
   <div
     className="ColorFilter"
   >
-    Loading
+    <h4>
+       COLOR 
+    </h4>
+    <a
+      className="clearFilter"
+      onClick={[Function]}
+    >
+      Clear
+    </a>
+    <ul>
+      <li
+        data-category-id={2}
+        onClick={[Function]}
+      >
+        <span
+          className="colorCheckbox"
+        />
+        <span
+          className="colorName"
+        >
+          black
+        </span>
+        <div
+          className="clear"
+        />
+      </li>
+    </ul>
   </div>
 </div>
 `;
 
-exports[`should render a todo item  1`] = `
-<div
-  className="sideFilter"
+exports[`SideFilter should mount item  1`] = `
+<SideFilter
+  data={Array []}
 >
-  <CategoryFilter />
-  <DesignerFilter />
-  <ColorFilter />
-</div>
+  <div
+    className="sideFilter"
+  >
+    <CategoryFilter>
+      <div
+        className="CatFilterList"
+      >
+        <Category
+          Category={
+            Object {
+              "id": 0,
+              "name": "Clothing",
+            }
+          }
+        >
+          <div
+            className="filterItem"
+            data-category-id={0}
+            onClick={[Function]}
+          >
+            Clothing
+          </div>
+        </Category>
+        <Category
+          Category={
+            Object {
+              "id": 40,
+              "name": "Beachwear",
+            }
+          }
+        >
+          <div
+            className="filterItem"
+            data-category-id={40}
+            onClick={[Function]}
+          >
+            Beachwear
+          </div>
+        </Category>
+        <Category
+          Category={
+            Object {
+              "id": 48,
+              "name": "Coat",
+            }
+          }
+        >
+          <div
+            className="filterItem"
+            data-category-id={48}
+            onClick={[Function]}
+          >
+            Coat
+          </div>
+        </Category>
+        <Category
+          Category={
+            Object {
+              "id": 46,
+              "name": "Dress",
+            }
+          }
+        >
+          <div
+            className="filterItem"
+            data-category-id={46}
+            onClick={[Function]}
+          >
+            Dress
+          </div>
+        </Category>
+        <Category
+          Category={
+            Object {
+              "id": 44,
+              "name": "Jackets",
+            }
+          }
+        >
+          <div
+            className="filterItem"
+            data-category-id={44}
+            onClick={[Function]}
+          >
+            Jackets
+          </div>
+        </Category>
+        <Category
+          Category={
+            Object {
+              "id": 55,
+              "name": "Jeans",
+            }
+          }
+        >
+          <div
+            className="filterItem"
+            data-category-id={55}
+            onClick={[Function]}
+          >
+            Jeans
+          </div>
+        </Category>
+        <Category
+          Category={
+            Object {
+              "id": 42,
+              "name": "Pants",
+            }
+          }
+        >
+          <div
+            className="filterItem"
+            data-category-id={42}
+            onClick={[Function]}
+          >
+            Pants
+          </div>
+        </Category>
+        <Category
+          Category={
+            Object {
+              "id": 39,
+              "name": "Top",
+            }
+          }
+        >
+          <div
+            className="filterItem"
+            data-category-id={39}
+            onClick={[Function]}
+          >
+            Top
+          </div>
+        </Category>
+        <Category
+          Category={
+            Object {
+              "id": 49,
+              "name": "Wrap",
+            }
+          }
+        >
+          <div
+            className="filterItem"
+            data-category-id={49}
+            onClick={[Function]}
+          >
+            Wrap
+          </div>
+        </Category>
+      </div>
+    </CategoryFilter>
+    <DesignerFilter>
+      <div
+        className="DesignerFilter"
+      >
+        Loading
+      </div>
+    </DesignerFilter>
+    <ColorFilter>
+      <div
+        className="ColorFilter"
+      >
+        Loading
+      </div>
+    </ColorFilter>
+  </div>
+</SideFilter>
 `;

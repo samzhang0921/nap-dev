@@ -1,17 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should match its snapshot with items 1`] = `
+exports[`DesignerFilter should match its snapshot with items 1`] = `
 <div
   className="DesignerFilter"
 >
-  Loading
+  <h4>
+    Designer
+  </h4>
+  <a
+    className="clearFilter"
+    onClick={[Function]}
+  >
+    Clear
+  </a>
+  <ul
+    className="scrollPanel"
+  >
+    <li
+      data-designer-id={1643}
+      onClick={[Function]}
+    >
+      <span
+        className="filterCheckbox"
+      />
+      <div
+        className="designer"
+      >
+        <span>
+          A.P.C. Atelier de Production et de Création
+        </span>
+      </div>
+      <div />
+    </li>
+  </ul>
 </div>
 `;
 
-exports[`should render a todo item  1`] = `
-<div
-  className="DesignerFilter"
+exports[`DesignerFilter should mount item  1`] = `
+<DesignerFilter
+  data={Array []}
 >
-  Loading
-</div>
+  <div
+    className="DesignerFilter"
+  >
+    Loading
+  </div>
+</DesignerFilter>
 `;

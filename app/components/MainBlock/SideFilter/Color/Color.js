@@ -28,9 +28,9 @@ componentWillUpdate(nextProps, nextState){
 render(){
   const checkBox = this.state.selectBox? style.colorCheckedbox: style.colorCheckbox;
   return (
-       <li data-category-id={this.props.colorItem.id} onClick={()=>this.getColor(this.props.colorItem.id)}>
+       <li data-category-id={this.props.id} onClick={()=>this.getColor(this.props.id)}>
          <span className={checkBox}></span>
-         <span className={style.colorName}>{this.props.colorItem.name}</span>
+         <span className={style.colorName}>{this.props.name}</span>
          <div className={style.clear}></div>
      </li>
   )

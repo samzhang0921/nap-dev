@@ -4,14 +4,44 @@ exports[`ColorFilter should match its snapshot with items 1`] = `
 <div
   className="ColorFilter"
 >
-  Loading
+  <h4>
+     COLOR 
+  </h4>
+  <a
+    className="clearFilter"
+    onClick={[Function]}
+  >
+    Clear
+  </a>
+  <ul>
+    <li
+      data-category-id={3}
+      onClick={[Function]}
+    >
+      <span
+        className="colorCheckbox"
+      />
+      <span
+        className="colorName"
+      >
+        Blue
+      </span>
+      <div
+        className="clear"
+      />
+    </li>
+  </ul>
 </div>
 `;
 
-exports[`ColorFilter should render a todo item  1`] = `
-<div
-  className="ColorFilter"
+exports[`ColorFilter should mount item  1`] = `
+<ColorFilter
+  data={Array []}
 >
-  Loading
-</div>
+  <div
+    className="ColorFilter"
+  >
+    Loading
+  </div>
+</ColorFilter>
 `;

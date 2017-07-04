@@ -1,38 +1,32 @@
-
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Designer from './Designer';
-import renderer from 'react-test-renderer';
+import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
+import Designer from './Designer';
 
 describe('Designer', () => {
-  const data = ['L', 'b', 'c'];
+  const id =  1643;
+  const name = "A.P.C. Atelier de Production et de Création";
 
-    it('should render a todo item ', () => {
-      const tree = toJson(shallow(<Designer data={[]} />));
-      expect(tree).toMatchSnapshot();
-    });
+  it('should mount item ', () => {
+    const tree = toJson(mount(<Designer data={[]}/>));
+    expect(tree).toMatchSnapshot();
+  });
 
-    it('should match its snapshot with data', () => {
-      const data = ['Learn react', 'rest', 'go out'];
+  it('should match its snapshot with items', () => {
+
+    const tree = renderer.create(<Designer id={id} name={name}/>).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should change class on the onClick function', () => {
+    const onChange = jest.fn();
       const tree = renderer.create(
-        <Designer data={data} />
-      ).toJSON();
-
-      expect(tree).toMatchSnapshot();
+        <Designer />
+      );
+      const component = mount(<Designer id={id} name={name} updateDesignerList={onChange}/>);
+      component.find('li').simulate('click');
+      expect(component.find('.filterCheckedbox')).toHaveLength(1);
     });
-
-    it('should pass a selected value to the onChange function', () => {
-   const tree = renderer.create(
-     <Designer />
-   );
-   const component = shallow(<Designer data={data} />);
-   component.find('li').first().simulate('change', { target: {
-     value: 'Change function' }
-   });
-
-   expect(toJson(component)).toMatchSnapshot();
- });
-
 });

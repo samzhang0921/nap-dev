@@ -72,6 +72,9 @@ class App extends React.Component {
     let cat = newCategory === 0 ? '': 'cat='+newCategory+'&';
     let url = "http://127.0.0.1:3000/api/en/shop?"+cat;
     this.fetchListing(url);
+    this.setState({
+      categoryRefresh: !this.state.categoryRefresh
+    });
   }
 
   updateDesignerList (updateDesigner){

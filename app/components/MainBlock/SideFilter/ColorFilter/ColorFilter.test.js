@@ -1,37 +1,34 @@
-
 import React from 'react';
-import ReactDOM from 'react-dom';
-import ColorFilter from './ColorFilter';
-import renderer from 'react-test-renderer';
+import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
+import ColorFilter from './ColorFilter';
 
 describe('ColorFilter', () => {
-  const data = [ {
-                id:1001,
-                name:"Animal print"
-            },
-            {
-                id:2,
-                name:"black"
-            },
-            {
-                id:3,
-                name:"Blue"
-            }];
-  it('should render a todo item ', () => {
-    const tree = toJson(shallow(<ColorFilter data={[]} />));
+  const pColor =  {
+"id": 3,
+"name": "Blue"
+};
+
+  it('should mount item ', () => {
+    const tree = toJson(mount(<ColorFilter data={[]}/>));
     expect(tree).toMatchSnapshot();
   });
 
   it('should match its snapshot with items', () => {
-    const data = ['a', 'b', 'c'];
-    const tree = renderer.create(
-      <ColorFilter data={data} />
-    ).toJSON();
+
+    const tree = renderer.create(<ColorFilter colorList={[pColor]}/>).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
-
+  it('should change class on the onClick function', () => {
+    const onChange = jest.fn();
+      const tree = renderer.create(
+        <ColorFilter />
+      );
+      const component = mount(<ColorFilter colorList={[pColor]} updateColorList={onChange}/>);
+      component.find('.clearFilter').simulate('click');
+      expect(component.find('.filterCheckedbox')).toHaveLength(0);
+    });
 });

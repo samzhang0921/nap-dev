@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Color should match its snapshot with items 1`] = `
+<li
+  data-category-id={1643}
+  onClick={[Function]}
+>
+  <span
+    className="colorCheckbox"
+  />
+  <span
+    className="colorName"
+  >
+    blue
+  </span>
+  <div
+    className="clear"
+  />
+</li>
+`;
+
+exports[`Color should mount item  1`] = `
+<Color
+  id={Array []}
+>
+  <li
+    data-category-id={Array []}
+    onClick={[Function]}
+  >
+    <span
+      className="colorCheckbox"
+    />
+    <span
+      className="colorName"
+    />
+    <div
+      className="clear"
+    />
+  </li>
+</Color>
+`;

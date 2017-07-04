@@ -1,19 +1,32 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import renderer from 'react-test-renderer';
 import SideFilter from './SideFilter';
 
-it('should render a todo item ', () => {
-  const tree = toJson(shallow(<SideFilter data={[]} />));
-  expect(tree).toMatchSnapshot();
-});
+describe('SideFilter', () => {
+  it('should mount item ', () => {
+    const tree = toJson(mount(<SideFilter data={[]}/>));
+    expect(tree).toMatchSnapshot();
+  });
 
-it('should match its snapshot with items', () => {
-  const data = ['a', 'b', 'c'];
-  const tree = renderer.create(
-    <SideFilter data={data} />
-  ).toJSON();
+  it('should match its snapshot with items', () => {
+    const data1 = [
+      {
+        "id": 1643,
+        "name": {
+          "en": "A.P.C. Atelier de Production et de Création"
+        }
+      }
+    ];
+    const data2 = [
+      {
+        "id": 2,
+        "name": "black"
+      }
+    ];
+    const tree = renderer.create(<SideFilter designerList={data1} colorList={data2}/>).toJSON();
 
-  expect(tree).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
+  });
 });
