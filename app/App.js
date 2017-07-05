@@ -28,8 +28,8 @@ class App extends React.Component {
     this.updateColorList = this.updateColorList.bind(this);
   };
 
-  componentWillMount() {
-    console.log('componentWillMount');
+  componentDidMount() {
+    console.log('componentDidMount ');
     const url = 'http://127.0.0.1:3000/api/en/shop';
     fetchListing(url).then((res) => {
       this.setState({

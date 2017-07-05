@@ -1309,11 +1309,11 @@ var App = function (_React$Component) {
   }
 
   _createClass(App, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
       var _this2 = this;
 
-      console.log('componentWillMount');
+      console.log('componentDidMount ');
       var url = 'http://127.0.0.1:3000/api/en/shop';
       (0, _actions2.default)(url).then(function (res) {
         _this2.setState({
