@@ -1,32 +1,34 @@
 import React from 'react';
-import {mount} from 'enzyme';
+import {
+  mount
+} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import renderer from 'react-test-renderer';
 import QuickView from './QuickView';
 
 describe('QuickView', () => {
-  const data1 = 11
+      const id = 11;
+      const showComponent = jest.fn();
+      const toggleImage = jest.fn();
 
+            it('should match its snapshot with items', () => {
 
-  it('should mount item ', () => {
-    const tree = toJson(mount(<QuickView data={[]}/>));
-    expect(tree).toMatchSnapshot();
-  });
+                const tree = renderer.create( < QuickView
+                  id = {id}
+                  showComponent = {showComponent}
+                  toggleImage = {toggleImage}
+                  />).toJSON();
 
-  it('should match its snapshot with items', () => {
+                  expect(tree).toMatchSnapshot();
+                });
 
-    const tree = renderer.create(<QuickView id={data1}/>).toJSON();
+              it('should change class on the onClick function', () => {
 
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should change class on the onClick function', () => {
-    const onChange = jest.fn();
-      const tree = renderer.create(
-        <QuickView />
-      );
-      const component = mount(<QuickView id={data1} updateDesignerList={onChange}/>);
-      component.find('.quickView').simulate('click');
-      expect(component.find('.overlay')).toHaveLength(0);
-    });
-});
+                  const component = mount( < QuickView
+                    id = {id}
+                    showComponent = {showComponent}
+                    toggleImage = {toggleImage}
+                    />);
+                    component.find('.close').simulate('click'); expect(component.find('img')).toHaveLength(0);
+                  });
+              });

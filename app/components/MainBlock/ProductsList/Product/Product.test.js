@@ -36,10 +36,6 @@ describe('Product', () => {
     }
   }
 
-  it('should mount item ', () => {
-    const tree = toJson(mount(<Product data={[]}/>));
-    expect(tree).toMatchSnapshot();
-  });
 
   it('should match its snapshot with items', () => {
 
@@ -50,11 +46,8 @@ describe('Product', () => {
 
   it('should change class on the onClick function', () => {
     const onChange = jest.fn();
-      const tree = renderer.create(
-        <Product />
-      );
       const component = mount(<Product product={data1} showComponent={onChange}/>);
       component.find('.quickView').simulate('click');
-      expect(component.find('.overlay')).toHaveLength(0);
+      expect(component.find('.overlay')).toHaveLength(1);
     });
 });

@@ -1,16 +1,49 @@
-# NAP Tech Web Dev Test
+# My NAP Test (sam)
+
+node express react product listing page
+
+## Run the Test
+
+npm install
+npm start
+
+## Test
+npm test    (jest snapshots)
+
+## Service started on port 3000
+
+http://127.0.0.1:3000  (default)
+
+### My Product listing
+
+http://127.0.0.1:3000/listing
+
+please aware some products image link was broken by default
+
+### Modified Product lists API
+
+http://127.0.0.1:3000/api/en/shop
+
+### Product details API
+
+http://127.0.0.1:3000/api/product/$id
+
+
+
+
+# ===================== TEST info ===================================
+
+## original TEST Repository
+
+https://github.com/NET-A-PORTER/nap-webdev-test
+
+## NAP Tech Web Dev Test
 
 This is a chance for you to show us how you think we should display our products.
 
 ## Task
 
 * Build a product catalogue experience based on two sample APIs.
-
-### Product lists
-    http://127.0.0.1:3000/api/products
-
-### Product details
-    http://127.0.0.1:3000/api/product/$id  
 
 ### You might want to include
 
@@ -34,14 +67,6 @@ The following are examples of the existing mobile and desktop listing pages:
 You can replicate these or if you think there is something we should be doing, or it should work another way - feel free to be creative but tell us why and what you think we are doing wrong.
 
 
-## Setup
-
-To run the app:
-
-```shell
-$ npm install
-$ npm start
-```
 
 # Apis
 

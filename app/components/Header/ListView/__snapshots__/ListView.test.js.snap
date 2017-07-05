@@ -25,16 +25,3 @@ exports[`ListView should match its snapshot with items 1`] = `
   </button>
 </div>
 `;
-
-exports[`ListView should mount item  1`] = `
-<ListView>
-  <div>
-    <button
-      className="ListView"
-      onClick={[Function]}
-    >
-      Product View
-    </button>
-  </div>
-</ListView>
-`;

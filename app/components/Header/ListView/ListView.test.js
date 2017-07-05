@@ -8,10 +8,6 @@ describe('ListView', () => {
 
   const changeProductsView = jest.fn();
 
-  it('should mount item ', () => {
-    const tree = toJson(mount(<ListView/>));
-    expect(tree).toMatchSnapshot();
-  });
 
   it('should match its snapshot with items', () => {
 

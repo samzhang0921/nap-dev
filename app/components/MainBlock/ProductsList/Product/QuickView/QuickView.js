@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import style from './QuickView.css';
+import fetch from 'isomorphic-fetch';
 export default class QuickView extends React.Component {
   constructor(props) {
     super(props)
@@ -25,7 +26,6 @@ export default class QuickView extends React.Component {
          quickProduct: res
 
        })
- console.log(this.state.quickProduct.images.large);
      })
    };
 

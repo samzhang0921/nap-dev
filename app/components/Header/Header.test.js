@@ -14,11 +14,6 @@ describe('Header', () => {
   const updateOffset = jest.fn();
   const updateSort = jest.fn();
 
-  it('should mount item ', () => {
-    const tree = toJson(mount(<Header />));
-    expect(tree).toMatchSnapshot();
-  });
-
   it('should match its snapshot with items', () => {
 
     const tree = renderer.create(

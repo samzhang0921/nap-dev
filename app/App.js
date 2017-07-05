@@ -2,16 +2,16 @@ import React from 'react';
 import {
   render
 } from 'react-dom';
-import fetch from 'isomorphic-fetch';
+import { default as fetchListing } from '../actions';
 import Header from './components/Header';
 import MainBlock from './components/MainBlock/MainBlock';
 import style from './App.css';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      data: {},
+      data: props.listingdata,
       productViewChecked: false,
       categoryRefresh: false,
       offset: 0,
@@ -19,7 +19,6 @@ class App extends React.Component {
       cat: 0,
       designerList:[],
       colorList:[]
-
     };
     this.changeProductsView = this.changeProductsView.bind(this);
     this.updateOffset = this.updateOffset.bind(this);
@@ -27,26 +26,17 @@ class App extends React.Component {
     this.updateSort = this.updateSort.bind(this);
     this.updateDesignerList = this.updateDesignerList.bind(this);
     this.updateColorList = this.updateColorList.bind(this);
-    this.fetchListing = this.fetchListing.bind(this);
   };
 
-  fetchListing(url) {
-    fetch(url).then(res => {
-      return res.json()
-    }).then(res => {
+  componentWillMount() {
+    console.log('componentWillMount');
+    const url = 'http://127.0.0.1:3000/api/en/shop';
+    fetchListing(url).then((res) => {
       this.setState({
         data: res
-      })
-    })
-  }
-
-  componentDidMount() {
-    console.log('componentDidMount');
-    const url = 'http://127.0.0.1:3000/api/en/shop';
-    this.fetchListing(url);
+      });
+    });
   };
-
-
 
   updateSort (newSort){
     this.setState({
@@ -58,7 +48,11 @@ class App extends React.Component {
     let colorList = this.state.colorList.length===0 ? '': 'color='+this.state.colorList.toString()+'&';
     let offset = this.state.offset === 0 ? '': 'offset='+this.state.offset;
     let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList+offset;
-    this.fetchListing(url);
+    fetchListing(url).then((res) => {
+      this.setState({
+        data: res
+      });
+    });
   }
 
   updateCategory (newCategory){
@@ -71,9 +65,11 @@ class App extends React.Component {
     });
     let cat = newCategory === 0 ? '': 'cat='+newCategory+'&';
     let url = "http://127.0.0.1:3000/api/en/shop?"+cat;
-    this.fetchListing(url);
-    this.setState({
-      categoryRefresh: !this.state.categoryRefresh
+    fetchListing(url).then((res) => {
+      this.setState({
+        data: res,
+        categoryRefresh: !this.state.categoryRefresh
+      });
     });
   }
 
@@ -107,7 +103,11 @@ class App extends React.Component {
     let colorList = this.state.colorList.length===0 ? '': 'color='+this.state.colorList.toString()+'&';
     let offset = this.state.offset === 0 ? '': 'offset='+this.state.offset;
     let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList+offset;
-    this.fetchListing(url);
+    fetchListing(url).then((res) => {
+      this.setState({
+        data: res
+      });
+    });
   }
 
   updateColorList (updateColor){
@@ -140,7 +140,11 @@ class App extends React.Component {
         let colorList = updateColorList.length===0 ? '': 'color='+updateColorList.toString()+'&';
         let offset = this.state.offset === 0 ? '': 'offset='+this.state.offset;
         let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList+offset;
-        this.fetchListing(url);
+        fetchListing(url).then((res) => {
+          this.setState({
+            data: res
+          });
+        });
     }
 
   updateOffset (newOffset){
@@ -153,7 +157,11 @@ class App extends React.Component {
     let designerList = this.state.designerList.length===0 ? '': 'brand='+this.state.designerList.toString()+'&';
     let colorList = this.state.colorList.length===0 ? '': 'color='+this.state.colorList.toString()+'&';
     let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList+offset;
-    this.fetchListing(url);
+    fetchListing(url).then((res) => {
+      this.setState({
+        data: res
+      });
+    });
   }
 
   changeProductsView (productViewChecked){
@@ -161,31 +169,40 @@ class App extends React.Component {
   }
 
   render() {
-    const { total,limit, offset } = this.state.data;
-    const totalPage = Math.ceil(total / limit);
-    const currentPage = parseInt(Math.floor(offset / limit)) + 1;
-    return (
-      < div className = {style.wraper} >
-          < Header
-          offset = {offset}
-          limit = {limit}
-          total = {total}
-          totalPage ={totalPage}
-          currentPage = {currentPage}
-          changeProductsView = {this.changeProductsView}
-          updateOffset = {this.updateOffset}
-          updateSort = {this.updateSort}
-          />
-          <MainBlock
-          data = {this.state.data}
-          productViewChecked = {this.state.productViewChecked}
-          updateCategory = {this.updateCategory}
-          updateDesignerList = {this.updateDesignerList}
-          updateColorList = {this.updateColorList}
-          categoryRefresh = {this.state.categoryRefresh}
-          />
-      </div >
-    );
+
+
+    if (this.state.data) {
+      const { total,limit, offset } = this.state.data;
+      const totalPage = Math.ceil(total / limit);
+      const currentPage = parseInt(Math.floor(offset / limit)) + 1;
+      return (
+        < div className = {style.wraper} >
+            < Header
+            offset = {offset}
+            limit = {limit}
+            total = {total}
+            totalPage ={totalPage}
+            currentPage = {currentPage}
+            changeProductsView = {this.changeProductsView}
+            updateOffset = {this.updateOffset}
+            updateSort = {this.updateSort}
+            />
+            <MainBlock
+            data = {this.state.data}
+            productViewChecked = {this.state.productViewChecked}
+            updateCategory = {this.updateCategory}
+            updateDesignerList = {this.updateDesignerList}
+            updateColorList = {this.updateColorList}
+            categoryRefresh = {this.state.categoryRefresh}
+            />
+        </div >
+      );
+    } else {
+      return (
+        <div>loading</div>
+      );
+    }
+
   }
 }
 

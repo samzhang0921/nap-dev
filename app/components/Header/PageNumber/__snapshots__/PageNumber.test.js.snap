@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageNumber should match its snapshot with props 1`] = `
+<li
+  className="pagination-10 pagenationBoxLi"
+  onClick={[Function]}
+>
+  <span>
+    10
+  </span>
+</li>
+`;
+
+exports[`PageNumber should mount without props  1`] = `
+<PageNumber>
+  <li
+    className="pagenationBoxCurrentPage"
+    onClick={[Function]}
+  >
+    <span />
+  </li>
+</PageNumber>
+`;

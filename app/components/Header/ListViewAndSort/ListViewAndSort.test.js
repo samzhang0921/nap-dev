@@ -9,11 +9,6 @@ describe('ListViewAndSort', () => {
   const changeProductsView = jest.fn();
   const updateSort = jest.fn();
 
-  it('should mount item ', () => {
-    const tree = toJson(mount(<ListViewAndSort/>));
-    expect(tree).toMatchSnapshot();
-  });
-
   it('should match its snapshot with items', () => {
 
     const tree = renderer.create(<ListViewAndSort changeProductsView={changeProductsView} updateSort={updateSort}/>).toJSON();

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuickView should match its snapshot with items 1`] = `
+<div
+  className="overlay"
+>
+  <div
+    className="wrap"
+  >
+    <h2 />
+    <h3 />
+    <h4 />
+    <div
+      className="close"
+      onClick={[Function]}
+    />
+    <div />
+  </div>
+</div>
+`;

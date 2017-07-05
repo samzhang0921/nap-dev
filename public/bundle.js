@@ -18,9 +18,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(7);
 
-var _Designer = __webpack_require__(121);
+var _ColorFilter = __webpack_require__(121);
 
-var _Designer2 = _interopRequireDefault(_Designer);
+var _ColorFilter2 = _interopRequireDefault(_ColorFilter);
+
+var _Color = __webpack_require__(101);
+
+var _Color2 = _interopRequireDefault(_Color);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30,70 +34,89 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Designer = function (_React$Component) {
-  _inherits(Designer, _React$Component);
+var ColorFilter = function (_React$Component) {
+  _inherits(ColorFilter, _React$Component);
 
-  function Designer(props) {
-    _classCallCheck(this, Designer);
+  function ColorFilter(props) {
+    _classCallCheck(this, ColorFilter);
 
-    var _this = _possibleConstructorReturn(this, (Designer.__proto__ || Object.getPrototypeOf(Designer)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ColorFilter.__proto__ || Object.getPrototypeOf(ColorFilter)).call(this, props));
 
     _this.state = {
-      selectBox: false
+      clearClicked: false
     };
-    _this.getDesigner = _this.getDesigner.bind(_this);
+    _this.clearColor = _this.clearColor.bind(_this);
     return _this;
   }
 
-  _createClass(Designer, [{
-    key: 'componentWillUpdate',
-    value: function componentWillUpdate(nextProps, nextState) {
-      if (this.props.clearClicked !== nextProps.clearClicked) {
-        this.setState({
-          selectBox: false
-        });
-      }
-    }
-  }, {
-    key: 'getDesigner',
-    value: function getDesigner(designer) {
-      var selectBox = this.state.selectBox;
+  _createClass(ColorFilter, [{
+    key: 'clearColor',
+    value: function clearColor() {
+      var clearClicked = this.state.clearClicked;
 
       this.setState({
-        selectBox: !selectBox
+        clearClicked: !clearClicked
       });
-      this.props.updateDesignerList(designer);
+      this.props.updateColorList(0);
+    }
+  }, {
+    key: 'componentWillUpdate',
+    value: function componentWillUpdate(nextProps, nextState) {
+      if (this.props.categoryRefresh !== nextProps.categoryRefresh) {
+        this.setState({
+          clearClicked: !this.state.clearClicked
+        });
+      }
     }
   }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      var checkBox = this.state.selectBox ? _Designer2.default.filterCheckedbox : _Designer2.default.filterCheckbox;
-      return _react2.default.createElement(
-        'li',
-        { 'data-designer-id': this.props.designerId, onClick: function onClick() {
-            return _this2.getDesigner(_this2.props.designerId);
-          } },
-        _react2.default.createElement('span', { className: checkBox }),
-        _react2.default.createElement(
+      if (!this.props.colorList) {
+        return _react2.default.createElement(
           'div',
-          { className: _Designer2.default.designer },
-          _react2.default.createElement(
-            'span',
-            null,
-            this.props.designerName
-          )
+          { className: _ColorFilter2.default.ColorFilter },
+          'Loading'
+        );
+      };
+      return _react2.default.createElement(
+        'div',
+        { className: _ColorFilter2.default.ColorFilter },
+        _react2.default.createElement(
+          'h4',
+          null,
+          ' COLOR '
         ),
-        _react2.default.createElement('div', null)
+        _react2.default.createElement(
+          'a',
+          { className: _ColorFilter2.default.clearFilter, onClick: function onClick() {
+              return _this2.clearColor();
+            } },
+          'Clear'
+        ),
+        _react2.default.createElement(
+          'ul',
+          null,
+          this.props.colorList.map(function (pColor) {
+            return _react2.default.createElement(_Color2.default, {
+              key: pColor.id,
+              id: pColor.id,
+              name: pColor.name,
+              updateColorList: _this2.props.updateColorList,
+              categoryRefresh: _this2.props.categoryRefresh,
+              clearClicked: _this2.state.clearClicked
+            });
+          })
+        )
       );
     }
   }]);
 
-  return Designer;
+  return ColorFilter;
 }(_react2.default.Component);
 
-exports.default = Designer;
+exports.default = ColorFilter;
 
 /***/ }),
 
@@ -115,11 +138,104 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(7);
 
-var _DesignerFilter = __webpack_require__(122);
+var _Color = __webpack_require__(122);
+
+var _Color2 = _interopRequireDefault(_Color);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Color = function (_React$Component) {
+  _inherits(Color, _React$Component);
+
+  function Color(props) {
+    _classCallCheck(this, Color);
+
+    var _this = _possibleConstructorReturn(this, (Color.__proto__ || Object.getPrototypeOf(Color)).call(this, props));
+
+    _this.state = {
+      selectBox: false
+    };
+    _this.getColor = _this.getColor.bind(_this);
+    return _this;
+  }
+
+  _createClass(Color, [{
+    key: 'getColor',
+    value: function getColor(newColor) {
+      var selectBox = this.state.selectBox;
+
+      this.setState({
+        selectBox: !selectBox
+      });
+      this.props.updateColorList(newColor);
+    }
+  }, {
+    key: 'componentWillUpdate',
+    value: function componentWillUpdate(nextProps, nextState) {
+      if (this.props.clearClicked !== nextProps.clearClicked) {
+        this.setState({
+          selectBox: false
+        });
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var checkBox = this.state.selectBox ? _Color2.default.colorCheckedbox : _Color2.default.colorCheckbox;
+      return _react2.default.createElement(
+        'li',
+        { 'data-category-id': this.props.id, onClick: function onClick() {
+            return _this2.getColor(_this2.props.id);
+          } },
+        _react2.default.createElement('span', { className: checkBox }),
+        _react2.default.createElement(
+          'span',
+          { className: _Color2.default.colorName },
+          this.props.name
+        ),
+        _react2.default.createElement('div', { className: _Color2.default.clear })
+      );
+    }
+  }]);
+
+  return Color;
+}(_react2.default.Component);
+
+exports.default = Color;
+
+/***/ }),
+
+/***/ 102:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(7);
+
+var _DesignerFilter = __webpack_require__(123);
 
 var _DesignerFilter2 = _interopRequireDefault(_DesignerFilter);
 
-var _Designer = __webpack_require__(100);
+var _Designer = __webpack_require__(103);
 
 var _Designer2 = _interopRequireDefault(_Designer);
 
@@ -218,7 +334,7 @@ exports.default = DesignerFilter;
 
 /***/ }),
 
-/***/ 102:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -228,43 +344,140 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _DesignerFilter = __webpack_require__(101);
+var _reactDom = __webpack_require__(7);
+
+var _Designer = __webpack_require__(124);
+
+var _Designer2 = _interopRequireDefault(_Designer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Designer = function (_React$Component) {
+  _inherits(Designer, _React$Component);
+
+  function Designer(props) {
+    _classCallCheck(this, Designer);
+
+    var _this = _possibleConstructorReturn(this, (Designer.__proto__ || Object.getPrototypeOf(Designer)).call(this, props));
+
+    _this.state = {
+      selectBox: false
+    };
+    _this.getDesigner = _this.getDesigner.bind(_this);
+    return _this;
+  }
+
+  _createClass(Designer, [{
+    key: 'componentWillUpdate',
+    value: function componentWillUpdate(nextProps, nextState) {
+      if (this.props.clearClicked !== nextProps.clearClicked) {
+        this.setState({
+          selectBox: false
+        });
+      }
+    }
+  }, {
+    key: 'getDesigner',
+    value: function getDesigner(designer) {
+      var selectBox = this.state.selectBox;
+
+      this.setState({
+        selectBox: !selectBox
+      });
+      this.props.updateDesignerList(designer);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var checkBox = this.state.selectBox ? _Designer2.default.filterCheckedbox : _Designer2.default.filterCheckbox;
+      return _react2.default.createElement(
+        'li',
+        { 'data-designer-id': this.props.designerId, onClick: function onClick() {
+            return _this2.getDesigner(_this2.props.designerId);
+          } },
+        _react2.default.createElement('span', { className: checkBox }),
+        _react2.default.createElement(
+          'div',
+          { className: _Designer2.default.designer },
+          _react2.default.createElement(
+            'span',
+            null,
+            this.props.designerName
+          )
+        ),
+        _react2.default.createElement('div', null)
+      );
+    }
+  }]);
+
+  return Designer;
+}(_react2.default.Component);
+
+exports.default = Designer;
+
+/***/ }),
+
+/***/ 104:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+      value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _DesignerFilter = __webpack_require__(102);
 
 var _DesignerFilter2 = _interopRequireDefault(_DesignerFilter);
 
-var _CategoryFilter = __webpack_require__(97);
+var _CategoryFilter = __webpack_require__(98);
 
 var _CategoryFilter2 = _interopRequireDefault(_CategoryFilter);
 
-var _ColorFilter = __webpack_require__(99);
+var _ColorFilter = __webpack_require__(100);
 
 var _ColorFilter2 = _interopRequireDefault(_ColorFilter);
 
-var _SideFilter = __webpack_require__(123);
+var _SideFilter = __webpack_require__(125);
 
 var _SideFilter2 = _interopRequireDefault(_SideFilter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SideFilter = function SideFilter(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: _SideFilter2.default.sideFilter },
-    _react2.default.createElement(_CategoryFilter2.default, { updateCategory: props.updateCategory }),
-    _react2.default.createElement(_DesignerFilter2.default, { designerList: props.designerList, updateDesignerList: props.updateDesignerList, categoryRefresh: props.categoryRefresh }),
-    _react2.default.createElement(_ColorFilter2.default, { updateColorList: props.updateColorList, colorList: props.colorList, categoryRefresh: props.categoryRefresh })
-  );
+      return _react2.default.createElement(
+            'div',
+            { className: _SideFilter2.default.sideFilter },
+            _react2.default.createElement(_CategoryFilter2.default, { updateCategory: props.updateCategory }),
+            _react2.default.createElement(_DesignerFilter2.default, { designerList: props.designerList, updateDesignerList: props.updateDesignerList, categoryRefresh: props.categoryRefresh }),
+            _react2.default.createElement(_ColorFilter2.default, { updateColorList: props.updateColorList, colorList: props.colorList, categoryRefresh: props.categoryRefresh })
+      );
 };
 
 exports.default = SideFilter;
 
 /***/ }),
 
-/***/ 103:
+/***/ 105:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -278,7 +491,7 @@ var _reactDom = __webpack_require__(7);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(84);
+var _App = __webpack_require__(85);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -288,27 +501,11 @@ _reactDom2.default.render(_react2.default.createElement(_App2.default, null), do
 
 /***/ }),
 
-/***/ 105:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-module.exports = {"wraper":"App__wraper___2TLPr"};
-
-/***/ }),
-
-/***/ 106:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-module.exports = {"pagenationBox":"ListPagination__pagenationBox___12FKT","pagenationBoxUl":"ListPagination__pagenationBoxUl___3z-0s"};
-
-/***/ }),
-
 /***/ 107:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"sortBy":"ListSort__sortBy___3-31j"};
+module.exports = {"wraper":"App__wraper___2xg1l"};
 
 /***/ }),
 
@@ -316,7 +513,7 @@ module.exports = {"sortBy":"ListSort__sortBy___3-31j"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"ListTitleAndTotal":"ListTitleAndTotal__ListTitleAndTotal___1wrbM","resultsBox":"ListTitleAndTotal__resultsBox___a4Hum"};
+module.exports = {"pagenationBox":"ListPagination__pagenationBox___6qSOT","pagenationBoxUl":"ListPagination__pagenationBoxUl___2Xx__"};
 
 /***/ }),
 
@@ -324,7 +521,7 @@ module.exports = {"ListTitleAndTotal":"ListTitleAndTotal__ListTitleAndTotal___1w
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"ListView":"ListView__ListView___wOWx8"};
+module.exports = {"sortBy":"ListSort__sortBy___3Qs7e"};
 
 /***/ }),
 
@@ -332,7 +529,7 @@ module.exports = {"ListView":"ListView__ListView___wOWx8"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"ListViewAndSort":"ListViewAndSort__ListViewAndSort___1_rUA"};
+module.exports = {"ListTitleAndTotal":"ListTitleAndTotal__ListTitleAndTotal___2u3-N","resultsBox":"ListTitleAndTotal__resultsBox___3HKjx"};
 
 /***/ }),
 
@@ -340,7 +537,7 @@ module.exports = {"ListViewAndSort":"ListViewAndSort__ListViewAndSort___1_rUA"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"pagenationBoxLi":"PageNumber__pagenationBoxLi___24FmS","pagenationBoxCurrentPage":"PageNumber__pagenationBoxCurrentPage___3sGk7","pagination-dot":"PageNumber__pagination-dot___3wBl0","pagination--1":"PageNumber__pagination--1___dglUQ","pagination-0":"PageNumber__pagination-0___1MeTq"};
+module.exports = {"ListViewAndSort":"ListViewAndSort__ListViewAndSort___1MDfY"};
 
 /***/ }),
 
@@ -348,7 +545,7 @@ module.exports = {"pagenationBoxLi":"PageNumber__pagenationBoxLi___24FmS","pagen
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"headerContainer":"header__headerContainer___2X29a"};
+module.exports = {"ListView":"ListView__ListView___3zPbn"};
 
 /***/ }),
 
@@ -356,7 +553,7 @@ module.exports = {"headerContainer":"header__headerContainer___2X29a"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"MainBlock":"MainBlock__MainBlock___1e6oB"};
+module.exports = {"pagenationBoxLi":"PageNumber__pagenationBoxLi___2o7CN","pagenationBoxCurrentPage":"PageNumber__pagenationBoxCurrentPage___3W6XT","pagination-dot":"PageNumber__pagination-dot___TEOzV","pagination--1":"PageNumber__pagination--1___Bjod1","pagination-0":"PageNumber__pagination-0___2xuyk"};
 
 /***/ }),
 
@@ -364,7 +561,7 @@ module.exports = {"MainBlock":"MainBlock__MainBlock___1e6oB"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"listItem":"Product__listItem___U9Sor","designer":"Product__designer___244-1","quickView":"Product__quickView___q7GlA"};
+module.exports = {"headerContainer":"header__headerContainer___1-Y0z"};
 
 /***/ }),
 
@@ -372,7 +569,7 @@ module.exports = {"listItem":"Product__listItem___U9Sor","designer":"Product__de
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"overlay":"QuickView__overlay___XnnAK","wrap":"QuickView__wrap___3WmXY","close":"QuickView__close___Qc8Ab"};
+module.exports = {"MainBlock":"MainBlock__MainBlock___1qRL8"};
 
 /***/ }),
 
@@ -380,7 +577,7 @@ module.exports = {"overlay":"QuickView__overlay___XnnAK","wrap":"QuickView__wrap
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"productsList":"ProductsList__productsList___11On8","loading":"ProductsList__loading___fryck"};
+module.exports = {"listItem":"Product__listItem___18pz-","designer":"Product__designer___1aKyV","quickView":"Product__quickView___3Cc-v"};
 
 /***/ }),
 
@@ -388,7 +585,7 @@ module.exports = {"productsList":"ProductsList__productsList___11On8","loading":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"filterItem":"Category__filterItem___3F8bx"};
+module.exports = {"overlay":"QuickView__overlay___3AHQ0","wrap":"QuickView__wrap___1IOPa","close":"QuickView__close___3Z_7X"};
 
 /***/ }),
 
@@ -396,7 +593,7 @@ module.exports = {"filterItem":"Category__filterItem___3F8bx"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"CatFilterList":"CategoryFilter__CatFilterList___2Uekt DesignerFilter__DesignerFilter___16r9D"};
+module.exports = {"productsList":"ProductsList__productsList___2iv_t","loading":"ProductsList__loading___4eRR6"};
 
 /***/ }),
 
@@ -404,7 +601,7 @@ module.exports = {"CatFilterList":"CategoryFilter__CatFilterList___2Uekt Designe
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"clear":"Color__clear___LKltW","colorName":"Color__colorName___1UfR5 Designer__designer___1wCqj","colorCheckbox":"Color__colorCheckbox___O4ZwR Designer__filterCheckbox___cQVCR","colorCheckedbox":"Color__colorCheckedbox___18jdi Designer__filterCheckedbox___1wYrx Designer__filterCheckbox___cQVCR"};
+module.exports = {"CatFilterList":"CategoryFilter__CatFilterList___FfMfo DesignerFilter__DesignerFilter___1auhx"};
 
 /***/ }),
 
@@ -412,7 +609,7 @@ module.exports = {"clear":"Color__clear___LKltW","colorName":"Color__colorName__
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"ColorFilter":"ColorFilter__ColorFilter___2v-WV DesignerFilter__DesignerFilter___16r9D","clearFilter":"ColorFilter__clearFilter___Zzw31 DesignerFilter__clearFilter___3x-nn"};
+module.exports = {"filterItem":"Category__filterItem___3fn3N"};
 
 /***/ }),
 
@@ -420,7 +617,7 @@ module.exports = {"ColorFilter":"ColorFilter__ColorFilter___2v-WV DesignerFilter
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"noSelected":"Designer__noSelected___hcy9Y","filterCheckbox":"Designer__filterCheckbox___cQVCR","filterCheckedbox":"Designer__filterCheckedbox___1wYrx Designer__filterCheckbox___cQVCR","checkBox":"Designer__checkBox___1jKW6","designer":"Designer__designer___1wCqj"};
+module.exports = {"ColorFilter":"ColorFilter__ColorFilter___2xG4s DesignerFilter__DesignerFilter___1auhx","clearFilter":"ColorFilter__clearFilter___3vLDk DesignerFilter__clearFilter___36mFp"};
 
 /***/ }),
 
@@ -428,7 +625,7 @@ module.exports = {"noSelected":"Designer__noSelected___hcy9Y","filterCheckbox":"
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"DesignerFilter":"DesignerFilter__DesignerFilter___16r9D","clearFilter":"DesignerFilter__clearFilter___3x-nn","scrollPanel":"DesignerFilter__scrollPanel___3DP0A"};
+module.exports = {"clear":"Color__clear___1Qtoz","colorName":"Color__colorName___2jlLG Designer__designer___QQ_2i","colorCheckbox":"Color__colorCheckbox___20bIe Designer__filterCheckbox___3S6zQ","colorCheckedbox":"Color__colorCheckedbox___3am8u Designer__filterCheckedbox___ARKh7 Designer__filterCheckbox___3S6zQ"};
 
 /***/ }),
 
@@ -436,24 +633,27 @@ module.exports = {"DesignerFilter":"DesignerFilter__DesignerFilter___16r9D","cle
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"sideFilter":"SideFilter__sideFilter___itz5S"};
+module.exports = {"DesignerFilter":"DesignerFilter__DesignerFilter___1auhx","clearFilter":"DesignerFilter__clearFilter___36mFp","scrollPanel":"DesignerFilter__scrollPanel___2zHva"};
 
 /***/ }),
 
-/***/ 138:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 124:
+/***/ (function(module, exports) {
 
-// the whatwg-fetch polyfill installs the fetch() function
-// on the global object (window or self)
-//
-// Return that as the export for use in Webpack, Browserify etc.
-__webpack_require__(225);
-module.exports = self.fetch.bind(self);
-
+// removed by extract-text-webpack-plugin
+module.exports = {"noSelected":"Designer__noSelected___2XNKK","filterCheckbox":"Designer__filterCheckbox___3S6zQ","filterCheckedbox":"Designer__filterCheckedbox___ARKh7 Designer__filterCheckbox___3S6zQ","checkBox":"Designer__checkBox___13gnt","designer":"Designer__designer___QQ_2i"};
 
 /***/ }),
 
-/***/ 140:
+/***/ 125:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"sideFilter":"SideFilter__sideFilter___1m2_e"};
+
+/***/ }),
+
+/***/ 141:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -520,7 +720,7 @@ module.exports = function() {
 
 /***/ }),
 
-/***/ 141:
+/***/ 142:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -547,18 +747,18 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(56)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(57)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(140)();
+  module.exports = __webpack_require__(141)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 
-/***/ 225:
+/***/ 226:
 /***/ (function(module, exports) {
 
 (function(self) {
@@ -1026,7 +1226,20 @@ if (process.env.NODE_ENV !== 'production') {
 
 /***/ }),
 
-/***/ 84:
+/***/ 55:
+/***/ (function(module, exports, __webpack_require__) {
+
+// the whatwg-fetch polyfill installs the fetch() function
+// on the global object (window or self)
+//
+// Return that as the export for use in Webpack, Browserify etc.
+__webpack_require__(226);
+module.exports = self.fetch.bind(self);
+
+
+/***/ }),
+
+/***/ 85:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1044,19 +1257,19 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(7);
 
-var _isomorphicFetch = __webpack_require__(138);
+var _actions = __webpack_require__(86);
 
-var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
+var _actions2 = _interopRequireDefault(_actions);
 
-var _Header = __webpack_require__(91);
+var _Header = __webpack_require__(93);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _MainBlock = __webpack_require__(92);
+var _MainBlock = __webpack_require__(94);
 
 var _MainBlock2 = _interopRequireDefault(_MainBlock);
 
-var _App = __webpack_require__(105);
+var _App = __webpack_require__(107);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -1071,13 +1284,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
     _this.state = {
-      data: {},
+      data: props.listingdata,
       productViewChecked: false,
       categoryRefresh: false,
       offset: 0,
@@ -1085,7 +1298,6 @@ var App = function (_React$Component) {
       cat: 0,
       designerList: [],
       colorList: []
-
     };
     _this.changeProductsView = _this.changeProductsView.bind(_this);
     _this.updateOffset = _this.updateOffset.bind(_this);
@@ -1093,33 +1305,27 @@ var App = function (_React$Component) {
     _this.updateSort = _this.updateSort.bind(_this);
     _this.updateDesignerList = _this.updateDesignerList.bind(_this);
     _this.updateColorList = _this.updateColorList.bind(_this);
-    _this.fetchListing = _this.fetchListing.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
-    key: 'fetchListing',
-    value: function fetchListing(url) {
+    key: 'componentWillMount',
+    value: function componentWillMount() {
       var _this2 = this;
 
-      (0, _isomorphicFetch2.default)(url).then(function (res) {
-        return res.json();
-      }).then(function (res) {
+      console.log('componentWillMount');
+      var url = 'http://127.0.0.1:3000/api/en/shop';
+      (0, _actions2.default)(url).then(function (res) {
         _this2.setState({
           data: res
         });
       });
     }
   }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      console.log('componentDidMount');
-      var url = 'http://127.0.0.1:3000/api/en/shop';
-      this.fetchListing(url);
-    }
-  }, {
     key: 'updateSort',
     value: function updateSort(newSort) {
+      var _this3 = this;
+
       this.setState({
         sort: newSort
       });
@@ -1129,11 +1335,17 @@ var App = function (_React$Component) {
       var colorList = this.state.colorList.length === 0 ? '' : 'color=' + this.state.colorList.toString() + '&';
       var offset = this.state.offset === 0 ? '' : 'offset=' + this.state.offset;
       var url = "http://127.0.0.1:3000/api/en/shop?" + sort + cat + designerList + colorList + offset;
-      this.fetchListing(url);
+      (0, _actions2.default)(url).then(function (res) {
+        _this3.setState({
+          data: res
+        });
+      });
     }
   }, {
     key: 'updateCategory',
     value: function updateCategory(newCategory) {
+      var _this4 = this;
+
       this.setState({
         sort: 'sort',
         cat: newCategory,
@@ -1143,14 +1355,18 @@ var App = function (_React$Component) {
       });
       var cat = newCategory === 0 ? '' : 'cat=' + newCategory + '&';
       var url = "http://127.0.0.1:3000/api/en/shop?" + cat;
-      this.fetchListing(url);
-      this.setState({
-        categoryRefresh: !this.state.categoryRefresh
+      (0, _actions2.default)(url).then(function (res) {
+        _this4.setState({
+          data: res,
+          categoryRefresh: !_this4.state.categoryRefresh
+        });
       });
     }
   }, {
     key: 'updateDesignerList',
     value: function updateDesignerList(updateDesigner) {
+      var _this5 = this;
+
       var updateDesignerList = [];
       if (updateDesigner === 0) {
         this.setState({
@@ -1180,11 +1396,17 @@ var App = function (_React$Component) {
       var colorList = this.state.colorList.length === 0 ? '' : 'color=' + this.state.colorList.toString() + '&';
       var offset = this.state.offset === 0 ? '' : 'offset=' + this.state.offset;
       var url = "http://127.0.0.1:3000/api/en/shop?" + sort + cat + designerList + colorList + offset;
-      this.fetchListing(url);
+      (0, _actions2.default)(url).then(function (res) {
+        _this5.setState({
+          data: res
+        });
+      });
     }
   }, {
     key: 'updateColorList',
     value: function updateColorList(updateColor) {
+      var _this6 = this;
+
       var updateColorList = [];
       if (updateColor === 0) {
         this.setState({
@@ -1214,11 +1436,17 @@ var App = function (_React$Component) {
       var colorList = updateColorList.length === 0 ? '' : 'color=' + updateColorList.toString() + '&';
       var offset = this.state.offset === 0 ? '' : 'offset=' + this.state.offset;
       var url = "http://127.0.0.1:3000/api/en/shop?" + sort + cat + designerList + colorList + offset;
-      this.fetchListing(url);
+      (0, _actions2.default)(url).then(function (res) {
+        _this6.setState({
+          data: res
+        });
+      });
     }
   }, {
     key: 'updateOffset',
     value: function updateOffset(newOffset) {
+      var _this7 = this;
+
       this.setState({
         offset: newOffset
       });
@@ -1228,7 +1456,11 @@ var App = function (_React$Component) {
       var designerList = this.state.designerList.length === 0 ? '' : 'brand=' + this.state.designerList.toString() + '&';
       var colorList = this.state.colorList.length === 0 ? '' : 'color=' + this.state.colorList.toString() + '&';
       var url = "http://127.0.0.1:3000/api/en/shop?" + sort + cat + designerList + colorList + offset;
-      this.fetchListing(url);
+      (0, _actions2.default)(url).then(function (res) {
+        _this7.setState({
+          data: res
+        });
+      });
     }
   }, {
     key: 'changeProductsView',
@@ -1238,35 +1470,44 @@ var App = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _state$data = this.state.data,
-          total = _state$data.total,
-          limit = _state$data.limit,
-          offset = _state$data.offset;
 
-      var totalPage = Math.ceil(total / limit);
-      var currentPage = parseInt(Math.floor(offset / limit)) + 1;
-      return _react2.default.createElement(
-        'div',
-        { className: _App2.default.wraper },
-        _react2.default.createElement(_Header2.default, {
-          offset: offset,
-          limit: limit,
-          total: total,
-          totalPage: totalPage,
-          currentPage: currentPage,
-          changeProductsView: this.changeProductsView,
-          updateOffset: this.updateOffset,
-          updateSort: this.updateSort
-        }),
-        _react2.default.createElement(_MainBlock2.default, {
-          data: this.state.data,
-          productViewChecked: this.state.productViewChecked,
-          updateCategory: this.updateCategory,
-          updateDesignerList: this.updateDesignerList,
-          updateColorList: this.updateColorList,
-          categoryRefresh: this.state.categoryRefresh
-        })
-      );
+      if (this.state.data) {
+        var _state$data = this.state.data,
+            total = _state$data.total,
+            limit = _state$data.limit,
+            offset = _state$data.offset;
+
+        var totalPage = Math.ceil(total / limit);
+        var currentPage = parseInt(Math.floor(offset / limit)) + 1;
+        return _react2.default.createElement(
+          'div',
+          { className: _App2.default.wraper },
+          _react2.default.createElement(_Header2.default, {
+            offset: offset,
+            limit: limit,
+            total: total,
+            totalPage: totalPage,
+            currentPage: currentPage,
+            changeProductsView: this.changeProductsView,
+            updateOffset: this.updateOffset,
+            updateSort: this.updateSort
+          }),
+          _react2.default.createElement(_MainBlock2.default, {
+            data: this.state.data,
+            productViewChecked: this.state.productViewChecked,
+            updateCategory: this.updateCategory,
+            updateDesignerList: this.updateDesignerList,
+            updateColorList: this.updateColorList,
+            categoryRefresh: this.state.categoryRefresh
+          })
+        );
+      } else {
+        return _react2.default.createElement(
+          'div',
+          null,
+          'loading'
+        );
+      }
     }
   }]);
 
@@ -1277,7 +1518,35 @@ exports.default = App;
 
 /***/ }),
 
-/***/ 85:
+/***/ 86:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _isomorphicFetch = __webpack_require__(55);
+
+var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var fetchListing = function fetchListing(url) {
+  return (0, _isomorphicFetch2.default)(url).then(function (res) {
+    return res.json();
+  }).then(function (res) {
+    return res;
+  });
+};
+
+exports.default = fetchListing;
+
+/***/ }),
+
+/***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1295,15 +1564,15 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(7);
 
-var _ListPagination = __webpack_require__(106);
+var _ListPagination = __webpack_require__(108);
 
 var _ListPagination2 = _interopRequireDefault(_ListPagination);
 
-var _PageNumber = __webpack_require__(90);
+var _PageNumber = __webpack_require__(92);
 
 var _PageNumber2 = _interopRequireDefault(_PageNumber);
 
-var _propTypes = __webpack_require__(141);
+var _propTypes = __webpack_require__(142);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1407,7 +1676,7 @@ exports.default = ListPagination;
 
 /***/ }),
 
-/***/ 86:
+/***/ 88:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1425,7 +1694,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(7);
 
-var _ListSort = __webpack_require__(107);
+var _ListSort = __webpack_require__(109);
 
 var _ListSort2 = _interopRequireDefault(_ListSort);
 
@@ -1490,7 +1759,7 @@ exports.default = ListSort;
 
 /***/ }),
 
-/***/ 87:
+/***/ 89:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1504,7 +1773,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ListTitleAndTotal = __webpack_require__(108);
+var _ListTitleAndTotal = __webpack_require__(110);
 
 var _ListTitleAndTotal2 = _interopRequireDefault(_ListTitleAndTotal);
 
@@ -1540,7 +1809,48 @@ exports.default = ListTitleAndTotal;
 
 /***/ }),
 
-/***/ 88:
+/***/ 90:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ListViewAndSort = __webpack_require__(111);
+
+var _ListViewAndSort2 = _interopRequireDefault(_ListViewAndSort);
+
+var _ListView = __webpack_require__(91);
+
+var _ListView2 = _interopRequireDefault(_ListView);
+
+var _ListSort = __webpack_require__(88);
+
+var _ListSort2 = _interopRequireDefault(_ListSort);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ListViewAndSort = function ListViewAndSort(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: _ListViewAndSort2.default.ListViewAndSort },
+    _react2.default.createElement(_ListView2.default, { changeProductsView: props.changeProductsView }),
+    _react2.default.createElement(_ListSort2.default, { updateSort: props.updateSort })
+  );
+};
+
+exports.default = ListViewAndSort;
+
+/***/ }),
+
+/***/ 91:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1558,7 +1868,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(7);
 
-var _ListView = __webpack_require__(109);
+var _ListView = __webpack_require__(112);
 
 var _ListView2 = _interopRequireDefault(_ListView);
 
@@ -1621,48 +1931,7 @@ exports.default = ListView;
 
 /***/ }),
 
-/***/ 89:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ListViewAndSort = __webpack_require__(110);
-
-var _ListViewAndSort2 = _interopRequireDefault(_ListViewAndSort);
-
-var _ListView = __webpack_require__(88);
-
-var _ListView2 = _interopRequireDefault(_ListView);
-
-var _ListSort = __webpack_require__(86);
-
-var _ListSort2 = _interopRequireDefault(_ListSort);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ListViewAndSort = function ListViewAndSort(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: _ListViewAndSort2.default.ListViewAndSort },
-    _react2.default.createElement(_ListView2.default, { changeProductsView: props.changeProductsView }),
-    _react2.default.createElement(_ListSort2.default, { updateSort: props.updateSort })
-  );
-};
-
-exports.default = ListViewAndSort;
-
-/***/ }),
-
-/***/ 90:
+/***/ 92:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1680,7 +1949,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(7);
 
-var _PageNumber = __webpack_require__(111);
+var _PageNumber = __webpack_require__(113);
 
 var _PageNumber2 = _interopRequireDefault(_PageNumber);
 
@@ -1757,7 +2026,7 @@ exports.default = PageNumber;
 
 /***/ }),
 
-/***/ 91:
+/***/ 93:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1771,19 +2040,19 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _header = __webpack_require__(112);
+var _header = __webpack_require__(114);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _ListViewAndSort = __webpack_require__(89);
+var _ListViewAndSort = __webpack_require__(90);
 
 var _ListViewAndSort2 = _interopRequireDefault(_ListViewAndSort);
 
-var _ListTitleAndTotal = __webpack_require__(87);
+var _ListTitleAndTotal = __webpack_require__(89);
 
 var _ListTitleAndTotal2 = _interopRequireDefault(_ListTitleAndTotal);
 
-var _ListPagination = __webpack_require__(85);
+var _ListPagination = __webpack_require__(87);
 
 var _ListPagination2 = _interopRequireDefault(_ListPagination);
 
@@ -1794,7 +2063,7 @@ var Header = function Header(props) {
   return _react2.default.createElement(
     'div',
     { className: _header2.default.headerContainer },
-    _react2.default.createElement(_ListViewAndSort2.default, { totalPage: props.totalPage, currentPage: props.currentPage, changeProductsView: props.changeProductsView, updateSort: props.updateSort }),
+    _react2.default.createElement(_ListViewAndSort2.default, { changeProductsView: props.changeProductsView, updateSort: props.updateSort }),
     _react2.default.createElement(_ListTitleAndTotal2.default, { total: props.total }),
     _react2.default.createElement(_ListPagination2.default, { totalPage: props.totalPage, currentPage: props.currentPage, updateOffset: props.updateOffset })
   );
@@ -1804,7 +2073,7 @@ exports.default = Header;
 
 /***/ }),
 
-/***/ 92:
+/***/ 94:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1818,15 +2087,15 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _MainBlock = __webpack_require__(113);
+var _MainBlock = __webpack_require__(115);
 
 var _MainBlock2 = _interopRequireDefault(_MainBlock);
 
-var _SideFilter = __webpack_require__(102);
+var _SideFilter = __webpack_require__(104);
 
 var _SideFilter2 = _interopRequireDefault(_SideFilter);
 
-var _ProductsList = __webpack_require__(95);
+var _ProductsList = __webpack_require__(97);
 
 var _ProductsList2 = _interopRequireDefault(_ProductsList);
 
@@ -1854,7 +2123,7 @@ exports.default = MainBlock;
 
 /***/ }),
 
-/***/ 93:
+/***/ 95:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1872,11 +2141,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(7);
 
-var _Product = __webpack_require__(114);
+var _Product = __webpack_require__(116);
 
 var _Product2 = _interopRequireDefault(_Product);
 
-var _QuickView = __webpack_require__(94);
+var _QuickView = __webpack_require__(96);
 
 var _QuickView2 = _interopRequireDefault(_QuickView);
 
@@ -1970,7 +2239,7 @@ exports.default = Product;
 
 /***/ }),
 
-/***/ 94:
+/***/ 96:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1988,9 +2257,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(7);
 
-var _QuickView = __webpack_require__(115);
+var _QuickView = __webpack_require__(117);
 
 var _QuickView2 = _interopRequireDefault(_QuickView);
+
+var _isomorphicFetch = __webpack_require__(55);
+
+var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2029,14 +2302,13 @@ var QuickView = function (_React$Component) {
       console.log('componentDidMount,,quickProduct');
       var productID = this.props.id;
       var url = 'http://127.0.0.1:3000/api/product/' + productID;
-      fetch(url).then(function (res) {
+      (0, _isomorphicFetch2.default)(url).then(function (res) {
         return res.json();
       }).then(function (res) {
         _this2.setState({
           quickProduct: res
 
         });
-        console.log(_this2.state.quickProduct.images.large);
       });
     }
   }, {
@@ -2081,7 +2353,7 @@ exports.default = QuickView;
 
 /***/ }),
 
-/***/ 95:
+/***/ 97:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2099,11 +2371,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(7);
 
-var _Product = __webpack_require__(93);
+var _Product = __webpack_require__(95);
 
 var _Product2 = _interopRequireDefault(_Product);
 
-var _ProductsList = __webpack_require__(116);
+var _ProductsList = __webpack_require__(118);
 
 var _ProductsList2 = _interopRequireDefault(_ProductsList);
 
@@ -2163,7 +2435,7 @@ exports.default = ProductsList;
 
 /***/ }),
 
-/***/ 96:
+/***/ 98:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2181,80 +2453,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(7);
 
-var _Category = __webpack_require__(117);
-
-var _Category2 = _interopRequireDefault(_Category);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Category = function (_React$Component) {
-  _inherits(Category, _React$Component);
-
-  function Category(props) {
-    _classCallCheck(this, Category);
-
-    var _this = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this, props));
-
-    _this.getCategory = _this.getCategory.bind(_this);
-    return _this;
-  }
-
-  _createClass(Category, [{
-    key: 'getCategory',
-    value: function getCategory(newCategory) {
-      this.props.updateCategory(newCategory);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      return _react2.default.createElement(
-        'div',
-        { className: _Category2.default.filterItem, 'data-category-id': this.props.Category.id, onClick: function onClick() {
-            return _this2.getCategory(_this2.props.Category.id);
-          } },
-        this.props.Category.name
-      );
-    }
-  }]);
-
-  return Category;
-}(_react2.default.Component);
-
-exports.default = Category;
-
-/***/ }),
-
-/***/ 97:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(7);
-
-var _CategoryFilter = __webpack_require__(118);
+var _CategoryFilter = __webpack_require__(119);
 
 var _CategoryFilter2 = _interopRequireDefault(_CategoryFilter);
 
-var _Category = __webpack_require__(96);
+var _Category = __webpack_require__(99);
 
 var _Category2 = _interopRequireDefault(_Category);
 
@@ -2331,99 +2534,6 @@ exports.default = CategoryFilter;
 
 /***/ }),
 
-/***/ 98:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(7);
-
-var _Color = __webpack_require__(119);
-
-var _Color2 = _interopRequireDefault(_Color);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Color = function (_React$Component) {
-  _inherits(Color, _React$Component);
-
-  function Color(props) {
-    _classCallCheck(this, Color);
-
-    var _this = _possibleConstructorReturn(this, (Color.__proto__ || Object.getPrototypeOf(Color)).call(this, props));
-
-    _this.state = {
-      selectBox: false
-    };
-    _this.getColor = _this.getColor.bind(_this);
-    return _this;
-  }
-
-  _createClass(Color, [{
-    key: 'getColor',
-    value: function getColor(newColor) {
-      var selectBox = this.state.selectBox;
-
-      this.setState({
-        selectBox: !selectBox
-      });
-      this.props.updateColorList(newColor);
-    }
-  }, {
-    key: 'componentWillUpdate',
-    value: function componentWillUpdate(nextProps, nextState) {
-      if (this.props.clearClicked !== nextProps.clearClicked) {
-        this.setState({
-          selectBox: false
-        });
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var checkBox = this.state.selectBox ? _Color2.default.colorCheckedbox : _Color2.default.colorCheckbox;
-      return _react2.default.createElement(
-        'li',
-        { 'data-category-id': this.props.id, onClick: function onClick() {
-            return _this2.getColor(_this2.props.id);
-          } },
-        _react2.default.createElement('span', { className: checkBox }),
-        _react2.default.createElement(
-          'span',
-          { className: _Color2.default.colorName },
-          this.props.name
-        ),
-        _react2.default.createElement('div', { className: _Color2.default.clear })
-      );
-    }
-  }]);
-
-  return Color;
-}(_react2.default.Component);
-
-exports.default = Color;
-
-/***/ }),
-
 /***/ 99:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2442,13 +2552,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(7);
 
-var _ColorFilter = __webpack_require__(120);
+var _Category = __webpack_require__(120);
 
-var _ColorFilter2 = _interopRequireDefault(_ColorFilter);
-
-var _Color = __webpack_require__(98);
-
-var _Color2 = _interopRequireDefault(_Color);
+var _Category2 = _interopRequireDefault(_Category);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2458,90 +2564,43 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ColorFilter = function (_React$Component) {
-  _inherits(ColorFilter, _React$Component);
+var Category = function (_React$Component) {
+  _inherits(Category, _React$Component);
 
-  function ColorFilter(props) {
-    _classCallCheck(this, ColorFilter);
+  function Category(props) {
+    _classCallCheck(this, Category);
 
-    var _this = _possibleConstructorReturn(this, (ColorFilter.__proto__ || Object.getPrototypeOf(ColorFilter)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this, props));
 
-    _this.state = {
-      clearClicked: false
-    };
-    _this.clearColor = _this.clearColor.bind(_this);
+    _this.getCategory = _this.getCategory.bind(_this);
     return _this;
   }
 
-  _createClass(ColorFilter, [{
-    key: 'clearColor',
-    value: function clearColor() {
-      var clearClicked = this.state.clearClicked;
-
-      this.setState({
-        clearClicked: !clearClicked
-      });
-      this.props.updateColorList(0);
-    }
-  }, {
-    key: 'componentWillUpdate',
-    value: function componentWillUpdate(nextProps, nextState) {
-      if (this.props.categoryRefresh !== nextProps.categoryRefresh) {
-        this.setState({
-          clearClicked: !this.state.clearClicked
-        });
-      }
+  _createClass(Category, [{
+    key: 'getCategory',
+    value: function getCategory(newCategory) {
+      this.props.updateCategory(newCategory);
     }
   }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      if (!this.props.colorList) {
-        return _react2.default.createElement(
-          'div',
-          { className: _ColorFilter2.default.ColorFilter },
-          'Loading'
-        );
-      };
       return _react2.default.createElement(
         'div',
-        { className: _ColorFilter2.default.ColorFilter },
-        _react2.default.createElement(
-          'h4',
-          null,
-          ' COLOR '
-        ),
-        _react2.default.createElement(
-          'a',
-          { className: _ColorFilter2.default.clearFilter, onClick: function onClick() {
-              return _this2.clearColor();
-            } },
-          'Clear'
-        ),
-        _react2.default.createElement(
-          'ul',
-          null,
-          this.props.colorList.map(function (pColor) {
-            return _react2.default.createElement(_Color2.default, {
-              key: pColor.id,
-              id: pColor.id,
-              name: pColor.name,
-              updateColorList: _this2.props.updateColorList,
-              categoryRefresh: _this2.props.categoryRefresh,
-              clearClicked: _this2.state.clearClicked
-            });
-          })
-        )
+        { className: _Category2.default.filterItem, 'data-category-id': this.props.Category.id, onClick: function onClick() {
+            return _this2.getCategory(_this2.props.Category.id);
+          } },
+        this.props.Category.name
       );
     }
   }]);
 
-  return ColorFilter;
+  return Category;
 }(_react2.default.Component);
 
-exports.default = ColorFilter;
+exports.default = Category;
 
 /***/ })
 
-},[103]);
+},[105]);
