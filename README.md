@@ -1,14 +1,16 @@
-# My NAP Test (sam)
+# My NAP Test
 
 node express react product listing page
 
 ## Run the Test
 
-npm install
+npm install  
+
+
 npm start
 
 ## Test
-npm test    (jest snapshots)
+npm test  
 
 ## Service started on port 3000
 
