@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should match its snapshot with data 1`] = `
+exports[`Header should match its snapshot with items 1`] = `
 <div
   className="headerContainer"
 >
@@ -53,6 +53,7 @@ exports[`should match its snapshot with data 1`] = `
         className="resultsBox"
       >
         <span>
+          500
            Results
         </span>
       </div>
@@ -73,11 +74,27 @@ exports[`should match its snapshot with data 1`] = `
         </span>
       </li>
       <li
-        className="pagination-1 pagenationBoxLi"
+        className="pagenationBoxCurrentPage"
         onClick={[Function]}
       >
         <span>
           1
+        </span>
+      </li>
+      <li
+        className="pagination-2 pagenationBoxLi"
+        onClick={[Function]}
+      >
+        <span>
+          2
+        </span>
+      </li>
+      <li
+        className="pagination-3 pagenationBoxLi"
+        onClick={[Function]}
+      >
+        <span>
+          3
         </span>
       </li>
       <li
@@ -86,6 +103,14 @@ exports[`should match its snapshot with data 1`] = `
       >
         <span>
           ...
+        </span>
+      </li>
+      <li
+        className="pagination-9 pagenationBoxLi"
+        onClick={[Function]}
+      >
+        <span>
+          9
         </span>
       </li>
       <li
@@ -101,12 +126,127 @@ exports[`should match its snapshot with data 1`] = `
 </div>
 `;
 
-exports[`should render a todo item  1`] = `
-<div
-  className="headerContainer"
->
-  <ListViewAndSort />
-  <ListTitleAndTotal />
-  <ListPagination />
-</div>
+exports[`Header should mount item  1`] = `
+<Header>
+  <div
+    className="headerContainer"
+  >
+    <ListViewAndSort>
+      <div
+        className="ListViewAndSort"
+      >
+        <ListView>
+          <div>
+            <button
+              className="ListView"
+              onClick={[Function]}
+            >
+              Product View
+            </button>
+          </div>
+        </ListView>
+        <ListSort>
+          <div
+            className="sortBy"
+          >
+            <select
+              name="sortOrder"
+              onChange={[Function]}
+            >
+              <option
+                value="sort"
+              >
+                Sort by
+              </option>
+              <option
+                value="low"
+              >
+                Price Low to High
+              </option>
+              <option
+                value="high"
+              >
+                Price High to Low
+              </option>
+            </select>
+          </div>
+        </ListSort>
+      </div>
+    </ListViewAndSort>
+    <ListTitleAndTotal>
+      <div
+        className="ListTitleAndTotal"
+      >
+        <h1>
+          what's new
+        </h1>
+        <div
+          className="resultBox"
+        >
+          <div
+            className="resultsBox"
+          >
+            <span>
+               Results
+            </span>
+          </div>
+        </div>
+      </div>
+    </ListTitleAndTotal>
+    <ListPagination>
+      <div
+        className="pagenationBox"
+      >
+        <ul
+          className="pagenationBoxUl"
+        >
+          <PageNumber
+            page={-1}
+          >
+            <li
+              className="pagination--1 pagenationBoxLi"
+              onClick={[Function]}
+            >
+              <span />
+            </li>
+          </PageNumber>
+          <PageNumber
+            page={1}
+          >
+            <li
+              className="pagination-1 pagenationBoxLi"
+              onClick={[Function]}
+            >
+              <span>
+                1
+              </span>
+            </li>
+          </PageNumber>
+          <PageNumber
+            page="..."
+          >
+            <li
+              className="pagination-dot pagenationBoxLi"
+              onClick={[Function]}
+            >
+              <span>
+                ...
+              </span>
+            </li>
+          </PageNumber>
+          <PageNumber
+            page={0}
+          >
+            <li
+              className="pagination-0 pagenationBoxLi"
+              onClick={[Function]}
+            >
+              <span />
+            </li>
+          </PageNumber>
+        </ul>
+      </div>
+    </ListPagination>
+  </div>
+</Header>
 `;

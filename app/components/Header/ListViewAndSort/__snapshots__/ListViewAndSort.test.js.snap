@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListViewAndSort should change class on the onClick function 1`] = `
+<ListViewAndSort
+  changeProductsView={[Function]}
+  updateSort={[Function]}
+>
+  <div
+    className="ListViewAndSort"
+  >
+    <ListView
+      changeProductsView={[Function]}
+    >
+      <div>
+        <button
+          className="ListView"
+          onClick={[Function]}
+        >
+          Product View
+        </button>
+      </div>
+    </ListView>
+    <ListSort
+      updateSort={[Function]}
+    >
+      <div
+        className="sortBy"
+      >
+        <select
+          name="sortOrder"
+          onChange={[Function]}
+        >
+          <option
+            value="sort"
+          >
+            Sort by
+          </option>
+          <option
+            value="low"
+          >
+            Price Low to High
+          </option>
+          <option
+            value="high"
+          >
+            Price High to Low
+          </option>
+        </select>
+      </div>
+    </ListSort>
+  </div>
+</ListViewAndSort>
+`;
+
+exports[`ListViewAndSort should match its snapshot with items 1`] = `
+<div
+  className="ListViewAndSort"
+>
+  <div>
+    <button
+      className="ListView"
+      onClick={[Function]}
+    >
+      Product View
+    </button>
+  </div>
+  <div
+    className="sortBy"
+  >
+    <select
+      name="sortOrder"
+      onChange={[Function]}
+    >
+      <option
+        value="sort"
+      >
+        Sort by
+      </option>
+      <option
+        value="low"
+      >
+        Price Low to High
+      </option>
+      <option
+        value="high"
+      >
+        Price High to Low
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
+exports[`ListViewAndSort should mount item  1`] = `
+<ListViewAndSort>
+  <div
+    className="ListViewAndSort"
+  >
+    <ListView>
+      <div>
+        <button
+          className="ListView"
+          onClick={[Function]}
+        >
+          Product View
+        </button>
+      </div>
+    </ListView>
+    <ListSort>
+      <div
+        className="sortBy"
+      >
+        <select
+          name="sortOrder"
+          onChange={[Function]}
+        >
+          <option
+            value="sort"
+          >
+            Sort by
+          </option>
+          <option
+            value="low"
+          >
+            Price Low to High
+          </option>
+          <option
+            value="high"
+          >
+            Price High to Low
+          </option>
+        </select>
+      </div>
+    </ListSort>
+  </div>
+</ListViewAndSort>
+`;

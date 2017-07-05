@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListTitleAndTotal should match its snapshot with items 1`] = `
+<div
+  className="ListTitleAndTotal"
+>
+  <h1>
+    what's new
+  </h1>
+  <div
+    className="resultBox"
+  >
+    <div
+      className="resultsBox"
+    >
+      <span>
+        9
+         Results
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ListTitleAndTotal should mount item  1`] = `
+<ListTitleAndTotal>
+  <div
+    className="ListTitleAndTotal"
+  >
+    <h1>
+      what's new
+    </h1>
+    <div
+      className="resultBox"
+    >
+      <div
+        className="resultsBox"
+      >
+        <span>
+           Results
+        </span>
+      </div>
+    </div>
+  </div>
+</ListTitleAndTotal>
+`;

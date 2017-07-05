@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsList should match its snapshot with items 1`] = `
+<div
+  className="productsList"
+>
+  <ul>
+    <li
+      className="listItem"
+    >
+      <div
+        className="productImage"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <img
+          src="//cache.net-a-porter.com/images/products/543002/543002_ou_sl.jpg"
+        />
+        <div
+          className="quickView"
+          onClick={[Function]}
+        >
+          Quick View
+        </div>
+      </div>
+      <div
+        className="productInfo"
+      >
+        <span
+          className="designer"
+          data-product-id={543002}
+        >
+          Madeleine Thompson
+        </span>
+        <br />
+        Cashmere wrap
+        <br />
+        <span>
+          £380
+        </span>
+        <br />
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`ProductsList should mount item  1`] = `
+<ProductsList
+  data={Array []}
+>
+  <div
+    className="productsList"
+  >
+     
+    <p
+      className="loading"
+    >
+      Loading
+    </p>
+  </div>
+</ProductsList>
+`;

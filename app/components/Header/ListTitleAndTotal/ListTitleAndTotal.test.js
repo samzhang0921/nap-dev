@@ -1,20 +1,25 @@
-import { render } from 'enzyme';
 import React from 'react';
+import {mount} from 'enzyme';
+import toJson from 'enzyme-to-json';
+import renderer from 'react-test-renderer';
 import ListTitleAndTotal from './ListTitleAndTotal';
 
+describe('ListTitleAndTotal', () => {
 
-describe('ListPagination', () => {
+  const total =9;
 
-  const total= 10;
-const wrapper = render((
-    <ListTitleAndTotal total={total}/>
-));
 
-  it('should render without throwing an error', () => {
-    expect(wrapper.find("h1")).toHaveLength(1);
+  it('should mount item ', () => {
+    const tree = toJson(mount(<ListTitleAndTotal />));
+    expect(tree).toMatchSnapshot();
   });
 
-  it('should mount in a full DOM', () => {
-    expect(wrapper.find('.ListTitleAndTotal')).toHaveLength(1);
+  it('should match its snapshot with items', () => {
+
+    const tree = renderer.create(
+    <ListTitleAndTotal total={total}/>
+  ).toJSON();
+
+    expect(tree).toMatchSnapshot();
   });
 });

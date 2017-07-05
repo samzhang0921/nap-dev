@@ -22,7 +22,6 @@ describe('Color', () => {
 
   it('should change class on the onClick function', () => {
     const onChange = jest.fn();
-    const tree = renderer.create(<Color/>);
     const component = mount(<Color id={id} name={name} updateColorList={onChange}/>);
     component.find('li').simulate('click');
     expect(component.find('.colorCheckedbox')).toHaveLength(1);

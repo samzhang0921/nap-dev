@@ -22,9 +22,7 @@ describe('Designer', () => {
 
   it('should change class on the onClick function', () => {
     const onChange = jest.fn();
-      const tree = renderer.create(
-        <Designer />
-      );
+      
       const component = mount(<Designer id={id} name={name} updateDesignerList={onChange}/>);
       component.find('li').simulate('click');
       expect(component.find('.filterCheckedbox')).toHaveLength(1);

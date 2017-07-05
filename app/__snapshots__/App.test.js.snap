@@ -19,8 +19,6 @@ exports[`App should mount item  1`] = `
       >
         <ListViewAndSort
           changeProductsView={[Function]}
-          currentPage={NaN}
-          totalPage={NaN}
           updateSort={[Function]}
         >
           <div

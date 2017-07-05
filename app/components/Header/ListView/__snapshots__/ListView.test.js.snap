@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListView should change class on the onClick function 1`] = `
+<ListView
+  changeProductsView={[Function]}
+>
+  <div>
+    <button
+      className="ListView"
+      onClick={[Function]}
+    >
+      Outfit View
+    </button>
+  </div>
+</ListView>
+`;
+
+exports[`ListView should match its snapshot with items 1`] = `
+<div>
+  <button
+    className="ListView"
+    onClick={[Function]}
+  >
+    Product View
+  </button>
+</div>
+`;
+
+exports[`ListView should mount item  1`] = `
+<ListView>
+  <div>
+    <button
+      className="ListView"
+      onClick={[Function]}
+    >
+      Product View
+    </button>
+  </div>
+</ListView>
+`;

@@ -24,9 +24,7 @@ describe('ColorFilter', () => {
 
   it('should change class on the onClick function', () => {
     const onChange = jest.fn();
-      const tree = renderer.create(
-        <ColorFilter />
-      );
+    
       const component = mount(<ColorFilter colorList={[pColor]} updateColorList={onChange}/>);
       component.find('.clearFilter').simulate('click');
       expect(component.find('.filterCheckedbox')).toHaveLength(0);

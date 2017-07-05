@@ -28,9 +28,7 @@ describe('DesignerFilter', () => {
 
   it('should change class on the onClick function', () => {
     const onChange = jest.fn();
-      const tree = renderer.create(
-        <DesignerFilter />
-      );
+    
       const component = mount(<DesignerFilter designerList={data1} updateDesignerList={onChange}/>);
       component.find('.clearFilter').simulate('click');
       expect(component.find('.filterCheckedbox')).toHaveLength(0);
