@@ -102,7 +102,7 @@ class App extends React.Component {
     let designerList = updateDesignerList.length===0 ? '': 'brand='+updateDesignerList.toString()+'&';
     let colorList = this.state.colorList.length===0 ? '': 'color='+this.state.colorList.toString()+'&';
     let offset = this.state.offset === 0 ? '': 'offset='+this.state.offset;
-    let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList+offset;
+    let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList;
     fetchListing(url).then((res) => {
       this.setState({
         data: res
@@ -139,7 +139,7 @@ class App extends React.Component {
         let designerList = this.state.designerList.length===0 ? '': 'brand='+this.state.designerList.toString()+'&';
         let colorList = updateColorList.length===0 ? '': 'color='+updateColorList.toString()+'&';
         let offset = this.state.offset === 0 ? '': 'offset='+this.state.offset;
-        let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList+offset;
+        let url = "http://127.0.0.1:3000/api/en/shop?"+sort+cat+designerList+colorList;
         fetchListing(url).then((res) => {
           this.setState({
             data: res
