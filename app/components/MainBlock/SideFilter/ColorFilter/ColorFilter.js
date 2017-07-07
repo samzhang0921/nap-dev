@@ -39,11 +39,10 @@ render() {
           name = {pColor.name}
           updateColorList = {this.props.updateColorList}
           categoryRefresh={this.props.categoryRefresh}
-          clearClicked = {this.state.clearClicked}
-          />
+          clearClicked = {this.state.clearClicked}/>
         })}
         </ul>
-      </div>
+        </div>
     )
   }
 }

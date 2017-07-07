@@ -6,6 +6,7 @@ import { default as fetchListing } from '../actions';
 import Header from './components/Header';
 import MainBlock from './components/MainBlock/MainBlock';
 import style from './App.css';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
   constructor(props) {
@@ -176,8 +177,8 @@ class App extends React.Component {
       const totalPage = Math.ceil(total / limit);
       const currentPage = parseInt(Math.floor(offset / limit)) + 1;
       return (
-        < div className = {style.wraper} >
-            < Header
+        <div className = {style.wraper}>
+            <Header
             offset = {offset}
             limit = {limit}
             total = {total}
@@ -185,17 +186,15 @@ class App extends React.Component {
             currentPage = {currentPage}
             changeProductsView = {this.changeProductsView}
             updateOffset = {this.updateOffset}
-            updateSort = {this.updateSort}
-            />
+            updateSort = {this.updateSort}/>
             <MainBlock
             data = {this.state.data}
             productViewChecked = {this.state.productViewChecked}
             updateCategory = {this.updateCategory}
             updateDesignerList = {this.updateDesignerList}
             updateColorList = {this.updateColorList}
-            categoryRefresh = {this.state.categoryRefresh}
-            />
-        </div >
+            categoryRefresh = {this.state.categoryRefresh}/>
+        </div>
       );
     } else {
       return (
@@ -204,6 +203,11 @@ class App extends React.Component {
     }
 
   }
+};
+
+App.PropTypes = {
+  data:PropTypes.object
 }
+
 
 export default App;

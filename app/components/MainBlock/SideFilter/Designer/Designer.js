@@ -1,8 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
 import style from './Designer.css';
+import PropTypes from 'prop-types';
 
-export default class Designer extends React.Component {
+class Designer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,7 +11,7 @@ export default class Designer extends React.Component {
     };
     this.getDesigner = this.getDesigner.bind(this);
   }
-  
+
   componentWillUpdate(nextProps, nextState){
     if (this.props.clearClicked !== nextProps.clearClicked){
       this.setState({
@@ -39,4 +40,13 @@ export default class Designer extends React.Component {
       </li>
     )
   }
-}
+};
+
+Designer.propTypes = {
+  designerName :PropTypes.string,
+  designerId :PropTypes.number,
+  updateDesignerList :PropTypes.func,
+  clearClicked :PropTypes.bool
+};
+
+export default Designer;

@@ -140,7 +140,7 @@ exports[`SideFilter should match its snapshot with items 1`] = `
 
 exports[`SideFilter should mount item  1`] = `
 <SideFilter
-  data={Array []}
+  data={Object {}}
 >
   <div
     className="sideFilter"

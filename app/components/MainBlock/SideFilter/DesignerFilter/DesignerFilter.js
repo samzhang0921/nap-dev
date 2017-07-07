@@ -2,7 +2,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import style from './DesignerFilter.css';
 import Designer from '../Designer/Designer';
-export default class DesignerFilter extends React.Component{
+import PropTypes from 'prop-types';
+
+class DesignerFilter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,22 +33,25 @@ export default class DesignerFilter extends React.Component{
     const designerList = this.props.designerList;
     return (
       <div className={style.DesignerFilter}>
-      <h4>Designer</h4>
-      <a className={style.clearFilter} onClick={()=>this.clearDesigner()}>Clear</a>
+        <h4>Designer</h4>
+        <a className={style.clearFilter} onClick={()=>this.clearDesigner()}>Clear</a>
         <ul className={style.scrollPanel}>
-          {designerList.map((designer) => {
-            return <Designer
-            key = {designer.id}
-            designerName = {designer.name.en}
-            designerId = {designer.id}
-            updateDesignerList = {this.props.updateDesignerList}
-            // select = {this.state.select}
-            clearClicked = {this.state.clearClicked}
-            />
-          })}
+            {designerList.map((designer) => {
+              return <Designer
+              key = {designer.id}
+              designerName = {designer.name.en}
+              designerId = {designer.id}
+              updateDesignerList = {this.props.updateDesignerList}
+              clearClicked = {this.state.clearClicked} />
+            })}
         </ul>
       </div>
     )
-  }
-
-}
+    }
+};
+DesignerFilter.propTypes = {
+  designerList:PropTypes.array,
+  updateDesignerList : PropTypes.func,
+  categoryRefresh : PropTypes.bool
+};
+export default DesignerFilter;

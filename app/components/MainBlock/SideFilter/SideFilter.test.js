@@ -6,7 +6,7 @@ import SideFilter from './SideFilter';
 
 describe('SideFilter', () => {
   it('should mount item ', () => {
-    const tree = toJson(mount(<SideFilter data={[]}/>));
+    const tree = toJson(mount(<SideFilter data={{}}/>));
     expect(tree).toMatchSnapshot();
   });
 

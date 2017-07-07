@@ -5,10 +5,6 @@ import renderer from 'react-test-renderer';
 import MainBlock from './MainBlock';
 
 describe('MainBlock', () => {
-  it('should mount item ', () => {
-    const tree = toJson(mount(<MainBlock data={[]}/>));
-    expect(tree).toMatchSnapshot();
-  });
 
   it('should match its snapshot with items', () => {
     const data = {
